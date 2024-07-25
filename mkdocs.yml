@@ -14,7 +14,6 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-
     # Palette toggle for dark mode
     - scheme: slate
       primary: black
@@ -38,6 +37,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
+  - pymdownx.smartsymbols
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
