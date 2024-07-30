@@ -148,8 +148,8 @@ public:
 代码：
 
 ```c++
-##include <iostream>
-##include <cstring>
+#include <iostream>
+#include <cstring>
 using std::cout;
 using std::endl;
 
@@ -282,9 +282,9 @@ void test() {
 【答】代码：
 
 ```c++
-##include <iostream>
-##include <string>
-##include <cmath>
+#include <iostream>
+#include <string>
+#include <cmath>
 using std::cout;
 using std::endl;
 using std::string;
@@ -467,14 +467,14 @@ int main(int argc, char *argv[])
 代码：
 
 ```cpp
-##include <iostream>
-##include <vector>
-##include <map>
-##include <set>
-##include <string>
-##include <sstream>
-##include <cstring>
-##include <fstream>
+#include <iostream>
+#include <vector>
+#include <map>
+#include <set>
+#include <string>
+#include <sstream>
+#include <cstring>
+#include <fstream>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -653,13 +653,13 @@ RSS文件就是一个树形结构
 代码：
 
 ```c++
-##include <iostream>
-##include <string>
-##include <vector>
-##include <regex>
-##include <fstream>
-##include "tinyxml2.h"
-##include "tinyxml2.cpp"
+#include <iostream>
+#include <string>
+#include <vector>
+#include <regex>
+#include <fstream>
+#include "tinyxml2.h"
+#include "tinyxml2.cpp"
 using std::cout;
 using std::endl;
 using std::string;
@@ -775,7 +775,7 @@ The post 是微服务架构不香还是云不香？ first appeared on 酷 壳 - 
 ### 1. 根据给定的程序，写出执行结果
 
 ```cpp
-##include <iostream>
+#include <iostream>
 using std::endl;
 using std::cout;
 
@@ -849,7 +849,7 @@ int main()
 ### 2. 根据给定的程序，写出执行结果
 
 ```cpp
-##include<iostream>
+#include<iostream>
 
 using std::endl;
 using std::cout;
@@ -1101,14 +1101,14 @@ int main(int argc, char *argv[])
 代码
 
 ```cpp
-##include <iostream>
-##include <vector>
-##include <map>
-##include <set>
-##include <string>
-##include <sstream>
-##include <cstring>
-##include <fstream>
+#include <iostream>
+#include <vector>
+#include <map>
+#include <set>
+#include <string>
+#include <sstream>
+#include <cstring>
+#include <fstream>
 using std::cin;
 using std::cerr;
 using std::cout;
@@ -1526,13 +1526,13 @@ private:
 代码：
 
 ```cpp
-##include <iostream>
-##include <string>
-##include <vector>
-##include <fstream>
-##include <sstream>
-##include <unordered_map>
-##include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fstream>
+#include <sstream>
+#include <unordered_map>
+#include <algorithm>
 using std::cout;
 using std::cerr;
 using std::endl;

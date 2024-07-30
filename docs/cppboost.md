@@ -122,9 +122,9 @@ B、源代码文件main.cpp
 框架自动生成的代码
 
 ```c++
-##include "dialog.h"
+#include "dialog.h"
 
-##include <QApplication>
+#include <QApplication>
 
 int main(int argc, char *argv[])
 {
@@ -150,7 +150,7 @@ dialog.h
 ##ifndef DIALOG_H
 ##define DIALOG_H
 
-##include <QDialog>
+#include <QDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Dialog; }
@@ -173,8 +173,8 @@ private:
 dialog.cpp
 
 ```c++
-##include "dialog.h"
-##include "ui_dialog.h"
+#include "dialog.h"
+#include "ui_dialog.h"
 
 Dialog::Dialog(QWidget *parent)
     : QDialog(parent)
@@ -249,7 +249,7 @@ mainwindow.h
 ##ifndef MAINWINDOW_H
 ##define MAINWINDOW_H
 
-##include <QMainWindow>
+#include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -305,9 +305,9 @@ private:
 main.cpp
 
 ```c++
-##include "mainwindow.h"
+#include "mainwindow.h"
 
-##include <QApplication>
+#include <QApplication>
 
 int main(int argc, char *argv[])
 {
@@ -321,8 +321,8 @@ int main(int argc, char *argv[])
 mainwindow.cpp
 
 ```c++
-##include "mainwindow.h"
-##include "ui_mainwindow.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
