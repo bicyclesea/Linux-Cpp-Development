@@ -1,8 +1,8 @@
 # C++基础（2）
 
-# 1011 C++基础篇之多态01
+## 1011 C++基础篇之多态01
 
-## 1. C++中有哪几种多态，简单阐述各种多态的使用情况
+### 1. C++中有哪几种多态，简单阐述各种多态的使用情况
 
 <span style=color:red;background:yellow>**C++支持两种多态性：编译时多态和运行时多态。**</span>
 
@@ -10,7 +10,7 @@
 
 **运行时多态**：在一些场合下，编译器无法在编译过程中完成联编，必须在程序运行时完成选择，因此编译器必须提供这么一套称为“动态联编”（dynamic binding）的机制，也叫动态联编。C++通过**虚函数**来实现动态联编。
 
-## 2. 什么是重载？什么是隐藏？什么是覆盖？他们之前的区别是？
+### 2. 什么是重载？什么是隐藏？什么是覆盖？他们之前的区别是？
 
 重载 (overload) ：发生在同一个类中， 当函数名称相同时 ，函数参数类型、顺序 、个数任一不同；
 
@@ -18,7 +18,7 @@
 
 覆盖 (override) ：发生在基类派生类之间，基类与派生类中同时定义相同的虚函数，覆盖的是虚函数表中的入口地址，并不是覆盖函数本身。
 
-## 3. 多基派生会产生的问题有哪些？怎样解决？
+### 3. 多基派生会产生的问题有哪些？怎样解决？
 
 【答】
 
@@ -131,7 +131,7 @@ public:
 
 采用虚拟继承的方式处理菱形继承问题，实际上改变了派生类的内存布局。B类和C类对象的内存布局中多出一个虚基类指针，位于所占内存空间的起始位置，同时继承自A类的内容被放在了这片空间的最后位置。D类对象中只会有一份A类的基类子对象。
 
-## 4. 构建一个类Person，包含字符串成员name（姓名），整型数据成员age（年龄），成员函数 display()用来输出name和age。
+### 4. 构建一个类Person，包含字符串成员name（姓名），整型数据成员age（年龄），成员函数 display()用来输出name和age。
 
 构造函数包含两个参数，用来对name和age初始化。构建一个类Employee由Person派生，包含department（部门），实型数据成员salary（工资）,成员函数display（）用来输出职工姓名、年龄、部门、工资，其他成员根据需要自己设定。主函数中定义3个Employee类对象，内容自己设定，将其姓名、年龄、部门、工资输出。要求：用char*来保存字符串内容，并能实现Employee对象的复制、赋值操作。
 
@@ -148,8 +148,8 @@ public:
 代码：
 
 ```c++
-#include <iostream>
-#include <cstring>
+##include <iostream>
+##include <cstring>
 using std::cout;
 using std::endl;
 
@@ -254,7 +254,7 @@ name: 张三, age: 23, department: C++部门, salary: 13000
 name: 李四, age: 25, department: C++部门, salary: 15000
 ```
 
-## 5. 编写程序：给定以下抽象类Figure，通过该图形类扩展生成3个不同的图形Rectangle、Circle、Triangle，体会使用纯虚函数的好处。
+### 5. 编写程序：给定以下抽象类Figure，通过该图形类扩展生成3个不同的图形Rectangle、Circle、Triangle，体会使用纯虚函数的好处。
 
 ```cpp
 class Figure {
@@ -282,9 +282,9 @@ void test() {
 【答】代码：
 
 ```c++
-#include <iostream>
-#include <string>
-#include <cmath>
+##include <iostream>
+##include <string>
+##include <cmath>
 using std::cout;
 using std::endl;
 using std::string;
@@ -389,15 +389,15 @@ int main()
 三角形的面积是: 6
 ```
 
-## 总结
+### 总结
 
 - 第4题，代码题，需要确保理解。
 - 第5题，代码题。
 - 需要理解虚函数、纯虚函数。
 
-# 1012 C++基础篇之多态02
+## 1012 C++基础篇之多态02
 
-## 1. 文本查询
+### 1. 文本查询
 
 该程序将读取用户指定的任意文本文件【china_daily.txt】，然后允许用户从该文件中查找单词。查询的结果是该单词出现的次数，并列出每次出现所在的行。如果某单词在同一行中多次出现，程序将只显示该行一次。行号按升序显示。
 
@@ -467,14 +467,14 @@ int main(int argc, char *argv[])
 代码：
 
 ```cpp
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <string>
-#include <sstream>
-#include <cstring>
-#include <fstream>
+##include <iostream>
+##include <vector>
+##include <map>
+##include <set>
+##include <string>
+##include <sstream>
+##include <cstring>
+##include <fstream>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -568,7 +568,7 @@ china occurs 2 times.
     (line 34) Zhao Wenli, an analyst at China Merchants Securities (HK) Co Ltd, said in a
 ```
 
-## 2. 使用tinyXml2解析RSS文件，并生成一个网页库pagelib.txt
+### 2. 使用tinyXml2解析RSS文件，并生成一个网页库pagelib.txt
 
 ```markup
 tinyXml2 -- https://github.com/leethomason/tinyxml2
@@ -653,13 +653,13 @@ RSS文件就是一个树形结构
 代码：
 
 ```c++
-#include <iostream>
-#include <string>
-#include <vector>
-#include <regex>
-#include <fstream>
-#include "tinyxml2.h"
-#include "tinyxml2.cpp"
+##include <iostream>
+##include <string>
+##include <vector>
+##include <regex>
+##include <fstream>
+##include "tinyxml2.h"
+##include "tinyxml2.cpp"
 using std::cout;
 using std::endl;
 using std::string;
@@ -766,16 +766,16 @@ The post 是微服务架构不香还是云不香？ first appeared on 酷 壳 - 
 ......
 ```
 
-## 总结
+### 总结
 
 - 文本查询，需要重新看。
 
-# 1013 C++基础篇之多态03
+## 1013 C++基础篇之多态03
 
-## 1. 根据给定的程序，写出执行结果
+### 1. 根据给定的程序，写出执行结果
 
 ```cpp
-#include <iostream>
+##include <iostream>
 using std::endl;
 using std::cout;
 
@@ -846,10 +846,10 @@ int main()
 5,6
 ```
 
-## 2. 根据给定的程序，写出执行结果
+### 2. 根据给定的程序，写出执行结果
 
 ```cpp
-#include<iostream>
+##include<iostream>
 
 using std::endl;
 using std::cout;
@@ -914,7 +914,7 @@ int main()
 
 
 
-## 3. 根据给定的程序，写出执行结果
+### 3. 根据给定的程序，写出执行结果
 
 ```cpp
 class A
@@ -968,7 +968,7 @@ int main( void )
 
 
 
-## 4. 根据给定的程序，写出执行结果
+### 4. 根据给定的程序，写出执行结果
 
 ```cpp
 class Base
@@ -1043,7 +1043,7 @@ int main()
 
 
 
-## 5. 文本查询
+### 5. 文本查询
 
 该程序将读取用户指定的任意文本文件【china_daily.txt】， 然后允许用户从该文件中查找单词。查询的结果是该单词出现的次数，并列 出每次出现所在的行。如果某单词在同一行中多次出现，程序将只显示该行 一次。行号按升序显示。
 
@@ -1101,14 +1101,14 @@ int main(int argc, char *argv[])
 代码
 
 ```cpp
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <string>
-#include <sstream>
-#include <cstring>
-#include <fstream>
+##include <iostream>
+##include <vector>
+##include <map>
+##include <set>
+##include <string>
+##include <sstream>
+##include <cstring>
+##include <fstream>
 using std::cin;
 using std::cerr;
 using std::cout;
@@ -1212,7 +1212,7 @@ china occurs 2 times.
 cs@cs-vm:~/code/cpp$ 
 ```
 
-## 6. 一个类有几张虚函数表？请详细说明
+### 6. 一个类有几张虚函数表？请详细说明
 
 【答】**虚函数表（虚表）可以理解为是一个数组，存放的是一个个虚函数的地址**
 
@@ -1222,35 +1222,35 @@ cs@cs-vm:~/code/cpp$
 
 也可以有多张虚函数表（继承多个有虚函数的基类）
 
-## 7. 带虚函数的单继承结构下，虚函数地址的存放规则是怎样？请用代码验证
+### 7. 带虚函数的单继承结构下，虚函数地址的存放规则是怎样？请用代码验证
 
 【答】
 
 
 
-## 8. 带虚函数的多继承结构下，虚函数地址的存放规则是怎样？
+### 8. 带虚函数的多继承结构下，虚函数地址的存放规则是怎样？
 
 【答】
 
 
 
-## 9. 使用函数模板实现两个整数类型数据相加、两个double型数据相加、两个存放int型元素的set融合、两个C风格字符串拼接。
+### 9. 使用函数模板实现两个整数类型数据相加、两个double型数据相加、两个存放int型元素的set融合、两个C风格字符串拼接。
 
 
 
-## 总结
+### 总结
 
 
 
-# 1014 C++基础篇之移动语义
+## 1014 C++基础篇之移动语义
 
-## 1. 利用可变模板参数实现一个函数模板，用来计算多个整型、浮点型数据的加法，返回类型为double
-
-
+### 1. 利用可变模板参数实现一个函数模板，用来计算多个整型、浮点型数据的加法，返回类型为double
 
 
 
-## 2. 什么是右值引用？C++11为什么要引入右值引用？
+
+
+### 2. 什么是右值引用？C++11为什么要引入右值引用？
 
 【答】
 
@@ -1264,11 +1264,11 @@ int && r_ref2 = a; //error
 
 
 
-## 3. std::move函数的作用是什么？
+### 3. std::move函数的作用是什么？
 
 【答】std::move函数的作用是显式的将一个左值转换为右值，<span style=color:red;background:yellow>**其实现本质上就是一个强制转换**</span>。当将一个左值显式转换为右值后，原来的左值对象就无法正常工作了，必须要重新赋值才可以继续使用。
 
-## 4. 为采用深拷贝方式实现的String类添加移动构造函数和移动赋值运算符函数，并进行测试。
+### 4. 为采用深拷贝方式实现的String类添加移动构造函数和移动赋值运算符函数，并进行测试。
 
 String(String &&rhs);
 
@@ -1278,19 +1278,19 @@ String & operator=(String &&rhs);
 
 
 
-## 5. 使用类模板模拟RAII的思想，使其管理堆上的Computer资源
+### 5. 使用类模板模拟RAII的思想，使其管理堆上的Computer资源
 
 【答】
 
 
 
-## 总结
+### 总结
 
 
 
-# 1015 C++基础篇之智能指针
+## 1015 C++基础篇之智能指针
 
-## 1. C++提供了哪几种智能指针，其各自的特点是什么？请通过代码进行练习、验证。
+### 1. C++提供了哪几种智能指针，其各自的特点是什么？请通过代码进行练习、验证。
 
 【答】c++11提供了以下几种智能指针，位于头文件&lt;memory&gt;，它们都是类模板。
 
@@ -1341,13 +1341,13 @@ String & operator=(String &&rhs);
 
 weak_ptr知道所托管的对象是否还存活，如果存活，必须要提升为shared_ptr才能对资源进行访问，不能直接访问。
 
-## 2. unique_ptr和shared_ptr需要注意哪些误用的情况，应该如何解决（避免），请通过代码进行说明。
+### 2. unique_ptr和shared_ptr需要注意哪些误用的情况，应该如何解决（避免），请通过代码进行说明。
 
 
 
 
 
-## 3. 理解shared_ptr的循环引用问题（面试容易问到），掌握解决的方法，通过代码验证
+### 3. 理解shared_ptr的循环引用问题（面试容易问到），掌握解决的方法，通过代码验证
 
 【答】
 
@@ -1365,17 +1365,17 @@ weak_ptr知道所托管的对象是否还存活，如果存活，必须要提升
 
 
 
-## 总结
+### 总结
 
-# 1016 C++基础篇之标准模板库01
+## 1016 C++基础篇之标准模板库01
 
-## 1. 实现C++ primer 15.9中的文本查询扩展的作业，可以查某个单词在某行出现、某个单词在某行没有出现、某两个单词在某行出现、某两个单词至少有一个出现、三个单词的查询等等。(即实现查询单词的与、或、非操作)
+### 1. 实现C++ primer 15.9中的文本查询扩展的作业，可以查某个单词在某行出现、某个单词在某行没有出现、某两个单词在某行出现、某两个单词至少有一个出现、三个单词的查询等等。(即实现查询单词的与、或、非操作)
 
 【答】
 
 
 
-## 2. STL包括哪些组件？各自具有哪些特点？
+### 2. STL包括哪些组件？各自具有哪些特点？
 
 【答】
 
@@ -1391,7 +1391,7 @@ weak_ptr知道所托管的对象是否还存活，如果存活，必须要提升
 
 6、空间配置器：对空间进行申请与释放。（使用 + 原理 + 源码）
 
-## 3. STL中的容器包括哪些？各自具有哪些特点？
+### 3. STL中的容器包括哪些？各自具有哪些特点？
 
 【答】
 
@@ -1399,27 +1399,27 @@ weak_ptr知道所托管的对象是否还存活，如果存活，必须要提升
 - 关联式容器  set、map
 - 无序关联式容器  unordered_set、unordered_map
 
-## 4. 序列式容器包括哪些？他们之间有哪些异同？
+### 4. 序列式容器包括哪些？他们之间有哪些异同？
 
 【答】vector、list
 
 
 
-## 5. 创建和初始化vector的方法，每种都给出一个实例？当然也可以把deque与list写出来
+### 5. 创建和初始化vector的方法，每种都给出一个实例？当然也可以把deque与list写出来
 
 【答】初始化的方法：创建无参对象、count个value、迭代器范围、大括号、拷贝或者移动。三种容器的初始化方式是一样的。
 
 
 
-## 总结
+### 总结
 
 - 
 
 
 
-# 1017 C++基础篇之标准模板库02
+## 1017 C++基础篇之标准模板库02
 
-## 1. 下面程序有什么错误？
+### 1. 下面程序有什么错误？
 
 ```cpp
 list<int> lst; 
@@ -1434,13 +1434,13 @@ while(iter1 < iter2)
 
 
 
-## 2. 如果c1与c2是两个容器，下面的比较操作有什么限制？if(c1 < c2)
+### 2. 如果c1与c2是两个容器，下面的比较操作有什么限制？if(c1 < c2)
 
 【答】
 
 
 
-## 3. 使用模板实现一个快速排序算法
+### 3. 使用模板实现一个快速排序算法
 
 ```cpp
 template<typename T,typename Compare=std::less<T>> 
@@ -1462,13 +1462,13 @@ private:
 
 
 
-## 总结
+### 总结
 
 
 
-# 1018 C++基础篇之标准模板库03
+## 1018 C++基础篇之标准模板库03
 
-## 1. 使用模板实现一个堆排序算法。
+### 1. 使用模板实现一个堆排序算法。
 
 使用模板的框架如下：
 
@@ -1491,7 +1491,7 @@ private:
 
 
 
-## 2. 关联式容器有哪些？各自具有哪些特点？（熟悉基本操作）
+### 2. 关联式容器有哪些？各自具有哪些特点？（熟悉基本操作）
 
 【答】map
 
@@ -1499,13 +1499,13 @@ private:
 
 
 
-## 3. 无序关联式容器有哪些？各自具有哪些特点？
+### 3. 无序关联式容器有哪些？各自具有哪些特点？
 
 【答】
 
 
 
-## 4. 使用map重写词频统计作业。（之前使用的vector，可以比较他们的速率）
+### 4. 使用map重写词频统计作业。（之前使用的vector，可以比较他们的速率）
 
 【答】
 
@@ -1513,26 +1513,26 @@ private:
 
 
 
-## 总结
+### 总结
 
 
 
-# 1019 C++基础篇之标准模板库04
+## 1019 C++基础篇之标准模板库04
 
-## 1. 使用unordered_map重写词频统计作业。再比较一下使用map和vector时所花费的时间，体会这几种容器的区别。
+### 1. 使用unordered_map重写词频统计作业。再比较一下使用map和vector时所花费的时间，体会这几种容器的区别。
 
 【答】
 
 代码：
 
 ```cpp
-#include <iostream>
-#include <string>
-#include <vector>
-#include <fstream>
-#include <sstream>
-#include <unordered_map>
-#include <algorithm>
+##include <iostream>
+##include <string>
+##include <vector>
+##include <fstream>
+##include <sstream>
+##include <unordered_map>
+##include <algorithm>
 using std::cout;
 using std::cerr;
 using std::endl;
@@ -1627,7 +1627,7 @@ int main()
 
 
 
-## 2. 使用unordered_map/map实现单词转换程序。
+### 2. 使用unordered_map/map实现单词转换程序。
 
 给定一个string，将它转换为另一个string。程序的输入是两个文件，第一个文件保存的是一些规则，用来转换第二个文件中的文本。每条规则由两部分组成：一个可能出现在输入文件中的单词和一个用来替换它的短语。表达的含义是，每当第一个单词出现在输入中时，我们就将它替换为对应的短语，第二个输入文件包含要转换的文本。（C++ primer 11.3.6）
 
@@ -1666,7 +1666,7 @@ l8r later
 
 
 
-## 3. Leetcode 146 LURCache的实现
+### 3. Leetcode 146 LURCache的实现
 
 https://leetcode-cn.com/problems/lru-cache/
 
@@ -1687,25 +1687,25 @@ void put(int key, int value) 如果关键字 key 已经存在，则变更其数�
 
 
 
-## 总结
+### 总结
 
 
 
 
 
-# 1020 C++基础篇之标准模板库05
+## 1020 C++基础篇之标准模板库05
 
-## 1. 容器、迭代器、算法之间的关系是怎样的？他们是如何结合在一起的？
-
-
+### 1. 容器、迭代器、算法之间的关系是怎样的？他们是如何结合在一起的？
 
 
 
-## 2. 什么是迭代器失效问题？该问题是如何产生的？怎样避免产生迭代器失效问题
+
+
+### 2. 什么是迭代器失效问题？该问题是如何产生的？怎样避免产生迭代器失效问题
 
 
 
-## 3. Leetcode 127题
+### 3. Leetcode 127题
 
 https://leetcode-cn.com/problems/word-ladder/
 
@@ -1724,21 +1724,21 @@ sk == endWord
 
 
 
-## 总结
+### 总结
 
 - 
 
 
 
-# 1021 C++基础篇之标准模板库06
+## 1021 C++基础篇之标准模板库06
 
-## 1. 阅读源码：结合STL中std::allocator的源码阅读《STL源码剖析》的第二章内容
-
-
+### 1. 阅读源码：结合STL中std::allocator的源码阅读《STL源码剖析》的第二章内容
 
 
 
-## 2. 了解std::allocator的用法之后,实现自定义的Vector类
+
+
+### 2. 了解std::allocator的用法之后,实现自定义的Vector类
 
 接口形式：
 
@@ -1776,7 +1776,7 @@ private:
 
 
 
-## 3. 什么是回调函数，注册回调函数，执行回调函数？(掌握std::bind用法,非常重要)
+### 3. 什么是回调函数，注册回调函数，执行回调函数？(掌握std::bind用法,非常重要)
 
 std::bind的实现原理阅读材料
 
@@ -1785,18 +1785,18 @@ https://www.tuicool.com/articles/iMZ7ba
 
 
 
-## 总结
+### 总结
 
 
 
-# 1022 C++基础篇之标准模板库07
+## 1022 C++基础篇之标准模板库07
 
-## 1. HDU：拯救
+### 1. HDU：拯救
 
 ```c++
 拯救 -- 考虑使用优先级队列来做 http://acm.hdu.edu.cn/showproblem.php?pid=1242
 
-公主被恶人抓走，被关押在牢房的某个地方。牢房用N*M (N, M <= 200)的矩阵来表示。矩阵中的每项可以代表道路（@）、墙壁（#）、和守卫（x）。
+公主被恶人抓走，被关押在牢房的某个地方。牢房用N*M (N, M <= 200)的矩阵来表示。矩阵中的每项可以代表道路（@）、墙壁（##）、和守卫（x）。
 英勇的骑士（r）决定孤身一人去拯救公主（a）。我们假设拯救成功的表示是“骑士到达了公主所在的位置”。由于在通往公主所在位置的道路中可能遇到守卫，骑士一旦遇到守卫，必须杀死守卫才能继续前进。
 现假设骑士可以向上、下、左、右四个方向移动，每移动一个位置需要1个单位时间，杀死一个守卫需要花费额外的1个单位时间。同时假设骑士足够强壮，有能力杀死所有的守卫。
 
@@ -1806,34 +1806,34 @@ Input
 第一行为一个整数S，表示输入的数据的组数（多组输入）
 随后有S组数据，每组数据按如下格式输入
 1、两个整数代表N和M, (N, M <= 200).
-2、随后N行，每行有M个字符。"@"代表道路，"a"代表公主，"r"代表骑士，"x"代表守卫, "#“代表墙壁。
+2、随后N行，每行有M个字符。"@"代表道路，"a"代表公主，"r"代表骑士，"x"代表守卫, "##“代表墙壁。
 Output
 如果拯救行动成功，输出一个整数，表示行动的最短时间。
 如果不可能成功，输出"Impossible”
 Sample Input
 2
 7 8
-#@#####@
-#@a#@@r@
-#@@#x@@@
-@@#@@#@#
-#@@@##@@
-@#@@@@@@
+##@########@
+##@a##@@r@
+##@@##x@@@
+@@##@@##@##
+##@@@###@@
+@##@@@@@@
 @@@@@@@@
 13 40
-@x@@##x@#x@x#xxxx##@#x@x@@#x#@#x#@@x@#@x
-xx###x@x#@@##xx@@@#@x@@#x@xxx@@#x@#x@@x@
-#@x#@x#x#@@##@@x#@xx#xxx@@x##@@@#@x@@x@x
-@##x@@@x#xx#@@#xxxx#@@x@x@#@x@@@x@#@#x@#
-@#xxxxx##@@x##x@xxx@@#x@x####@@@x#x##@#@
-#xxx#@#x##xxxx@@#xx@@@x@xxx#@#xxx@x#####
-#x@xxxx#@x@@@@##@x#xx#xxx@#xx#@#####x#@x
-xx##@#@x##x##x#@x#@a#xx@##@#@##xx@#@@x@x
-x#x#@x@#x#@##@xrx@x#xxxx@##x##xx#@#x@xx@
-#x@@#@###x##x@x#@@#@@x@x@@xx@@@@##@@x@@x
-x#xx@x###@xxx#@#x#@@###@#@##@x#@x@#@@#@@
-#@#x@x#x#x###@x@@xxx####x@x##@x####xx#@x
-#x#@x#x######@@#x@#xxxx#xx@@@#xx#x#####@
+@x@@###x@##x@x##xxxx###@##x@x@@##x##@##x##@@x@##@x
+xx#####x@x##@@###xx@@@##@x@@##x@xxx@@##x@##x@@x@
+##@x##@x##x##@@###@@x##@xx##xxx@@x###@@@##@x@@x@x
+@###x@@@x##xx##@@##xxxx##@@x@x@##@x@@@x@##@##x@##
+@##xxxxx###@@x###x@xxx@@##x@x######@@@x##x###@##@
+##xxx##@##x###xxxx@@##xx@@@x@xxx##@##xxx@x########
+##x@xxxx##@x@@@@###@x##xx##xxx@##xx##@########x##@x
+xx###@##@x###x###x##@x##@a##xx@###@##@###xx@##@@x@x
+x##x##@x@##x##@###@xrx@x##xxxx@###x###xx##@##x@xx@
+##x@@##@#####x###x@x##@@##@@x@x@@xx@@@@###@@x@@x
+x##xx@x#####@xxx##@##x##@@#####@##@###@x##@x@##@@##@@
+##@##x@x##x##x#####@x@@xxx######x@x###@x######xx##@x
+##x##@x##x#########@@##x@##xxxx##xx@@@##xx##x########@
 Sample Output
 13
 7
@@ -1843,7 +1843,7 @@ Sample Output
 
 
 
-## 2. Leetcode 20题
+### 2. Leetcode 20题
 
 https://leetcode-cn.com/problems/valid-parentheses/
 
@@ -1863,7 +1863,7 @@ https://leetcode-cn.com/problems/valid-parentheses/
 
 
 
-## 总结
+### 总结
 
 - 
 

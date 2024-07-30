@@ -1,8 +1,8 @@
 # C++提高
 
-# C++提升篇01
+## C++提升篇01
 
-## 1. 扩展阅读（阅读，加深对面向对象的理解）
+### 1. 扩展阅读（阅读，加深对面向对象的理解）
 
 [OO真经]：https://www.cnblogs.com/leoo2sk/archive/2009/04/09/1432103.html
 
@@ -10,91 +10,91 @@
 
 
 
-## 2. 类与类之间的关系有哪几种？各自的特点怎样的？
+### 2. 类与类之间的关系有哪几种？各自的特点怎样的？
 
 
 
-## 3. 面向对象设计有哪些原则？各自的特点是什么？
+### 3. 面向对象设计有哪些原则？各自的特点是什么？
 
 
 
-## 4. 运用所学的UML类图的知识，画出“文本查询程序的扩展”作业的类图。【C++ Primer 15.9节作业】（可以贴图）
+### 4. 运用所学的UML类图的知识，画出“文本查询程序的扩展”作业的类图。【C++ Primer 15.9节作业】（可以贴图）
 
 
 
-## 总结
+### 总结
 
 
 
 
 
-# C++提升篇02
+## C++提升篇02
 
-## 1. 设计模式可以分为几类？分别有哪些？
-
-
-
-## 2. 什么是单例模式？它有哪些特点？
+### 1. 设计模式可以分为几类？分别有哪些？
 
 
 
-## 3. 什么是工厂模式？它有哪些特点？
+### 2. 什么是单例模式？它有哪些特点？
 
 
 
-## 4. 什么是观察者模式？它有哪些特点？
+### 3. 什么是工厂模式？它有哪些特点？
 
 
 
-## 总结
+### 4. 什么是观察者模式？它有哪些特点？
 
 
 
-# 数据库提高篇01
-
-## 1. 简答题：什么是Redis?有哪些有优缺点？
+### 总结
 
 
 
-## 2. 简答题：为什么要用 Redis /为什么要用缓存
+## 数据库提高篇01
+
+### 1. 简答题：什么是Redis?有哪些有优缺点？
 
 
 
-## 3. 简答题：Redis为什么这么快？
+### 2. 简答题：为什么要用 Redis /为什么要用缓存
 
 
 
-## 4. 简答题：Redis有哪些常用数据类型？
+### 3. 简答题：Redis为什么这么快？
 
 
 
-## 5. 简答题：什么是Redis持久化？
+### 4. 简答题：Redis有哪些常用数据类型？
 
 
 
-## 6. 简答题：Redis 的持久化机制是什么？各自的优缺点？
+### 5. 简答题：什么是Redis持久化？
 
 
 
-## 7. 简答题：Redis key的过期时间和永久有效分别怎么设置？
+### 6. 简答题：Redis 的持久化机制是什么？各自的优缺点？
 
 
 
-## 8. 简答题：Redis事务的概念？Redis事务的三个阶段？Redis事务相关命令和事务的特征？
+### 7. 简答题：Redis key的过期时间和永久有效分别怎么设置？
 
 
 
-## 9. 简答题：将每种数据类型的命令多敲击一下，加深印象？（这个自己下面多敲一敲，熟悉一下，此题不交）
+### 8. 简答题：Redis事务的概念？Redis事务的三个阶段？Redis事务相关命令和事务的特征？
 
 
 
-## 总结
+### 9. 简答题：将每种数据类型的命令多敲击一下，加深印象？（这个自己下面多敲一敲，熟悉一下，此题不交）
 
 
 
-# Qt框架01
+### 总结
 
-## 1. 说明一下Qt生成的项目模板中有哪些文件和文件夹，分别有什么作用？
+
+
+## Qt框架01
+
+### 1. 说明一下Qt生成的项目模板中有哪些文件和文件夹，分别有什么作用？
 
 【答】
 
@@ -122,9 +122,9 @@ B、源代码文件main.cpp
 框架自动生成的代码
 
 ```c++
-#include "dialog.h"
+##include "dialog.h"
 
-#include <QApplication>
+##include <QApplication>
 
 int main(int argc, char *argv[])
 {
@@ -147,10 +147,10 @@ C、对话框对象的设计
 dialog.h
 
 ```c++
-#ifndef DIALOG_H
-#define DIALOG_H
+##ifndef DIALOG_H
+##define DIALOG_H
 
-#include <QDialog>
+##include <QDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Dialog; }
@@ -167,14 +167,14 @@ public:
 private:
     Ui::Dialog *ui;
 };
-#endif // DIALOG_H
+##endif // DIALOG_H
 ```
 
 dialog.cpp
 
 ```c++
-#include "dialog.h"
-#include "ui_dialog.h"
+##include "dialog.h"
+##include "ui_dialog.h"
 
 Dialog::Dialog(QWidget *parent)
     : QDialog(parent)
@@ -218,7 +218,7 @@ C、Sources目录存放用户自己写的源代码文件；
 
 D、Forms目录存放静态界面文件。
 
-## 2. Qt Creator中有哪几个模式，切换的快捷键是什么？
+### 2. Qt Creator中有哪几个模式，切换的快捷键是什么？
 
 【答】
 
@@ -230,14 +230,14 @@ D、Forms目录存放静态界面文件。
 
 快捷键Shift+F4，可以实现快速切换Designer和源代码；快捷键Esc，可以回退Designer到ui代码。
 
-## 3. 如何查看某个Qt内置类的帮助文档，如何查看某个类的源代码？QApplication的继承体系是怎么样的？
+### 3. 如何查看某个Qt内置类的帮助文档，如何查看某个类的源代码？QApplication的继承体系是怎么样的？
 
 答：使用快捷键F1可以打开帮助手册，F2可以转到类的定义。
 
 - Dialog类派生自QDialog类，其构造函数中存在一个parent形参。
 - Dialog类的实现部分是由另一个类Ui::Dialog来完成的，这里使用了pimpl技术来减少依赖。
 
-## 4. 根据如下ui绘制一个计算器，先不实现计算的功能，只实现显示表达式和编辑表达式的功能；QString的append方法可以追加一个字符。
+### 4. 根据如下ui绘制一个计算器，先不实现计算的功能，只实现显示表达式和编辑表达式的功能；QString的append方法可以追加一个字符。
 
 ![20240530180746](qt-image/20240530180746.png)
 
@@ -246,10 +246,10 @@ D、Forms目录存放静态界面文件。
 mainwindow.h
 
 ```c++
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+##ifndef MAINWINDOW_H
+##define MAINWINDOW_H
 
-#include <QMainWindow>
+##include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -299,15 +299,15 @@ private slots:
 private:
     Ui::MainWindow *ui;
 };
-#endif // MAINWINDOW_H
+##endif // MAINWINDOW_H
 ```
 
 main.cpp
 
 ```c++
-#include "mainwindow.h"
+##include "mainwindow.h"
 
-#include <QApplication>
+##include <QApplication>
 
 int main(int argc, char *argv[])
 {
@@ -321,8 +321,8 @@ int main(int argc, char *argv[])
 mainwindow.cpp
 
 ```c++
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+##include "mainwindow.h"
+##include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -499,15 +499,15 @@ void MainWindow::on_btn_equal_clicked()
 }
 ```
 
-## 总结
+### 总结
 
 - Qt项目1001-4
 
 
 
-# Qt框架02
+## Qt框架02
 
-## 1. QString和std::string和char数组有什么区别？QString增删改查用什么成员函数？
+### 1. QString和std::string和char数组有什么区别？QString增删改查用什么成员函数？
 
 【答】
 
@@ -543,13 +543,13 @@ int main()
 
 查：indexOf()
 
-## 2. 使用元对象系统的注意事项有哪些？
+### 2. 使用元对象系统的注意事项有哪些？
 
 为了正确使用元对象，代码需要遵循下列步骤：
 
 - 从QObject派生的含有Q_OBJECT宏的类的定义**必须在头文件**中，Q_OBJECT宏应该位于类声明的私有部分。
 - 确保pro文件中，SOURCES变量包含了项目中的所有源文件，HEADERS变量包含了项目中所有的头文件。（如果使用Qt Creator，IDE会自动帮我们完成这一步骤）。
-- 应该在头文件中使用逻辑指令（比如#ifndef）防止头文件被包含多次。
+- 应该在头文件中使用逻辑指令（比如##ifndef）防止头文件被包含多次。
 - QObject类应是基类列表中的第一个类。
 
 ```c++
@@ -562,19 +562,19 @@ class Q_WIDGETS_EXPORT QWidget : public QObject, public QPaintDevice
 };
 ```
 
-## 3. 书写一个函数MyIntersection，可以支持两个相同的QList或者QSet的取交集的操作，返回新集合。书写一个函数MyOdd，可以将一个QMap<int,int>的所有奇数的键或者是值搜集起来，返回新QList。
+### 3. 书写一个函数MyIntersection，可以支持两个相同的QList或者QSet的取交集的操作，返回新集合。书写一个函数MyOdd，可以将一个QMap<int,int>的所有奇数的键或者是值搜集起来，返回新QList。
 
 
 
 
 
-## 4. 给出一个路径'/usr/include/dir1/dir2'：将路径切割并存入一个栈中；实现cd 子目录和cd 上一级功能，返回路径的字符串。
+### 4. 给出一个路径'/usr/include/dir1/dir2'：将路径切割并存入一个栈中；实现cd 子目录和cd 上一级功能，返回路径的字符串。
 
 
 
 
 
-## 5. 根据如下ui绘制一个计算器，点击任何一个符号的时候直接输出运算结果。
+### 5. 根据如下ui绘制一个计算器，点击任何一个符号的时候直接输出运算结果。
 
 
 
@@ -582,41 +582,41 @@ class Q_WIDGETS_EXPORT QWidget : public QObject, public QPaintDevice
 
 
 
-## 6. 书写一个用于显示属性配置的程序：2个QLineEdit、3个QPushButton 1个QLabel；左边QLineEdit可以输入 ip port username password 等其他字符串；右边QLineEdit可以输入 左边属性对应的值；submit按钮可以提交数据。要求，所有的属性存入一个QMap中。
+### 6. 书写一个用于显示属性配置的程序：2个QLineEdit、3个QPushButton 1个QLabel；左边QLineEdit可以输入 ip port username password 等其他字符串；右边QLineEdit可以输入 左边属性对应的值；submit按钮可以提交数据。要求，所有的属性存入一个QMap中。
 
 
 
 
 
-## 总结
+### 总结
 
 
 
-# Qt框架03
+## Qt框架03
 
-## 1. 实现一个井字棋 点击空白按钮可以显示'X'或者'O'。
-
-
-
-## 2. 信号和槽机制的目的是什么？书写代码实现一个自定义信号和自定义槽函数。
+### 1. 实现一个井字棋 点击空白按钮可以显示'X'或者'O'。
 
 
 
-## 3. connect函数有几种重载形式？哪一种更好为什么？
+### 2. 信号和槽机制的目的是什么？书写代码实现一个自定义信号和自定义槽函数。
 
 
 
-## 4. 现在有三个对象A，B，C，需要实现下面效果：A发射信号会导致 B调用槽函数 C调用槽函数；B发射信号会导致 C调用槽函数；C发射信号会导致 A发射信号。
+### 3. connect函数有几种重载形式？哪一种更好为什么？
 
 
 
-## 总结
+### 4. 现在有三个对象A，B，C，需要实现下面效果：A发射信号会导致 B调用槽函数 C调用槽函数；B发射信号会导致 C调用槽函数；C发射信号会导致 A发射信号。
 
 
 
-# Qt框架04
+### 总结
 
-## 1. 现在有三个对象ABC，A的父亲是B，B的父亲是C。
+
+
+## Qt框架04
+
+### 1. 现在有三个对象ABC，A的父亲是B，B的父亲是C。
 
 点击A的内部，要求执行：A的filter、event和event_handler；B的filter、event。
 
@@ -624,7 +624,7 @@ class Q_WIDGETS_EXPORT QWidget : public QObject, public QPaintDevice
 
 
 
-## 2. 实现一个“打蚊子”游戏。
+### 2. 实现一个“打蚊子”游戏。
 
 在屏幕中央有一个600*400的QWidget，一个用来统计分数的QLabel；一开始会在QWidget内部随机位置生成一个蚊子，当鼠标点击到蚊子以后，旧蚊子消失然后在另一个位置生成新的蚊子，分数增加。
 
@@ -632,55 +632,55 @@ class Q_WIDGETS_EXPORT QWidget : public QObject, public QPaintDevice
 
 
 
-## 总结
+### 总结
 
 
 
-# Qt框架05
+## Qt框架05
 
-## 1. 什么是窗口？怎么样创建一个窗口
+### 1. 什么是窗口？怎么样创建一个窗口
 
 
 
-## 2. 通过修改QWidget的构造函数的参数来显示不同风格的窗口，并在窗口中显示窗口选项![img](https://doc.qt.io/qt-5/images/windowflags-example.png)
+### 2. 通过修改QWidget的构造函数的参数来显示不同风格的窗口，并在窗口中显示窗口选项![img](https://doc.qt.io/qt-5/images/windowflags-example.png)
 
 答：
 
 
 
-## 总结
+### 总结
 
 
 
-# Workflow01
+## Workflow01
 
-## 1. Nginx和Apache最大区别是什么？
-
-
-
-## 2. 使用Nginx部署一个产品的帮助文档服务器。
+### 1. Nginx和Apache最大区别是什么？
 
 
 
-## 3. 有哪些负载均衡策略？各有什么优缺点？
+### 2. 使用Nginx部署一个产品的帮助文档服务器。
 
 
 
-## 4. 说明什么是幂等性？
+### 3. 有哪些负载均衡策略？各有什么优缺点？
 
 
 
-## 5. 为什么需要将HTTP协议设计成无状态的呢？
+### 4. 说明什么是幂等性？
 
 
 
-## 总结
+### 5. 为什么需要将HTTP协议设计成无状态的呢？
 
 
 
-# Workflow02
+### 总结
 
-## 1. 存在下列的redis键值映射关系，使用workflow的redis任务和序列，假如只知道"x1"，如何找到最终的"100"？
+
+
+## Workflow02
+
+### 1. 存在下列的redis键值映射关系，使用workflow的redis任务和序列，假如只知道"x1"，如何找到最终的"100"？
 
 ```html
 "x1" --> "x2"
@@ -693,7 +693,7 @@ class Q_WIDGETS_EXPORT QWidget : public QObject, public QPaintDevice
 
 
 
-## 2. 读取某个网站的内容，并且存入redis服务端当中
+### 2. 读取某个网站的内容，并且存入redis服务端当中
 
 （比如先访问淘宝，再set [www.taobao.com](http://www.taobao.com/) 淘宝的html内容）
 
@@ -701,21 +701,21 @@ class Q_WIDGETS_EXPORT QWidget : public QObject, public QPaintDevice
 
 
 
-## 总结
+### 总结
 
 - 
 
 
 
-# Workflow03
+## Workflow03
 
-## 1. 实现分片上传功能
+### 1. 实现分片上传功能
 
 【答】
 
 
 
-## 总结
+### 总结
 
 - 
 
