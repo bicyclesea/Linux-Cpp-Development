@@ -1,0 +1,3595 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../LeetCode/">
+      
+      
+        <link rel="next" href="../MY-CppBase/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>C语言 - Linux C++ 开发</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Linux C++ 开发" class="md-header__button md-logo" aria-label="Linux C++ 开发" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linux C++ 开发
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C语言
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linux C++ 开发" class="md-nav__button md-logo" aria-label="Linux C++ 开发" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Linux C++ 开发
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LeetCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    力扣
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    C语言
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    C语言
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1001-c01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1001 C语言基础01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1001 C语言基础01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：下列关于C语言的说法，正确的是：(多选)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：下列关于进程，关于虚拟内存空间的说法正确的是：(多选)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3c" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：关于C语言标识符命名规范和风格，以下哪些说法是正确的？（多选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4c" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题4：关于变量在C语言中的声明、初始化、赋值、定义以及其它相关概念，以下哪些说法是不正确的？（多选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      提交环境测试1：简答题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题1：编程题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题2：编写一个程序实现以下需求：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题3：用运算符实现以下算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3nums" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题3扩展题目：给定一个非空的整数数组nums，已知有两个元素只出现了一次，其余元素均出现两次，那么请你找出这两个只出现一次的元素。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4switchint" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题4：利用switch语句编写一个程序，先键盘录入一个成绩(int整数)，然后把用数字表示的成绩转化为字母表示的成绩等级。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题5：经典循环案例：请求出所有的水仙花数，并统计总共有几个。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题6：简答题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题7：现在我们就来开发一个简单的交互式程序：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1002-c02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1002 C语言基础02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1002 C语言基础02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：下列关于从源代码到可执行程序转换过程中各个步骤的描述，哪些是正确的？（多选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2c" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：下列关于C语言的编译错误和链接错误的描述中，哪些是正确的？（多选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：写一个程序，实现分数相加。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题4：简答题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题1：用C语言编写程序实现以下需求：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题2：用C语言编写程序实现以下需求：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题3：用C语言编写程序实现以下需求：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题4：用C语言编写程序实现以下需求：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1003-c03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1003 C语言基础03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1003 C语言基础03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1c_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：考虑以下C语言表达式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：扩展题，不要求每一位同学做。大家可以酌情做。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题1：利用优先级规则，计算下面表达式的值，并确定各个变量的值(不要运行代码, 自己思考)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题2：扩展题，可不做。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1004-c04" class="md-nav__link">
+    <span class="md-ellipsis">
+      1004 C语言基础04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1004 C语言基础04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：编写程序模拟掷骰子的游戏（两个骰子）。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：写一个随机发牌的程序。用户指定发几张牌，程序打印手牌。程序的会话如下：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：用户输入初始金额，利率和投资年数，程序将打印一张表格。表格将显示输入的利率以及紧随其后 4 个更高利率下的总金额。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题4：杨辉三角，在数学中，它是二项式系数在三角形中的一种几何排列。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1005-c05" class="md-nav__link">
+    <span class="md-ellipsis">
+      1005 C语言基础05
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1005 C语言基础05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：编程题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-largest-second_largest" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：查找数组中最大的元素和第二大的元素，并将它们分别存放在由 largest 和 second_largest 指向的变量中。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-n-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：分别用循环和递归方式求解 n 的阶乘 n!。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题4：编写函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1c_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题1：在C语言中，关于值传递的描述，下列哪些是正确的？（多选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题2：编程题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1006-c06" class="md-nav__link">
+    <span class="md-ellipsis">
+      1006 C语言基础06
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1006 C语言基础06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：以下题目功能，都要求编写函数来实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2c_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：依照C语言的字符串标准库函数，手动实现以下函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1007-c07" class="md-nav__link">
+    <span class="md-ellipsis">
+      1007 C语言基础07
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1007 C语言基础07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：编写一个函数，计算一个字符串中单词的数量。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：给定一个字符串，要求它可能包含数字和字母。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：编写一个函数，检查给定的字符串中的圆括号()是否正确匹配。注意只考虑小括号，字符串中没有其它括号。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1008-c08" class="md-nav__link">
+    <span class="md-ellipsis">
+      1008 C语言基础08
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1008 C语言基础08">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1date" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：定义一个Date结构体，包含年、月、日数据项。编写一个函数，计算两个日期之间的天数差。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2a-vsdebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：(a) 下面结构体类型的变量的内存布局是怎样的？请使用VS的debug模式展示内存布局并截图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1009-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1009 数据结构和算法01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1009 数据结构和算法01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：编程题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2strcat" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：标准库函数strcat会将一个字符串追加到另一个字符串的末尾。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：动手自己实现动态数组Vector，基于以下结构体定义和函数声明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1010-02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1010 数据结构和算法02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1010 数据结构和算法02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：动手自己实现动态数组Vector，基于以下结构体定义和函数声明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：你已经手动实现了一个自己的Vector，很好，这很酷。那么请思考和完成以下扩展的题目。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：基于以下链表结点结构体类型的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题4：给你下面一个结构体类型的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1011-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1011 数据结构和算法03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1011 数据结构和算法03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：基于以下头文件，手动实现单链表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1012-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      1012 数据结构和算法04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1012 数据结构和算法04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      第1题：请手动使用链表来实现队列。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      第2题：请手动实现一个固定长度，基于拉链法的哈希表。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      第3题：在任意以往自己实现的栈的基础上，编写代码完成括号的匹配。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      第4题：（扩展作业）用动态数组和链表，基于拉链法设计哈希桶，实现哈希表。要求能够基于负载因子，能够进行自动扩容。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1013-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      1013 数据结构和算法05
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1013 数据结构和算法05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：请手动实现一个BST二叉搜索树。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1014-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      1014 数据结构和算法06
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1014 数据结构和算法06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：请自己手动实现三个基础的排序算法：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：请手动实现希尔排序：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：请实现归并排序，并分析它的时间复杂度，空间复杂度和稳定性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1015-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      1015 数据结构和算法07
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1015 数据结构和算法07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：请利用二分查找实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2api" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：自己敲文件流的API实现以下功能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：请实现堆排序，并分析它的时间复杂度，空间复杂度和稳定性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY-CppBase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY-CppBoost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++提高
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux系统编程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编程软件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1001-c01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1001 C语言基础01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1001 C语言基础01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：下列关于C语言的说法，正确的是：(多选)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：下列关于进程，关于虚拟内存空间的说法正确的是：(多选)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3c" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：关于C语言标识符命名规范和风格，以下哪些说法是正确的？（多选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4c" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题4：关于变量在C语言中的声明、初始化、赋值、定义以及其它相关概念，以下哪些说法是不正确的？（多选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      提交环境测试1：简答题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题1：编程题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题2：编写一个程序实现以下需求：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题3：用运算符实现以下算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3nums" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题3扩展题目：给定一个非空的整数数组nums，已知有两个元素只出现了一次，其余元素均出现两次，那么请你找出这两个只出现一次的元素。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4switchint" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题4：利用switch语句编写一个程序，先键盘录入一个成绩(int整数)，然后把用数字表示的成绩转化为字母表示的成绩等级。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题5：经典循环案例：请求出所有的水仙花数，并统计总共有几个。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题6：简答题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      能力测试题7：现在我们就来开发一个简单的交互式程序：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1002-c02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1002 C语言基础02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1002 C语言基础02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：下列关于从源代码到可执行程序转换过程中各个步骤的描述，哪些是正确的？（多选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2c" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：下列关于C语言的编译错误和链接错误的描述中，哪些是正确的？（多选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：写一个程序，实现分数相加。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题4：简答题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题1：用C语言编写程序实现以下需求：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题2：用C语言编写程序实现以下需求：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题3：用C语言编写程序实现以下需求：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题4：用C语言编写程序实现以下需求：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1003-c03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1003 C语言基础03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1003 C语言基础03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1c_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：考虑以下C语言表达式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：扩展题，不要求每一位同学做。大家可以酌情做。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题1：利用优先级规则，计算下面表达式的值，并确定各个变量的值(不要运行代码, 自己思考)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题2：扩展题，可不做。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1004-c04" class="md-nav__link">
+    <span class="md-ellipsis">
+      1004 C语言基础04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1004 C语言基础04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：编写程序模拟掷骰子的游戏（两个骰子）。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：写一个随机发牌的程序。用户指定发几张牌，程序打印手牌。程序的会话如下：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：用户输入初始金额，利率和投资年数，程序将打印一张表格。表格将显示输入的利率以及紧随其后 4 个更高利率下的总金额。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题4：杨辉三角，在数学中，它是二项式系数在三角形中的一种几何排列。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1005-c05" class="md-nav__link">
+    <span class="md-ellipsis">
+      1005 C语言基础05
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1005 C语言基础05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：编程题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-largest-second_largest" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：查找数组中最大的元素和第二大的元素，并将它们分别存放在由 largest 和 second_largest 指向的变量中。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-n-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：分别用循环和递归方式求解 n 的阶乘 n!。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题4：编写函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1c_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题1：在C语言中，关于值传递的描述，下列哪些是正确的？（多选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      补充习题2：编程题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1006-c06" class="md-nav__link">
+    <span class="md-ellipsis">
+      1006 C语言基础06
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1006 C语言基础06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：以下题目功能，都要求编写函数来实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2c_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：依照C语言的字符串标准库函数，手动实现以下函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1007-c07" class="md-nav__link">
+    <span class="md-ellipsis">
+      1007 C语言基础07
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1007 C语言基础07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：编写一个函数，计算一个字符串中单词的数量。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：给定一个字符串，要求它可能包含数字和字母。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：编写一个函数，检查给定的字符串中的圆括号()是否正确匹配。注意只考虑小括号，字符串中没有其它括号。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1008-c08" class="md-nav__link">
+    <span class="md-ellipsis">
+      1008 C语言基础08
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1008 C语言基础08">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1date" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：定义一个Date结构体，包含年、月、日数据项。编写一个函数，计算两个日期之间的天数差。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2a-vsdebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：(a) 下面结构体类型的变量的内存布局是怎样的？请使用VS的debug模式展示内存布局并截图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1009-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1009 数据结构和算法01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1009 数据结构和算法01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：编程题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2strcat" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：标准库函数strcat会将一个字符串追加到另一个字符串的末尾。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：动手自己实现动态数组Vector，基于以下结构体定义和函数声明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1010-02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1010 数据结构和算法02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1010 数据结构和算法02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：动手自己实现动态数组Vector，基于以下结构体定义和函数声明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：你已经手动实现了一个自己的Vector，很好，这很酷。那么请思考和完成以下扩展的题目。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：基于以下链表结点结构体类型的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题4：给你下面一个结构体类型的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1011-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1011 数据结构和算法03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1011 数据结构和算法03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：基于以下头文件，手动实现单链表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1012-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      1012 数据结构和算法04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1012 数据结构和算法04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      第1题：请手动使用链表来实现队列。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      第2题：请手动实现一个固定长度，基于拉链法的哈希表。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      第3题：在任意以往自己实现的栈的基础上，编写代码完成括号的匹配。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      第4题：（扩展作业）用动态数组和链表，基于拉链法设计哈希桶，实现哈希表。要求能够基于负载因子，能够进行自动扩容。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1013-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      1013 数据结构和算法05
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1013 数据结构和算法05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：请手动实现一个BST二叉搜索树。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1014-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      1014 数据结构和算法06
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1014 数据结构和算法06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：请自己手动实现三个基础的排序算法：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：请手动实现希尔排序：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：请实现归并排序，并分析它的时间复杂度，空间复杂度和稳定性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1015-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      1015 数据结构和算法07
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1015 数据结构和算法07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题1：请利用二分查找实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2api" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题2：自己敲文件流的API实现以下功能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题3：请实现堆排序，并分析它的时间复杂度，空间复杂度和稳定性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="c">C语言<a class="headerlink" href="#c" title="Permanent link">&para;</a></h1>
+<h2 id="1001-c01">1001 C语言基础01<a class="headerlink" href="#1001-c01" title="Permanent link">&para;</a></h2>
+<h3 id="1c">习题1：下列关于C语言的说法，<strong>正确</strong>的是：(多选)<a class="headerlink" href="#1c" title="Permanent link">&para;</a></h3>
+<p>A: C语言之父是詹姆斯·高斯林（James Gosling）</p>
+<p>B: C语言来源于贝尔实验室，由Ken Thompson（肯·汤普逊）、Dennis Ritchie（丹尼斯·里奇）共同发明</p>
+<p>C: C语言是研发Unix操作系统的副产品</p>
+<p>D: C语言第一个标准化版本是C90/C89（ANSI C）</p>
+<p>E: C语言的官方标准语法特性在不同平台编译器中，都是一样的。前提是这些平台遵循C标准实现</p>
+<p>F: C语言相对于汇编语言、机器语言是高级语言，但比起绝大多数高级编程语言比如C++、Java等，它更像低级语言</p>
+<p>【答】</p>
+<h3 id="2">习题2：下列关于进程，关于虚拟内存空间的说法<strong>正确</strong>的是：(多选)<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>A：运行中的程序称之为进程。</p>
+<p>B：每个进程都有自己独立的虚拟内存空间</p>
+<p>C：虚拟内存空间和物理内存之间存在映射的关系，由操作系统和硬件共同管理这种映射关系</p>
+<p>D：进程的虚拟内存空间模型包含代码段、数据段、堆空间、栈空间、内核区域等部分</p>
+<p>E：内存地址就是虚拟内存空间中某1个字节区域的唯一性标识。</p>
+<p>F：变量地址就是变量所占内存空间的第一个字节的内存地址。</p>
+<p>G：所谓小端存储法，就是将此数据的最低有效位字节存储在低内存地址上</p>
+<p>H：所谓大端存储法，就是将此数据的最高有效位字节存储在低内存地址上</p>
+<p>【答】</p>
+<h3 id="3c">习题3：关于C语言标识符命名规范和风格，以下哪些说法是正确的？（多选）<a class="headerlink" href="#3c" title="Permanent link">&para;</a></h3>
+<p>A：标识符可以以数字开头。</p>
+<p>B：标识符中可以包含字母、数字或下划线。</p>
+<p>C：C语言中的关键字可以用作标识符。</p>
+<p>D：标识符的命名应避免使用汉语拼音，除非特殊情况。</p>
+<p>E：标识符中禁止出现除字母、数字和下划线以外的其他字符。比如汉字，日语假名等</p>
+<p>F：标识符对大小写不敏感，因此num和Num被视为同一个标识符。</p>
+<p>G：标识符命名的核心原则是"见名知意"</p>
+<p>H：标识符的命名风格可以用"下划线法"和"驼峰法",可以随意混用这两种风格</p>
+<p>【答】</p>
+<h3 id="4c">习题4：关于变量在C语言中的声明、初始化、赋值、定义以及其它相关概念，以下哪些说法是不正确的？（多选）<a class="headerlink" href="#4c" title="Permanent link">&para;</a></h3>
+<p>A：声明一个变量是告诉编译器变量的类型和名称，并且一定会最终分配内存空间</p>
+<p>B：变量的第一次赋值称之为初始化</p>
+<p>C：一个变量声明初始化后,再次改变取值,称之为赋值</p>
+<p>D：局部变量如果仅声明那么取值将是一个随机值,使用随机值会导致未定义行为</p>
+<p>E：未定义行为指的是程序行为并未在标准中明确规定的场景</p>
+<p>F：未定义行为可能可以运行出一个结果,可能导致程序崩溃,可能报错,可能出现莫名其妙的结果等等</p>
+<p>G：在编程时出现未定义行为也无所谓</p>
+<p>H：变量的三要素是: 变量名,数据类型,取值</p>
+<p>【答】</p>
+<h3 id="1">提交环境测试1：简答题<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>(a) 从源代码生成可执行程序包含哪几个步骤，请用自己的话描述每个步骤的作用。</p>
+<p>(b) 预处理阶段会执行预处理指令，我们讲过哪几种预处理指令？编写带参数的宏 (宏函数) 应该注意哪些事项？宏函数优于普通函数的地方在哪里？</p>
+<p>&copy; 什么是进程？进程的虚拟内存空间包含哪几部分？</p>
+<p>【答】</p>
+<h3 id="1_1">能力测试题1：编程题<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>键盘输入一名学生的语文、数学和英语成绩（均为整数百分制）。计算其平均成绩，并保留两位小数打印显示。</li>
+<li>键盘输入一个位于(0, 1)范围内的浮点数，并将其转化为百分比形式，结果保留一位小数。例如：输入0.12转换为12.0%，而输入0.1234转换为12.3%。</li>
+</ol>
+<p>【答】</p>
+<h3 id="2_1">能力测试题2：编写一个程序实现以下需求：<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>用户键盘录入一整行字符数据，包含数字和字母。</li>
+<li>当用户按下回车键后结束数据录入。</li>
+<li>请统计用户输入的一整行字符数据中，数字和字母分别有多少个。</li>
+</ol>
+<p>【答】</p>
+<h3 id="3">能力测试题3：用运算符实现以下算法<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>1）定义一个函数，判断某个整数是否为奇数。</p>
+<p>2）给定一个正整数，请定义一个函数判断它是否为2的幂(1, 2, 4, 8, 16, ....)。</p>
+<p>3）给定一个不为0的整数，编写函数找出它值为1的最低有效位 (称之为Last Set Bit)。LSB是1表示此整数的最低位就是1,2则表示倒数第二位是第一个1,4表示倒数第三位是第一个1.... </p>
+<p>一个示例如下：</p>
+<blockquote>
+<p>输入：n = 24</p>
+<p>输出：8</p>
+<p>解释：24的二进制表示为 11000，值为 1 的最低有效位是倒数第四位，则输出 2^3，即输出的结果8。</p>
+</blockquote>
+<p>4）给定两个不同的整数 a 和 b，请交换它们两个的值。(这里不要定义函数来实现)</p>
+<p>5）给定一个非空的整数数组nums，已知某个元素只出现了一次，其余元素均出现两次，那么请你找出这个只出现一次的元素。</p>
+<p>【答】</p>
+<h3 id="3nums">能力测试题3扩展题目：给定一个非空的整数数组nums，已知有两个元素只出现了一次，其余元素均出现两次，那么请你找出这两个只出现一次的元素。<a class="headerlink" href="#3nums" title="Permanent link">&para;</a></h3>
+<p>【答】</p>
+<h3 id="4switchint">能力测试题4：利用switch语句编写一个程序，先键盘录入一个成绩(int整数)，然后把用数字表示的成绩转化为字母表示的成绩等级。<a class="headerlink" href="#4switchint" title="Permanent link">&para;</a></h3>
+<p>评定规则是：</p>
+<ol>
+<li>90~100为A</li>
+<li>80~89为B</li>
+<li>70~79为C</li>
+<li>60~69为D</li>
+<li>0~59为F</li>
+<li>如果成绩高于100或者低于0，则显示出错消息。</li>
+</ol>
+<p>【答】</p>
+<h3 id="5">能力测试题5：经典循环案例：请求出所有的水仙花数，并统计总共有几个。<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<ol>
+<li>所谓的水仙花数是指一个三位数，其各位数字的立方和等于该数本身。</li>
+<li>举例：153就是一个水仙花数，153 = 1 * 1 * 1 + 5 * 5 * 5 + 3 * 3 * 3 = 1 + 125 + 27 = 153</li>
+</ol>
+<p>【答】</p>
+<h3 id="6">能力测试题6：简答题<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 输入0就不必要累加了</span>
+<span class="w">        </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;sum = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">);</span>
+
+<span class="o">-----------------------------------</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">count</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">  </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// 输入0就不必要累加了</span>
+<span class="w">      </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;sum = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">);</span>
+<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>以上两段代码一个使用while循环实现，一个使用for循环实现。</p>
+<p>那么它们实现的功能有什么区别呢？为什么有这样的区别</p>
+<p>【答】</p>
+<h3 id="7">能力测试题7：现在我们就来开发一个简单的交互式程序：<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>程序将为用户提供选择菜单：</p>
+<ol>
+<li>清空账户余额</li>
+<li>往账户上存钱</li>
+<li>从账户上取钱</li>
+<li>显示当前余额</li>
+<li>退出程序。</li>
+</ol>
+<p>选择项分别用整数 0、1、2、3 和 4 表示，账户余额可以用一个简单的局部变量表示。交互程序大致界面如下：<img alt="img" src="../c-image/1.jpg" /></p>
+<p>【答】</p>
+<h3 id="_1">总结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="1002-c02">1002 C语言基础02<a class="headerlink" href="#1002-c02" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">习题1：下列关于从源代码到可执行程序转换过程中各个步骤的描述，哪些是正确的？（多选）<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>A：广义来说，C程序从源代码到可执行程序，要经历编译和链接的过程</p>
+<p>B：广义的编译包含预处理、编译、汇编三个过程</p>
+<p>C：狭义的编译指的是将源代码转换为汇编代码，处理.i文件生成.s文件的过程</p>
+<p>D：在预处理阶段，会处理#开头的预处理指令，并忽略源代码中的注释。</p>
+<p>E：预处理指令以#符号开始</p>
+<p>F：预处理指令是一个特殊指令，include、define等是关键字</p>
+<p>G：广义编译过程若出现错误表现出来就是编译错误，链接过程出错表现出来就是链接错误</p>
+<p>【答】</p>
+<h3 id="2c">习题2：下列关于C语言的编译错误和链接错误的描述中，哪些是正确的？（多选）<a class="headerlink" href="#2c" title="Permanent link">&para;</a></h3>
+<p>A：编译错误往往是由于语法错误引起的，如缺少分号或者括号不匹配。</p>
+<p>B：链接错误发生在编译阶段，主要由于源代码中的语法问题。</p>
+<p>C：链接错误发生在链接阶段，主要是因为编译器找不到某些函数的定义。</p>
+<p>D：编译错误可以通过阅读代码逻辑来解决，而链接错误通常需要检查库文件或函数声明。</p>
+<p>【答】</p>
+<h3 id="3_1">习题3：写一个程序，实现分数相加。<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>用户以分子/分母的形式输入分数，程序打印相加后的结果(化为最简分数)。如：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nl">输入</span><span class="p">:</span>
+<span class="n">Enter</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">fraction</span><span class="o">:</span><span class="w"> </span><span class="mi">5</span><span class="o">/</span><span class="mi">6</span><span class="w">     </span>
+<span class="n">Enter</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="n">fraction</span><span class="o">:</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">输出</span><span class="err">：</span>
+<span class="n">The</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="mi">19</span><span class="o">/</span><span class="mi">12</span>
+</code></pre></div></td></tr></table></div>
+<p>（注：利用欧几里得算法求最大公约数，进行分数简化）</p>
+<p>【答】</p>
+<h3 id="4">习题4：简答题<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>(a) <code>double ans = 10.0 + 2.0 / 3.0 − 2.0 ∗ 2.0;</code>请在适当的位置插入()，使得 ans = 11.0.</p>
+<p>(b) <code>double ans = 18.0 / SQUARED(2 + 1);</code> 如果宏函数定义如下，请写出对应 ans 的值。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#define SQUARED(x) x*x</span>
+<span class="cp">#define SQUARED(x) (x*x)</span>
+<span class="cp">#define SQUARED(x) (x)*(x)</span>
+<span class="cp">#define SQUARED(x) ((x)*(x))</span>
+</code></pre></div></td></tr></table></div>
+<p>&copy; 请解释下面代码为什么错了，并改正它。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="err">#</span><span class="n">include</span><span class="w"> </span><span class="o">&lt;</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">function</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="n">arg1</span><span class="p">){</span><span class="w">        </span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="n">arg1</span><span class="mi">-1</span><span class="p">;</span><span class="w">   </span>
+<span class="w">   </span><span class="p">}</span>
+<span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="err">#</span><span class="n">define</span><span class="w"> </span><span class="n">MESSAGE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Happy new year!&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="1c_1">补充习题1：用C语言编写程序实现以下需求：<a class="headerlink" href="#1c_1" title="Permanent link">&para;</a></h3>
+<p>编写一个函数，输入一个公元年份（如2004），判断该年是否为闰年，并返回判断结果。</p>
+<p><strong>平年闰年的规则如下</strong>：</p>
+<ol>
+<li>如果年份不是4的倍数，则是平年。</li>
+<li>如果年份是4的倍数但不是100的倍数，则是闰年。</li>
+<li>如果年份是100的倍数但不是400的倍数，则是平年。</li>
+<li>如果年份是400的倍数，则是闰年。</li>
+</ol>
+<p>要求使用bool类型作为函数的返回值。</p>
+<p><strong>注意：日历有一系列的题目，这道题编写的函数在下一道题目中可能会用到。</strong></p>
+<p>【答】</p>
+<h3 id="2c_1">补充习题2：用C语言编写程序实现以下需求：<a class="headerlink" href="#2c_1" title="Permanent link">&para;</a></h3>
+<p>紧接着上一问，编写一个函数，输入年、月、日，计算并输出下一天的日期。</p>
+<p>比如：</p>
+<p>传入函数的日期是2004年3月31日</p>
+<p>那么函数体内部要直接打印下一天是：2004年4月1日</p>
+<p>要求：</p>
+<p>键盘录入年月日日期时，键盘录入的格式是："年/月/日"</p>
+<p><strong>注意：日历有一系列的题目，这道题编写的函数在下一道题目中可能会用到。</strong></p>
+<p><strong>提示：</strong></p>
+<p><strong>求下一天的日期，无非就是传入日期的天数加1，但加1后天数有可能"溢出"，所以需要知道输入的月份有几天。</strong></p>
+<p><strong>天数+1如果溢出，天数就需要归1，然后让月份+1</strong></p>
+<p><strong>月份+1如果溢出，那就需要将年份+1</strong></p>
+<p><strong>当然年份不需要考虑溢出...</strong></p>
+<p>【答】</p>
+<h3 id="3c_1">补充习题3：用C语言编写程序实现以下需求：<a class="headerlink" href="#3c_1" title="Permanent link">&para;</a></h3>
+<p>编写一个函数，输入两个日期（年/月/日），计算这两个日期之间相隔的天数。</p>
+<p>要求键盘录入的第一个日期，必须要早于第二个日期。</p>
+<p>例如：</p>
+<p>键盘录入2020/01/01和2020/01/02，打印它们相隔1天</p>
+<p>键盘录入2020/01/01和2021/01/02，打印它们相隔367天</p>
+<p><strong>提示：</strong></p>
+<p>这个问题求解的思路不唯一，你可以自己思考求解，我这里提供一种比较简单直观的思路。</p>
+<p>直接计算两个日期相隔多少天，可能不太好计算。于是我们就找一个基准点。</p>
+<p>比如设置基准点为："1/1/1"，即公元1年1月1日</p>
+<p><strong>然后求两个日期到基准点的总天数，再把得到的两个总天数相减，结果就是两个日期相隔的天数。</strong></p>
+<p><strong>于是这里就存在一个问题：如何求某个日期到"1/1/1"的总天数呢？</strong></p>
+<p>计算三点即可：</p>
+<ol>
+<li><strong>加上前面所有过去年份的天数</strong>：对于已经过去的每一年，判断它是平年还是闰年（闰年366天，平年365天），并累加所有这些年份的天数。</li>
+<li><strong>加上当前年份中之前月份的天数：</strong>给定日期的前面所有月都是已经过去的，根据月份确定该月的天数（考虑闰年2月有29天），并累加起来。当然当前月份还没过完，不要累加进去。</li>
+<li><strong>加上当前月份中已经过去的天数</strong>：直接加上给定日期中的“日”部分。今天也算过去了，不需要减1。</li>
+</ol>
+<p>试一试求解该题吧。</p>
+<p>【答】</p>
+<h3 id="4c_1">补充习题4：用C语言编写程序实现以下需求：<a class="headerlink" href="#4c_1" title="Permanent link">&para;</a></h3>
+<p>已知1970年1月1日是星期四，编写一个函数，输入一个日期（年、月、日），计算该日期是星期几。</p>
+<p>规定输入的日期，必须在1970年1月1日后。</p>
+<p><strong>注意：</strong></p>
+<p><strong>你已经可以求解出输入日期到1970年1月1日相隔多少天了，那么求解星期几还不是轻轻松松？</strong></p>
+<p><strong>提示：取余运算</strong></p>
+<p>【答】</p>
+<h3 id="_2">总结<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="1003-c03">1003 C语言基础03<a class="headerlink" href="#1003-c03" title="Permanent link">&para;</a></h2>
+<h3 id="1c_2">习题1：考虑以下C语言表达式<a class="headerlink" href="#1c_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">--</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">++</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>以下说法正确的是（多选）:</p>
+<p>A：表达式 x++ 有副作用，即修改了 x 的值。</p>
+<p>B：表达式x++ * --y，实际上就是 5 * 2</p>
+<p>C：表达式 5 / 2 的结果是2.5。</p>
+<p>D：表达式 x++ * --y 的主要作用是 返回一个结果10, 没有副作用</p>
+<p>E：表达式a = a++; 最终a的结果是3</p>
+<p>F：表达式a = a++; 最好不要出现C语言代码中，它会引发未定义行为</p>
+<p>【答】</p>
+<h3 id="2_2">习题2：扩展题，不要求每一位同学做。大家可以酌情做。<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>在前面所有日历题目的基础上，完成最后一个需求。</p>
+<p>输入1970年之后任意一年的年份，输出该年的年历。打印的格式如下：</p>
+<p><img alt="img" src="../c-image/2.png" /></p>
+<p><img alt="img" src="../c-image/3.png" /></p>
+<p>注：<strong>这题其实没有太大难度，难的在于怎么把格式调对齐，这需要一定的耐心罢了</strong></p>
+<p>【答】</p>
+<h3 id="1_3">补充习题1：利用优先级规则，计算下面表达式的值，并确定各个变量的值(不要运行代码, 自己思考)。<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<p><strong>请手动为表达式添加括号，以表示优先级的关系。</strong></p>
+<p>(a) 假设(x = 0xFF33, MASK = 0xFF00).表达式: c = x &amp; MASK ==0;</p>
+<p>(b) 假设(x = 10, y = 2, z = 2;).表达式: z = x++ + ++y ∗ 2;</p>
+<p>&copy; 假设(x = 10, y=4, z=1;).表达式: y &gt;&gt;= x &amp; 0x2 &amp;&amp; z;</p>
+<p>【答】</p>
+<h3 id="2_3">补充习题2：扩展题，可不做。<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>下面题目请考虑使用位运算符来实现需求：</p>
+<ol>
+<li>
+<p>编写一个函数，计算一个整数的二进制表示中1的个数。</p>
+</li>
+<li>
+<p>判断两个整数是否相反符号。比如1和-2就具有相反的符号</p>
+</li>
+<li>
+<p>利用位运算符求一个整数的绝对值</p>
+</li>
+</ol>
+<p>【答】</p>
+<h3 id="_3">总结<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="1004-c04">1004 C语言基础04<a class="headerlink" href="#1004-c04" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">习题1：编写程序模拟掷骰子的游戏（两个骰子）。<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<p>每局游戏的规则如下：</p>
+<p>第一次掷的时候，如 果点数之和为 7 或 11 则获胜；如果点数之和为2、3或12则落败；其他情况下的点数之和称为“目标”，游戏继续。在后续的投掷中，如果玩家再次掷出“目标”点数则获胜，掷出7则落败，其他情况都忽略，游戏继续进行。</p>
+<p>每局游戏结束时，程序询问用户是否再玩一次，如果用 户输入的回答不是 y 或 Y ，程序会显示胜败的次数然后终止。(拓展题，不要求每个同学回答)</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code>You rolled: 8
+Your point is 8
+You rolled: 3
+You rolled: 10
+You rolled: 8
+You win!
+
+Play again? y
+
+You rolled: 6
+Your point is 6
+You rolled: 5
+You rolled: 12
+You rolled: 3
+You rolled: 7
+You lose!
+
+Play again? y
+
+You rolled: 11
+You win!
+
+Play again? n
+
+Wins: 2 Losses: 1
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="2_4">习题2：写一个随机发牌的程序。用户指定发几张牌，程序打印手牌。程序的会话如下：<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Enter number of cards in hand: 5
+Your hand: 9c 7d 3c 5d kd
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="3-4">习题3：用户输入初始金额，利率和投资年数，程序将打印一张表格。表格将显示输入的利率以及紧随其后 4 个更高利率下的总金额。<a class="headerlink" href="#3-4" title="Permanent link">&para;</a></h3>
+<p>程序的会话如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>Enter initial balance: 100
+Enter interest rate: 6
+Enter number of years: 5
+
+Years    6%     7%     8%     9%    10%
+  1    106.00 107.00 108.00 109.00 110.00
+  2    112.36 114.49 116.64 118.81 121.00
+  3    119.10 122.50 125.97 129.50 133.10
+  4    126.25 131.08 136.05 141.16 146.41
+  5    133.82 140.26 146.93 153.86 161.05
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="4_1">习题4：杨辉三角，在数学中，它是二项式系数在三角形中的一种几何排列。<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>大致图案如下：</p>
+<p>1</p>
+<p>1 1</p>
+<p>1 2 1</p>
+<p>1 3 3 1</p>
+<p>1 4 6 4 1</p>
+<p>1 5 10 10 5 1</p>
+<p>........</p>
+<p>在欧洲，这个表叫做帕斯卡三角形（Pascal's Triangle），法国数学家布莱士·帕斯卡（Blaise Pascal ）在1654年发现这一规律，相比于中国，比杨辉要迟393年，比贾宪迟600年。</p>
+<p>杨辉三角从纯粹数字规律上来说，就是：</p>
+<ol>
+<li>每一行的元素和行数一样，即行数等于列数。第一行有一列，第二行有两列....</li>
+<li>第一行的元素从1开始，<strong>且之后每个元素的值，都是上一行同列元素和上一行左边列的元素之和。</strong></li>
+<li>前两行的元素和每一行的首尾元素由于没有上一行同列元素或上一行左列元素，默认都是1。</li>
+</ol>
+<p>现在请你用二维数组来存储杨辉三角的前十行(每一行就是一个一维数组)，并以杨辉三角的打印格式来最终打印杨辉三角。</p>
+<p>注意：C语言的二维数组列长是一致的，所以实际上只能用二维数组的一半空间来存储元素，这一点要特别注意。</p>
+<p>【答】</p>
+<h3 id="_4">总结<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="1005-c05">1005 C语言基础05<a class="headerlink" href="#1005-c05" title="Permanent link">&para;</a></h2>
+<h3 id="1_5">习题1：编程题<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<p>(1) 汉诺塔</p>
+<p>有三根杆子A，B，C。A杆上有 N 个 (N&gt;1) 穿孔圆盘，盘的尺寸由下到上依次变小。要求按下列规则将所有圆盘移至 C 杆：</p>
+<ol>
+<li>每次只能移动一个圆盘;</li>
+<li>大盘不能叠在小盘上面。</li>
+</ol>
+<p>利用递归的方式，打印出移动轨迹。运行结果如下图所示:</p>
+<p><img alt="img" src="../c-image/4.jpg" /></p>
+<p>(2) 十进制转换成二进制</p>
+<p>给定任意一个<strong>非负十进制整数</strong>，请利用递归的方式，求解它的二进制表示方式。</p>
+<p>基本的思路是：把该整数除以2得到余数，然后倒着输出余数。</p>
+<p><strong>思考一下：如何实现倒着打印余数呢？</strong></p>
+<p>【答】</p>
+<h3 id="2-largest-second_largest">习题2：查找数组中最大的元素和第二大的元素，并将它们分别存放在由 largest 和 second_largest 指向的变量中。<a class="headerlink" href="#2-largest-second_largest" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">find_two_largest</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">largest</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">second_largest</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>注意：为了简化程序，数组不存在重复元素。</p>
+<p>【答】</p>
+<h3 id="3-n-n">习题3：分别用循环和递归方式求解 n 的阶乘 n!。<a class="headerlink" href="#3-n-n" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>f(n) = 1,          if n = 0
+f(n) = n * f(n-1), if n &gt; 0
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="4_2">习题4：编写函数<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">split_time</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">total_sec</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">hour</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">minute</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">second</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>total_sec 表示从午夜12:00:00开始计算的秒数。请将 total_sec 转化以时(0-23)、分(0-59)、秒(0-59)表示的时间，并存放到函数外部由指针 hour, minute, second 指向的变量中。并在外部，打印出当前的时间。</p>
+<p>【答】</p>
+<h3 id="1c_3">补充习题1：在C语言中，关于值传递的描述，下列哪些是正确的？（多选）<a class="headerlink" href="#1c_3" title="Permanent link">&para;</a></h3>
+<p>A：通过参数传递可以直接修改原始实参的取值
+B：值传递的本质是在函数调用时, 将实际参数的值复制到函数内部的形式参数中。
+C：如果函数需要修改一个变量的值，应传递指向它的指针类型而不是原本的变量
+D：值传递保护了原始数据，防止在函数内部被意外修改。
+E：如果函数的形参是int <em>p, 那么在函数内部可以修改原始指针指向的内容
+F：如果函数的形参是int </em>p, 那么在函数内部可以修改原始指针的指向
+G：如果函数的形参是const int *p, 那么在函数内部依然可以修改p指针指向的内容
+H：若想要通过传参修改某个指针的指向，应该传递该指针的二级指针
+I：通过参数直接传递一个全局变量，利用传递的形参, 在函数体内部可以修改原始全局变量的值
+J：通过传递指针，可以在函数体内部修改原始指针指向的内容。这说明C语言不是值传递，因为可以修改原始数据</p>
+<p>【答】</p>
+<h3 id="2_5">补充习题2：编程题<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>（1）查找数组的最大值和最小值，但要将最大值作为返回值返回，最小值则依靠传入的指针完成赋值。</p>
+<p><strong>要求不能使用"[]"运算符。</strong></p>
+<p>函数的声明如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">max_min</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">pmin</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>（2）求平均值，给定一个double数组，求平均值，并且返回。</p>
+<p><strong>要求使用while循环遍历数组，然后配合"*p++"的语法实现。</strong></p>
+<p>函数的声明如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="nf">get_ave</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="_5">总结<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="1006-c06">1006 C语言基础06<a class="headerlink" href="#1006-c06" title="Permanent link">&para;</a></h2>
+<h3 id="1_6">习题1：以下题目功能，都要求编写函数来实现<a class="headerlink" href="#1_6" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>编写函数交换数组中两个下标的元素。函数声明如下：void swap(int *arr, int i, int j) 。要求不使用[]运算符，将它还原成解引用运算符和指针算术运算。</p>
+</li>
+<li>
+<p>数组元素的逆序。要求使用指针操作直接完成，不要使用下标运算。</p>
+</li>
+<li>
+<p>数组元素求和。要求使用"*p++"语法结构来完成数组元素的累加 </p>
+</li>
+<li>
+<p>给定一个int数组以及一个目标值target，请编写函数找到这个目标值的下标，要求该函数没有返回值。</p>
+</li>
+<li>
+<p>编写一个函数，检查一个整数数组是否是回文，即正序与倒序相同。例如[1,2,3,2,1]就是回文的。要求使用指针的算术运算，不要使用取下标运算</p>
+</li>
+<li>
+<p>给定一个非空整数数组src，再给定一个足够长的dest数组。编写一个函数 copy_array，使用 *p++ 复制这个数组到一个新的数组。注意：这道题目要把代码写得尽量简洁！！</p>
+</li>
+<li>
+<p>给定一个整数数组，将所有奇数移到数组前面，偶数移到数组后面。（扩展题）</p>
+</li>
+</ol>
+<p>【答】</p>
+<h3 id="2c_2">习题2：依照C语言的字符串标准库函数，手动实现以下函数<a class="headerlink" href="#2c_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>size_t my_strlen(const char *str);</p>
+</li>
+<li>
+<p>char *my_strcpy(char *dest, const char *src);</p>
+</li>
+<li>
+<p>char *my_strncpy(char *dest, const char *src, size_t n);</p>
+</li>
+<li>
+<p>char *my_strcat(char *dest, const char *src);</p>
+</li>
+<li>
+<p>char *my_strncat(char *dest, const char *src, size_t n);</p>
+</li>
+<li>
+<p>int my_strcmp(const char *str1, const char *str2);</p>
+</li>
+</ol>
+<p>函数的实现要模拟标准库函数中对应函数的行为，不要依据自己的理解来实现这些函数。</p>
+<p>【答】</p>
+<h3 id="_6">总结<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h2 id="1007-c07">1007 C语言基础07<a class="headerlink" href="#1007-c07" title="Permanent link">&para;</a></h2>
+<h3 id="1_7">习题1：编写一个函数，计算一个字符串中单词的数量。<a class="headerlink" href="#1_7" title="Permanent link">&para;</a></h3>
+<p>这里，单词被定义为由空格分隔的字符序列。</p>
+<p>例如，对于字符串"hello world! word Excel space blank"</p>
+<p>就应该输出有6个单词</p>
+<p>注意：空格可能连续出现。</p>
+<p>思路参考（两种思路皆可）：</p>
+<ol>
+<li>
+<p>整个过程就是跳过前面的所有空白字符，先找到一个非空字符，然后再跳过所有非空字符找到一个空白字符，于是确定找到一个单词。</p>
+</li>
+<li>
+<p>第二种思路: 遍历整个字符串, 如果字符是非空格制表符,那么就是单词的一部分, 继续遍历直到碰到空字符或者空格制表符, 意味着单词结束.计数器加1。</p>
+</li>
+</ol>
+<p>【答】</p>
+<h3 id="2_6">习题2：给定一个字符串，要求它可能包含数字和字母。<a class="headerlink" href="#2_6" title="Permanent link">&para;</a></h3>
+<p>请编写函数，统计该字符串中每个字符出现的次数，统计过程中忽略大小写的差异，并打印最终每个字符出现的次数。</p>
+<p>提示：</p>
+<p>用一个int数组存储字符出现的次数，可以用一个128长度的数组，这样数组下标位置的元素就是该编码值字符出现的次数，缺点是浪费空间，但你可以先写一个这样的实现。</p>
+<p>（扩展）做完后，你可以思考一下：</p>
+<p>实际上只会有36个字符(10个数字和26个不区分大小写的字母)，所以int数组的长度实际上只需要36就可以了。</p>
+<p>那么怎么把数组的长度缩短到36呢？</p>
+<p>【答】</p>
+<h3 id="3_2">习题3：编写一个函数，检查给定的字符串中的圆括号<code>()</code>是否正确匹配。注意只考虑小括号，字符串中没有其它括号。<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<p>如字符串：((Hello) (World))</p>
+<p>函数会返回一个布尔值，表示匹配成功或失败</p>
+<p>注意：只考虑英文括号</p>
+<p>【答】</p>
+<h3 id="_7">总结<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h2 id="1008-c08">1008 C语言基础08<a class="headerlink" href="#1008-c08" title="Permanent link">&para;</a></h2>
+<h3 id="1date">习题1：定义一个Date结构体，包含年、月、日数据项。编写一个函数，计算两个日期之间的天数差。<a class="headerlink" href="#1date" title="Permanent link">&para;</a></h3>
+<p>不考虑平年闰年，不考虑月份天数不同。</p>
+<p>假设每个月都是30天，每年是360天，以简化计算</p>
+<p>【答】</p>
+<h3 id="2a-vsdebug">习题2：(a) 下面结构体类型的变量的内存布局是怎样的？请使用VS的debug模式展示内存布局并截图<a class="headerlink" href="#2a-vsdebug" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">stundent_s</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">25</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">gender</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">chinese</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">math</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">english</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">Student</span><span class="p">;</span>
+
+<span class="n">Student</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>(b) 如何通过结构体获取成员，如何通过指向结构体的指针获取成员？</p>
+<p>&copy; (学生信息处理)有这样一种学生结构体类型，其数据成员有包括学号，姓名和3门课程的成绩。实现下列功能：</p>
+<ul>
+<li>从键盘输入5个学生的信息，将这些同学的信息采用结构体数组的方式存储起来。</li>
+<li>输出每门课程最高分的学生信息。</li>
+<li>输出每门课程的平均分。</li>
+<li>按照总分从高到低对学生进行排序，并输出排序后的学生信息。（排序话自己写个选择或冒泡排序即可）</li>
+</ul>
+<p>【答】</p>
+<h3 id="_8">总结<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h2 id="1009-01">1009 数据结构和算法01<a class="headerlink" href="#1009-01" title="Permanent link">&para;</a></h2>
+<h3 id="1_8">习题1：编程题<a class="headerlink" href="#1_8" title="Permanent link">&para;</a></h3>
+<p>假设：所有字符串的长度不会超过100.</p>
+<p>(a) 将字符串中的字符和数字分开，使得字符串中前一部分是数字，后一部分是字母。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">seperate</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">);</span>
+<span class="nl">输入</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;h1ell2o3&quot;</span>
+<span class="nl">输出</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;123hello&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>(b) 将字符串中的空格替换成 %020 (假定原字符数组能够存放替换后的字符串)。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">substitute_space</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">);</span>
+<span class="nl">输入</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;hello world how &quot;</span>
+<span class="nl">输出</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;hello%020world%020how%020&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>&copy; 删除字符串中指定的字符。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">delete_character</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="nl">输入</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abcdaefaghiagkl&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;a&#39;</span>
+<span class="nl">输出</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bcdefghigkl&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="2strcat">习题2：标准库函数strcat会将一个字符串追加到另一个字符串的末尾。<a class="headerlink" href="#2strcat" title="Permanent link">&para;</a></h3>
+<p>现在我们编写一个函数把两个字符串拼接起来，返回拼接的结果，但要求不改变其中任何一个字符串。其函数声明如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">my_strcat</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">prefix</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">suffix</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>形参prefix表示前缀，suffix表示后缀，拼接的结果是prefix + suffix</p>
+<p>比如：my_strcat("abc", "d")，拼接的结果是"abcd"。</p>
+<p>思路：</p>
+<ol>
+<li>在堆上分配内存空间，用于存储结果字符串。</li>
+<li>将prefix和suffix两个字符串的字符信息复制进去。</li>
+</ol>
+<p>【答】</p>
+<h3 id="3vector">习题3：动手自己实现动态数组Vector，基于以下结构体定义和函数声明<a class="headerlink" href="#3vector" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">E</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">E</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">   </span><span class="c1">// 指向堆空间的数组</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w">   </span><span class="c1">// 元素的个数</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">capacity</span><span class="p">;</span><span class="w"> </span><span class="c1">// 数组的容量</span>
+<span class="p">}</span><span class="w"> </span><span class="n">Vector</span><span class="p">;</span>
+
+<span class="c1">// 请实现下面方法</span>
+
+<span class="c1">// 初始化一个Vector动态数组</span>
+<span class="n">Vector</span><span class="o">*</span><span class="w"> </span><span class="nf">vector_create</span><span class="p">();</span>
+
+<span class="c1">// 销毁一个Vector动态数组，释放内存。</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">vector_destroy</span><span class="p">(</span><span class="n">Vector</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">);</span>
+
+<span class="c1">// 向动态数组末尾添加一个元素</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">vector_push_back</span><span class="p">(</span><span class="n">Vector</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">element</span><span class="p">);</span>
+
+<span class="c1">// 在动态数组最前面添加元素，所有元素依次后移</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">vector_push_front</span><span class="p">(</span><span class="n">Vector</span><span class="o">*</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+
+<span class="c1">// 将元素val添加到索引为idx的位置，idx后面的元素依次后移</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">vector_insert</span><span class="p">(</span><span class="n">Vector</span><span class="o">*</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>注意：</strong></p>
+<p><strong>你应该将上述代码放在头文件中，并且使用头文件保护语法。</strong>
+提交作业时，你应该提交头文件，实现函数的源文件，测试源文件三个文件的代码</p>
+<p>【答】</p>
+<h3 id="_9">总结<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h2 id="1010-02">1010 数据结构和算法02<a class="headerlink" href="#1010-02" title="Permanent link">&para;</a></h2>
+<h3 id="1vector">习题1：动手自己实现动态数组Vector，基于以下结构体定义和函数声明<a class="headerlink" href="#1vector" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">E</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">E</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">   </span><span class="c1">// 指向堆空间的数组</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w">   </span><span class="c1">// 元素的个数</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">capacity</span><span class="p">;</span><span class="w"> </span><span class="c1">// 数组的容量</span>
+<span class="p">}</span><span class="w"> </span><span class="n">Vector</span><span class="p">;</span>
+
+<span class="c1">// 请实现下面方法</span>
+
+<span class="c1">// 初始化一个Vector动态数组</span>
+<span class="n">Vector</span><span class="o">*</span><span class="w"> </span><span class="nf">vector_create</span><span class="p">();</span>
+
+<span class="c1">// 销毁一个Vector动态数组，释放内存。</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">vector_destroy</span><span class="p">(</span><span class="n">Vector</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">);</span>
+
+<span class="c1">// 向动态数组末尾添加一个元素</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">vector_push_back</span><span class="p">(</span><span class="n">Vector</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">element</span><span class="p">);</span>
+
+<span class="c1">// 在动态数组最前面添加元素，所有元素依次后移</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">vector_push_front</span><span class="p">(</span><span class="n">Vector</span><span class="o">*</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+
+<span class="c1">// 将元素val添加到索引为idx的位置，idx后面的元素依次后移</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">vector_insert</span><span class="p">(</span><span class="n">Vector</span><span class="o">*</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>注意：</strong></p>
+<p><strong>你应该将上述代码放在头文件中，并且使用头文件保护语法。</strong>
+提交作业时，你应该提交头文件，实现函数的源文件，测试源文件三个文件的代码</p>
+<p>【答】</p>
+<h3 id="2vector">习题2：你已经手动实现了一个自己的Vector，很好，这很酷。那么请思考和完成以下扩展的题目。<a class="headerlink" href="#2vector" title="Permanent link">&para;</a></h3>
+<p>现在请你回答第一个问题：</p>
+<p><strong>原本的动态数组用于存储int类型元素，是int类型动态数组。现在我希望你能把它变成字符串动态数组，应该怎么改代码吗？</strong></p>
+<p>如果仅在原本代码的基础上修改ElementType的类型，那么请你思考第二个问题：</p>
+<p><strong>此时Vector虽然能存字符串了，但只能存什么字符串呢？</strong></p>
+<p>把以上问题都考虑清楚后，请完成以下测试工作：</p>
+<p>使用push_back函数向动态字符串数组中<strong>循环添加100个</strong>字符串元素，这些字符串依次是：</p>
+<p>"0"</p>
+<p>"01"</p>
+<p>"012"</p>
+<p>"0123"</p>
+<p>......
+"01234567890"</p>
+<p>"012345678901"</p>
+<p>....
+添加完成后，请遍历打印这个动态字符串数组。请将这段测试动态字符串数组Vector的代码贴在答案里。</p>
+<p>Vector的其它实现代码不需要贴进来。</p>
+<p>注意，实现这个需求时，不需要考虑字符串的生命周期问题。</p>
+<p>【答】</p>
+<h3 id="3_3">习题3：基于以下链表结点结构体类型的定义<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">Node</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>利用<strong>二级指针</strong>语法实现以下函数：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 头插法新增一个结点</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">insert_head</span><span class="p">(</span><span class="n">Node</span><span class="o">**</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="n">Element</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+<span class="c1">// 修改第一个结点的元素值，如果链表为空，则用new_val初始化第一个结点</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">modify_first_node</span><span class="p">(</span><span class="n">Node</span><span class="o">**</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">new_val</span><span class="p">)</span>
+<span class="c1">// 尾插法新增一个结点</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">insert_tail</span><span class="p">(</span><span class="n">Node</span><span class="o">**</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="n">Element</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>在main函数里初始化一个Node* list指针为空指针，表示list链表为空。然后基于上述函数实现，构建一条链表。</p>
+<p>注：尾插法会稍微麻烦一些，可以放在最后实现。</p>
+<p>【答】</p>
+<h3 id="4_3">习题4：给你下面一个结构体类型的定义<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 坐标轴上的某个点，其坐标是(x, y)</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">Point</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>假设你有一个坐标点数组，每个点有x和y两个坐标值。比如下列一个数组:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Point</span><span class="w"> </span><span class="n">points</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">-2</span><span class="p">,</span><span class="w"> </span><span class="mi">-2</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-2</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">-2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">-2</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">-4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">-4</span><span class="p">,</span><span class="w"> </span><span class="mi">-4</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">-4</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<span class="p">};</span><span class="w"> </span><span class="c1">// 如果你愿意,你可以继续加一些坐标点</span>
+</code></pre></div></td></tr></table></div>
+<p>你的任务是使用<code>qsort</code>函数对这个结构体数组进行排序：</p>
+<ol>
+<li>
+<p>先按照每个坐标点到原点(0, 0)的距离从小到大进行排序。</p>
+</li>
+<li>
+<p>如果两个坐标点距离相同，则先按x值的大小从小到大排序,。</p>
+</li>
+<li>
+<p>如果x的值一致, 再按照y值从大到小进行排序。</p>
+</li>
+</ol>
+<p>注意：</p>
+<p>浮点数相减作为比较规则函数的返回值是有可能产生问题的，比如相减结果是0.4，会隐式转换为0，导致两个元素大小相等。</p>
+<p>此时解决办法是不开平方，直接比较int的结果。或者去看一下参考代码的实现</p>
+<p>【答】</p>
+<h3 id="_10">总结<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h2 id="1011-03">1011 数据结构和算法03<a class="headerlink" href="#1011-03" title="Permanent link">&para;</a></h2>
+<h3 id="1_9">习题1：基于以下头文件，手动实现单链表<a class="headerlink" href="#1_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 头文件保护语法</span>
+<span class="cp">#ifndef LINKED_LIST_H</span>
+<span class="cp">#define LINKED_LIST_H</span>
+
+<span class="c1">// 包含linked_list.h头文件也会同步包含它包含的其它头文件</span>
+<span class="c1">// 根据这一特点, 可以选择将一些共用的头文件包含在此头文件中</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdbool.h&gt;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DataType</span><span class="p">;</span>
+
+<span class="c1">// 定义链表结点结构</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="p">{</span>
+<span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">           </span><span class="c1">// 数据域</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w">  </span><span class="c1">// 指针域</span>
+<span class="p">}</span><span class="w"> </span><span class="n">Node</span><span class="p">;</span>
+
+<span class="c1">// 定义链表结构本身</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">head</span><span class="p">;</span><span class="w">  </span><span class="c1">// 头指针</span>
+<span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span><span class="w">  </span><span class="c1">// 尾结点指针</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w">  </span><span class="c1">// 用于记录链表的长度</span>
+<span class="p">}</span><span class="w"> </span><span class="n">LinkedList</span><span class="p">;</span>
+
+<span class="c1">// 基础操作函数声明</span>
+<span class="n">LinkedList</span><span class="o">*</span><span class="w"> </span><span class="nf">create_linked_list</span><span class="p">();</span><span class="w">                     </span><span class="c1">// 创建一个空的链表</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">destroy_linked_list</span><span class="p">(</span><span class="n">LinkedList</span><span class="o">*</span><span class="w"> </span><span class="n">list</span><span class="p">);</span><span class="w">           </span><span class="c1">// 销毁链表</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">add_before_head</span><span class="p">(</span><span class="n">LinkedList</span><span class="o">*</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">);</span><span class="w">        </span><span class="c1">// 头部插入结点</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">add_behind_tail</span><span class="p">(</span><span class="n">LinkedList</span><span class="o">*</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">);</span><span class="w">        </span><span class="c1">// 尾部插入结点</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">add_index</span><span class="p">(</span><span class="n">LinkedList</span><span class="o">*</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">);</span><span class="w"> </span><span class="c1">// 按索引插入结点</span>
+
+<span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="nf">search_by_index</span><span class="p">(</span><span class="n">LinkedList</span><span class="o">*</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">);</span><span class="w">          </span><span class="c1">// 根据索引搜索结点</span>
+<span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="nf">search_by_data</span><span class="p">(</span><span class="n">LinkedList</span><span class="o">*</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">);</span><span class="w">             </span><span class="c1">// 根据数据搜索结点</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">delete_node_by_data</span><span class="p">(</span><span class="n">LinkedList</span><span class="o">*</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="n">DataType</span><span class="w"> </span><span class="n">data</span><span class="p">);</span><span class="w">         </span><span class="c1">// 根据数据删除结点</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">delete_by_idx</span><span class="p">(</span><span class="n">LinkedList</span><span class="o">*</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">);</span><span class="w">         </span><span class="c1">// 根据索引删除结点</span>
+
+
+<span class="cp">#endif </span><span class="c1">// !LINKED_LIST_H</span>
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="_11">总结<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h2 id="1012-04">1012 数据结构和算法04<a class="headerlink" href="#1012-04" title="Permanent link">&para;</a></h2>
+<h3 id="1_10">第1题：请手动使用链表来实现队列。<a class="headerlink" href="#1_10" title="Permanent link">&para;</a></h3>
+<p>可以基于以下头文件来实现：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#ifndef LIST_QUEUE_H</span>
+<span class="cp">#define LIST_QUEUE_H</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdbool.h&gt;</span>
+
+<span class="c1">// 定义队列中的元素类型</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">E</span><span class="p">;</span>
+
+<span class="c1">// 队列节点的结构</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node_s</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">node_s</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">QueueNode</span><span class="p">;</span>
+
+<span class="c1">// 队列的结构</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">QueueNode</span><span class="o">*</span><span class="w"> </span><span class="n">front</span><span class="p">;</span><span class="w">  </span><span class="c1">// 队列的头部</span>
+<span class="w">    </span><span class="n">QueueNode</span><span class="o">*</span><span class="w"> </span><span class="n">rear</span><span class="p">;</span><span class="w">   </span><span class="c1">// 队列的尾部</span>
+<span class="p">}</span><span class="w"> </span><span class="n">LinkedListQueue</span><span class="p">;</span>
+
+<span class="c1">// 函数声明</span>
+<span class="n">LinkedListQueue</span><span class="o">*</span><span class="w"> </span><span class="nf">create_queue</span><span class="p">();</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">destroy_queue</span><span class="p">(</span><span class="n">LinkedListQueue</span><span class="o">*</span><span class="w"> </span><span class="n">q</span><span class="p">);</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">enqueue</span><span class="p">(</span><span class="n">LinkedListQueue</span><span class="o">*</span><span class="w"> </span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">element</span><span class="p">);</span>
+<span class="n">E</span><span class="w"> </span><span class="nf">dequeue</span><span class="p">(</span><span class="n">LinkedListQueue</span><span class="o">*</span><span class="w"> </span><span class="n">q</span><span class="p">);</span>
+<span class="n">E</span><span class="w"> </span><span class="nf">peek_queue</span><span class="p">(</span><span class="n">LinkedListQueue</span><span class="o">*</span><span class="w"> </span><span class="n">q</span><span class="p">);</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="n">LinkedListQueue</span><span class="o">*</span><span class="w"> </span><span class="n">q</span><span class="p">);</span>
+
+<span class="cp">#endif </span><span class="c1">// !LIST_QUEUE_H</span>
+</code></pre></div></td></tr></table></div>
+<p>LinkedListQueue，即链表实现的队列。</p>
+<p>【答】</p>
+<h3 id="2_7">第2题：请手动实现一个固定长度，基于拉链法的哈希表。<a class="headerlink" href="#2_7" title="Permanent link">&para;</a></h3>
+<p>可以基于以下头文件：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#ifndef HASH_MAP_H</span>
+<span class="cp">#define HASH_MAP_H</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdbool.h&gt;</span>
+<span class="cp">#define CAPACITY 10</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">K</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">V</span><span class="p">;</span>
+
+<span class="c1">// 键值对结点</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node_s</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+<span class="w">  </span><span class="n">V</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+<span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">node_s</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">KeyValueNode</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// 哈希桶</span>
+<span class="w">  </span><span class="n">KeyValueNode</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">buckets</span><span class="p">[</span><span class="n">CAPACITY</span><span class="p">];</span>
+<span class="w">  </span><span class="c1">// 哈希函数需要的种子值</span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">hash_seed</span><span class="p">;</span><span class="w"> </span>
+<span class="p">}</span><span class="w"> </span><span class="n">HashMap</span><span class="p">;</span>
+
+<span class="c1">// 创建一个固定容量的哈希表</span>
+<span class="n">HashMap</span><span class="o">*</span><span class="w"> </span><span class="nf">create_hashmap</span><span class="p">();</span>
+<span class="c1">// 销毁一个哈希表</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">destroy_hashmap</span><span class="p">(</span><span class="n">HashMap</span><span class="o">*</span><span class="w"> </span><span class="n">map</span><span class="p">);</span>
+
+<span class="c1">// 插入一个键值对</span>
+<span class="n">V</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="n">HashMap</span><span class="o">*</span><span class="w"> </span><span class="n">map</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+<span class="c1">// 查询一个键值对</span>
+<span class="n">V</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="n">HashMap</span><span class="o">*</span><span class="w"> </span><span class="n">map</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+<span class="c1">// 删除某个键值对</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">map_remove</span><span class="p">(</span><span class="n">HashMap</span><span class="o">*</span><span class="w"> </span><span class="n">map</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+
+<span class="cp">#endif </span><span class="c1">// !HASH_MAP_H</span>
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="3_4">第3题：在任意以往自己实现的栈的基础上，编写代码完成括号的匹配。<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<p>括号有三类：{}、[]、()</p>
+<p>注：</p>
+<ol>
+<li>
+<p>若字符串中没有括号，也算做匹配成功。</p>
+</li>
+<li>
+<p>思路可以参考文档《栈》</p>
+</li>
+</ol>
+<p>【答】</p>
+<h3 id="4_4">第4题：（扩展作业）用动态数组和链表，基于拉链法设计哈希桶，实现哈希表。要求能够基于负载因子，能够进行自动扩容。<a class="headerlink" href="#4_4" title="Permanent link">&para;</a></h3>
+<p>可以参考以下头文件定义：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#ifndef HASH_MAP_H</span>
+<span class="cp">#define HASH_MAP_H</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">K</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">V</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node_s</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+<span class="w">  </span><span class="n">V</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+<span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">node_s</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">KeyValueNode</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">KeyValueNode</span><span class="o">**</span><span class="w"> </span><span class="n">buckets</span><span class="p">;</span><span class="w">   </span><span class="c1">// 此时哈希桶是一个动态数组</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w">       </span><span class="c1">// 键值对的个数</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">capacity</span><span class="p">;</span><span class="w">   </span><span class="c1">// 数组的长度</span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">hash_seed</span><span class="p">;</span><span class="w">  </span><span class="c1">// 哈希函数需要的种子值</span>
+<span class="p">}</span><span class="w"> </span><span class="n">HashMap</span><span class="p">;</span>
+
+<span class="c1">// 基础的操作则可以保持一致</span>
+
+<span class="c1">// 创建一个固定容量的哈希表</span>
+<span class="n">HashMap</span><span class="o">*</span><span class="w"> </span><span class="nf">create_hashmap</span><span class="p">();</span>
+<span class="c1">// 销毁一个哈希表</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">destroy_hashmap</span><span class="p">(</span><span class="n">HashMap</span><span class="o">*</span><span class="w"> </span><span class="n">map</span><span class="p">);</span>
+
+<span class="c1">// 插入一个键值对</span>
+<span class="n">V</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="n">HashMap</span><span class="o">*</span><span class="w"> </span><span class="n">map</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+<span class="c1">// 查询一个键值对</span>
+<span class="n">V</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="n">HashMap</span><span class="o">*</span><span class="w"> </span><span class="n">map</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+<span class="c1">// 删除某个键值对</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">map_remove</span><span class="p">(</span><span class="n">HashMap</span><span class="o">*</span><span class="w"> </span><span class="n">map</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+
+<span class="cp">#endif </span><span class="c1">// !HASH_MAP_H</span>
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="_12">总结<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h2 id="1013-05">1013 数据结构和算法05<a class="headerlink" href="#1013-05" title="Permanent link">&para;</a></h2>
+<h3 id="1bst">习题1：请手动实现一个BST二叉搜索树。<a class="headerlink" href="#1bst" title="Permanent link">&para;</a></h3>
+<p>可以基于以下头文件：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#ifndef BST_H</span>
+<span class="cp">#define BST_H</span>
+
+<span class="cp">#include</span><span class="cpf">&lt;stdbool.h&gt;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+<span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="o">*</span><span class="w"> </span><span class="n">left</span><span class="p">;</span><span class="w">  </span><span class="c1">// 左子树</span>
+<span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="o">*</span><span class="w"> </span><span class="n">right</span><span class="p">;</span><span class="w"> </span><span class="c1">// 右子树</span>
+<span class="p">}</span><span class="w"> </span><span class="n">TreeNode</span><span class="p">;</span>
+
+<span class="c1">// 推荐定义一个二叉搜索树的结构体,这样更便于扩展</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">;</span><span class="w"> </span><span class="c1">// 根结点</span>
+<span class="p">}</span><span class="n">BST</span><span class="p">;</span>
+
+<span class="c1">// 基础操作</span>
+<span class="n">BST</span><span class="o">*</span><span class="w"> </span><span class="nf">bst_create</span><span class="p">();</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">bst_destroy</span><span class="p">(</span><span class="n">BST</span><span class="o">*</span><span class="w"> </span><span class="n">tree</span><span class="p">);</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">bst_insert</span><span class="p">(</span><span class="n">BST</span><span class="o">*</span><span class="w"> </span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+<span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="nf">bst_search</span><span class="p">(</span><span class="n">BST</span><span class="o">*</span><span class="w"> </span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">bst_delete</span><span class="p">(</span><span class="n">BST</span><span class="o">*</span><span class="w"> </span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">bst_preorder</span><span class="p">(</span><span class="n">BST</span><span class="o">*</span><span class="w"> </span><span class="n">tree</span><span class="p">);</span><span class="w"> </span><span class="c1">// 先序遍历</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">bst_inorder</span><span class="p">(</span><span class="n">BST</span><span class="o">*</span><span class="w"> </span><span class="n">tree</span><span class="p">);</span><span class="w">  </span><span class="c1">// 中序遍历</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">bst_postorder</span><span class="p">(</span><span class="n">BST</span><span class="o">*</span><span class="w"> </span><span class="n">tree</span><span class="p">);</span><span class="w">  </span><span class="c1">// 后序遍历</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">bst_levelorder</span><span class="p">(</span><span class="n">BST</span><span class="o">*</span><span class="w"> </span><span class="n">tree</span><span class="p">);</span><span class="w"> </span><span class="c1">// 层次遍历</span>
+
+<span class="cp">#endif </span><span class="c1">// !BST_H</span>
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="_13">总结<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h2 id="1014-06">1014 数据结构和算法06<a class="headerlink" href="#1014-06" title="Permanent link">&para;</a></h2>
+<h3 id="1_11">习题1：请自己手动实现三个基础的排序算法：<a class="headerlink" href="#1_11" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>选择排序</p>
+</li>
+<li>
+<p>冒泡排序</p>
+</li>
+<li>
+<p>插入排序</p>
+</li>
+</ol>
+<p>【答】</p>
+<h3 id="2_8">习题2：请手动实现希尔排序：<a class="headerlink" href="#2_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">shell_sort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="3_5">习题3：请实现归并排序，并分析它的时间复杂度，空间复杂度和稳定性<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">merge_sort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="_14">总结<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h2 id="1015-07">1015 数据结构和算法07<a class="headerlink" href="#1015-07" title="Permanent link">&para;</a></h2>
+<h3 id="1_12">习题1：请利用二分查找实现<a class="headerlink" href="#1_12" title="Permanent link">&para;</a></h3>
+<ol>
+<li>查找数组中最后一个与目标值相等的元素</li>
+<li>查找最后一个小于等于目标值的元素</li>
+<li>改进插入排序</li>
+</ol>
+<p>【答】</p>
+<h3 id="2api">习题2：自己敲文件流的API实现以下功能<a class="headerlink" href="#2api" title="Permanent link">&para;</a></h3>
+<p>1：逐字符文本文件复制，函数声明是：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">copy_file_char</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">src_file</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">dest_file</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</code></pre></div></td></tr></table></div>
+<p>2：逐行文本文件复制，函数声明式：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">copy_file_line</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">src_file</span><span class="p">,</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">dest_file</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</code></pre></div></td></tr></table></div>
+<p>3：用fread和fwrite函数实现二进制文件的复制, 函数声明如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">binary_file_cpy</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">src_file</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">dest_file</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</code></pre></div></td></tr></table></div>
+<p>4：用fread和fwrite函数实现二进制的序列化和反序列化。</p>
+<p>此操作可以不提取函数，直接在main函数中实现即可。但只允许使用一个FILE流。</p>
+<p>【答】</p>
+<h3 id="3_6">习题3：请实现堆排序，并分析它的时间复杂度，空间复杂度和稳定性<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">heap_sort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="_15">总结<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "navigation.path"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

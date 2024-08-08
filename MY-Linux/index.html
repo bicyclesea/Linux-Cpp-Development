@@ -1,0 +1,4068 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../MY-CppBoost/">
+      
+      
+        <link rel="next" href="../software/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Linux系统编程 - Linux C++ 开发</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linux" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Linux C++ 开发" class="md-header__button md-logo" aria-label="Linux C++ 开发" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linux C++ 开发
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux系统编程
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linux C++ 开发" class="md-nav__button md-logo" aria-label="Linux C++ 开发" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Linux C++ 开发
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LeetCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    力扣
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY-C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C语言
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY-CppBase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY-CppBoost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++提高
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Linux系统编程
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Linux系统编程
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1001-linux01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1001 Linux系统编程之基础篇01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1001 Linux系统编程之基础篇01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-ls-l-3-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. (1) 整理ls -l各列的含义 (3) 目录文件的内容是一个什么结构，存储了哪些信息？(2) 什么是硬链接？目录和硬链接存在什么关系？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-1-2-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. (1) 检查一下自己的内核版本，在互联网上查询当前最新的内核版本。(2) Linux的系统可以分成哪几层结构，分别有什么功能？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 以表格的形式整理用户（查询、切换、配置密码、增加和删除）相关命令。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-1-linux2-3-4-cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. (1) Linux的虚拟文件系统采用什么类型的数据结构组织的？目录文件和普通文件在数据结构中扮演着怎么样不同的角色？(2) 什么是路径、相对路径和绝对路径？(3) 普通用户家目录在何方？如何快速将当前工作目录切换到家目录。(4) 整理cd命令的几种用法。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1002-linux02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1002 Linux系统编程之基础篇02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1002 Linux系统编程之基础篇02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-usrsharedochtml100blockls-l" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 在/usr/share/doc找到所有以html结尾且大小大于100个block的文件，并且使用ls -l展示其详细信息。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 整理学习过的正则表达式规则。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vimtutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 尝试一下vimtutor命令，按照要求练习一下，记录使用到的快捷键。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1003-linux03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1003 Linux系统编程之基础篇03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1003 Linux系统编程之基础篇03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-gdbgdbcore" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 使用gdb调试程序，整理调试所用到的所有快捷键。使用gdb调试core文件，并检查出错时的堆栈信息。可以使用以下代码进行调试。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 说明一下使用动态库和静态库的区别，然后分别生成动态库和静态库。可以直接参考文档笔记中的实现。主要是自己练习一下生成库文件的指令。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cmainc-addc-subtractcmainmakefilectestc-test2c-test3cmaintesttest2test3makefilecleanrebuildmakefile" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 一个目录中有三个.c文件：main.c add.c subtract.c(内容无所谓)，最终将它们生成一个可执行程序main。请编写这个Makefile文件。一个目录中有三个.c文件：test.c test2.c test3.c(内容无所谓)，它们都有自己的main函数，都要最终生成独立的可执行程序：test、test2、test3。请编写这个Makefile文件。注意：要求实现clean清理和rebuild重建功能。注：可以考虑将你写的Makefile尽量提高通用性。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1004-linux04" class="md-nav__link">
+    <span class="md-ellipsis">
+      1004 Linux系统编程之基础篇04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1004 Linux系统编程之基础篇04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-helloworldlinuxmakefilecc" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 请按照章节《HelloWorld》配置Linux开发环境。配置好公共头文件、Makefile以及.c文件模板。最后实现一个标准C语言的文件流文件复制，将代码提交上来。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-1dirent2telldirseekdir3ls-al" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 以下小题目，请利用学过的目录相关操作函数实现：（1）打印列出目录中的所有文件和子目录，要求列出dirent结构体的所有信息（不用递归，只看一级目录）。（2）自己生成一个目录，感受一下telldir和seekdir的使用。（3）往后预习，尝试自己写一下ls -al的实现。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1005-linux05" class="md-nav__link">
+    <span class="md-ellipsis">
+      1005 Linux系统编程之基础篇05
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1005 Linux系统编程之基础篇05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1ls-al2tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 实现：（1）无排序功能的ls -al指令（2）实现简化版tree指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1006-linux06" class="md-nav__link">
+    <span class="md-ellipsis">
+      1006 Linux系统编程之基础篇06
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1006 Linux系统编程之基础篇06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fopenopenmmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 请实现fopen/open/mmap三种形式的文件复制。然后自己测试比较一下它们的性能。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-struct-studentintfloatstruct-student-s3lseekprintf" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 定义一个学生结构体类型struct student，里边含有学号(int)，姓名，分数(float)。定义结构体数组struct student s[3],给数组赋初值后，写入文件，然后通过lseek偏移到开头，然后再读取并使用printf输出。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-dup12-3-4serverlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 利用dup实现重定向功能：（1）重定向标准输出到文件（2）标准输入重定向到文件, 从文件读数据（3）实现在标准输出重定向到文件, 复原,再重定向到文件的反复横跳（4）重定向标准错误到文件server.log中, 实现类似打印日志的功能。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1007-linux01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1007 Linux系统编程之文件系统01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1007 Linux系统编程之文件系统01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ababb" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 编写程序A和B。A负责将文件的名字、长度和内容通过管道发送B，B需要新建一个目录，并将该文件存储起来。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-10s10s" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 实现即时聊天，如果对方连续10s没有发送任何消息则断开连接。（注意，即使本方在10s内从标准输入当中输入数据也不行）。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1008-linux01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1008 Linux系统编程之进程管理01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1008 Linux系统编程之进程管理01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 说明一下什么是进程，什么是虚拟内存，什么是虚拟CPU？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cpsidid" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 编写C程序验证ps命令显示的是有效用户ID，还是真实用户ID。作业中应该包括代码、操作每个步骤和命令以及最终结果的截图。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 使用思维导图整理所学过的所有进程相关的命令。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-1-2-printf-printf-n-" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. (1). 请问下面的程序一共输出多少个“-”。(2). 上题中的printf("-")换成printf("-\n")；程序会输出多少个“-”?思考一下为什么？把进程地址空间的图画出来。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1009-linux02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1009 Linux系统编程之进程管理02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1009 Linux系统编程之进程管理02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 说明什么是孤儿进程，什么是僵尸进程，他们对操作系统有什么影响？书写代码创建孤儿进程和僵尸进程。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-return_exitexit" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 进程的结束方式有哪些？return、_exit和exit有什么区别？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 实现一个守护进程。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 书写两个可执行程序：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 验证匿名管道的性质：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1010-linux03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1010 Linux系统编程之进程管理03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1010 Linux系统编程之进程管理03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-how-are-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 新建共享内存，连接，然后往共享内存写入How are you,然后另外一个进程连接共享内存，读取数据并打印显示,最后删除共享内存。 提交操作记录和相关代码。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-forkfor11000" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. fork创建一个子进程，两个进程访问同一段共享内存，共享内存里保存一个整形数，父子进程用for循环的方式。每次对这个整形数字加1，父子进程各循环1000万次。加完后打印一下共享内存里的数字，看看是多少？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1011-linux04" class="md-nav__link">
+    <span class="md-ellipsis">
+      1011 Linux系统编程之进程管理04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1011 Linux系统编程之进程管理04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-signalhandlerhandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. signal的作用是什么？会不会导致阻塞？handler函数会在什么情况下调用？使用同一个handler去注册不同的信号，效果怎么样？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-maskpending" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 信号递送过程中，产生了另一个同类信号会怎么样？产生了另两个、三个、多个同类信号会怎么样？写代码验证一下你的想法。说明mask和pending如何变化。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sigaction21-223332sigpending3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 使用sigaction注册2号信号的处理函数。1） 允许自动重启低速系统调用；2）在处理2号信号时阻塞3号信号，不会被3号信号打断；3）在2号信号的信号处理函数中，使用sigpending函数判断一下有没有3号信号处于未决状态。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-sigprocmask252sigpending" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 通过sigprocmask阻塞2号信号，睡眠5秒后，解除阻塞，2号信号得到执行；在睡眠后，解除阻塞之前，通过sigpending检测是否有信号挂起。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 完成窗口聊天：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      （1）通信方式：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1012-linux01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1012 Linux系统编程之多线程01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1012 Linux系统编程之多线程01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 什么是线程？线程和进程有哪些区别？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pthread_joinvoid-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. pthread_join为什么需要一个void **参数？书写程序，创建3个子线程，然后等待所有的子线程终止，最后获取其退出状态。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1013-linux02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1013 Linux系统编程之多线程02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1013 Linux系统编程之多线程02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 线程的清理函数什么时候会执行？什么情况下线程退出的时候不会执行清理函数？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pthread_cleanup_pushpthread_cleanup_pop" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 从源码角度说明为什么pthread_cleanup_push和pthread_cleanup_pop必须成对出现？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-22000gettimeofdaygettimeofday" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 尝试使用2个线程对同一个全局变量各加2000万(或者更多次)，统计加锁解锁的消耗。使用gettimeofday可以获取高精度当前时间(参考预习文档上对gettimeofday使用说明)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1014-linux03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1014 Linux系统编程之多线程03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1014 Linux系统编程之多线程03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-t1t2t1-a-ct2-ba-b-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 现在有两个线程t1和t2，t1 打印 A 和 C，t2 打印 B。书写代码，使用条件变量每次的显示顺序都是A-&gt;B-&gt;C。代码书写完成后，回答问题：条件变量中加锁的目的是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ababsleepba" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 主线程执行事件A，子线程执行事件B，在AB事件之外不使用sleep，使用循环机制配合互斥锁，确保B一定在A完成之后运行。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 文档上给的生产者消费者代码示例，有时间可以写写练练优化优化。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1015-linux01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1015 Linux系统编程之网络编程01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1015 Linux系统编程之网络编程01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ositcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. OSI模型有哪些层？TCP/IP模型有哪些层？他们之间的对应关系是怎样的？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tcpiptcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. TCP/IP协议族常见的协议有哪些？他们分别属于TCP/IP模型的哪一层？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-http-getpost" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. http的请求方式中: get请求和post请求有什么区别, 试说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1016-linux02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1016 Linux系统编程之网络编程02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1016 Linux系统编程之网络编程02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-httphttphttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. HTTP请求报文和响应报文由哪些部分组成？HTTP常用方法有哪些？HTTP常用状态码有哪些？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 对称加密和非对称加密有什么区别？简要说明一下HTTPS的握手阶段流程。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-uri" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. URI由哪些部分组成？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-httphttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. HTTP的中文全称是什么？从全称的每个字段来说明HTTP的特点。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-http-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 使用浏览器或者抓包工具, 抓一个http的包, 截图标注一个http请求有那些信息需要重点关注。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1017-linux03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1017 Linux系统编程之网络编程03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1017 Linux系统编程之网络编程03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. TCP协议如何保证数据的可靠传输？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 为什么TCP需要三次握手？两次握手为什么不行？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tcp4time_wait" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. TCP断开连接时为什么是4次挥手？为什么主动断开的一方要经历TIME_WAIT状态？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-wiresharktcptcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 通过wireshark抓包分析TCP三次握手过程，尝试解读TCP协议的每一个字段，截图显示抓包结果。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-net" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 在net转换的时候, 路由器会做什么事情? 简要说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1018-linux04" class="md-nav__link">
+    <span class="md-ellipsis">
+      1018 Linux系统编程之网络编程04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1018 Linux系统编程之网络编程04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 什么是大端模式和小端模式，什么是主机字节序和网络字节序？编写代码，验证一下自己的机器是大端模式还是小端模式？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 根据域名，获取一下知名互联网厂商的IP地址信息，如阿里、京东、腾讯、百度。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-socketbindlistenconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 说说socket、bind、listen、connect函数分别有什么作用呢？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-recvsend" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 使用recv和send函数时发生了什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 编写两个程序，一个是客户端另一个是服务端，它们通过tcp连接进行即时聊天。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1019-linux05" class="md-nav__link">
+    <span class="md-ellipsis">
+      1019 Linux系统编程之网络编程05
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1019 Linux系统编程之网络编程05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sockettcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 让socket底层基于TCP, 实现代码让两个客户端连接同一个服务端, 两者之间可以相互通信。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sockettcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 选做: 让socket底层基于TCP, 实现代码让多个客户端连接同一个服务端, 实现群聊效果(一个人发信息, 别人都可以收到)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1020-linux06" class="md-nav__link">
+    <span class="md-ellipsis">
+      1020 Linux系统编程之网络编程06
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1020 Linux系统编程之网络编程06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 边缘触发和水平触发是什么？为什么使用边缘触发的时候必须配合非阻塞IO？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-epoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 把前面写的群聊的代码, 试着改成epoll实现。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1021-linux07" class="md-nav__link">
+    <span class="md-ellipsis">
+      1021 Linux系统编程之网络编程07
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1021 Linux系统编程之网络编程07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-a-b-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 参考我们上课的代码: 让子进程A打开一个文件, 把这个文件描述符信息发给父进程B, 让父进程B在这个文件上能写一个字符串。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 仿照我们上课写的进程池, 自己手写(不要直接复制)一个进程池代码 (如果有余力可以试着优化功能)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1022-linux08" class="md-nav__link">
+    <span class="md-ellipsis">
+      1022 Linux系统编程之网络编程08
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1022 Linux系统编程之网络编程08">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-recvnint-netfd-void-buf-int-lengthmsg_waitallbuflength-recvnetfdbuf-lenmsg_waitall-recvnnetfd-buf-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 在今天代码的基础上: 实现函数(客户端): recvn(int netfd, void *buf, int length)。该函数可以在不使用MSG_WAITALL的情况下，往buf指向的内存中接收任意长度(length)的数据。即: 把我们的代码由 recv(netFd,buf, len,MSG_WAITALL) 改为调用我们自己实现的 recvn(netfd, buf, length)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-atxt-btxt-atxt-atxt-btxt-btxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 选做: 假设服务端有两个文件A.txt, B.txt; 当客户端要求(发送请求)下载A.txt, 服务器传输A.txt给客户端; 当客户端要求下载B.txt的时候, 服务器传输B.txt给客户端
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1023-linux09" class="md-nav__link">
+    <span class="md-ellipsis">
+      1023 Linux系统编程之网络编程09
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1023 Linux系统编程之网络编程09">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 上课代码好好看看写写。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-queueh-queuec-queuec" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 把我们上课没有写完的队列实现(我们上课只是定义了queue.h, 没有实现queue.c), 写出来(queue.c)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sendfd-sendfdint-local_socket_fd-int-net_fdsendfdint-local_socket_fd-int-net_fd-int-tag-recvfd" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 上课说在有序退出的时候, 我们在实现调用sendFd的时候偷懒了, 把sendFd(int local_socket_fd, int net_fd)改造成sendFd(int local_socket_fd, int net_fd, int tag)的模式, 把对应的recvFd也改改。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1024-linux10" class="md-nav__link">
+    <span class="md-ellipsis">
+      1024 Linux系统编程之网络编程10
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1024 Linux系统编程之网络编程10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 把线程池的代码最好自己手写一遍(如果能自己独立写出来更好)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-eg" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. (选作)把我们上课写的线程池的代码选择一个方向进行优化实现(eg: 限制任务队列长度, 队列长度超出的时候, 给用户回复服务器忙. 或者自选优化方向)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 把git的今天讲的命令练习一下, 截图提交。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1025-mysql01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1025 关系型数据库MySQL01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1025 关系型数据库MySQL01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 练习今天讲的所有Git命令(提交部分命令的关键截图即可)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 模拟和同桌共同使用开发一个项目, 制造冲突, 解决冲突。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 创建分支, 试着在分支上写代码并且感受合并分支。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ubuntumysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 通过我们在Ubuntu系统中安装的mysql客户端, 创建一个名为'订单'的数据库, 截图提交。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1026-mysql02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1026 关系型数据库MySQL02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1026 关系型数据库MySQL02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-usersql" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 新建如下表 user表，按要求写出如下SQL语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 有如下一张表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 新建一个学生表S，有包含如下信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 创建一个城市表，字段有id、名字、所属国家名字、人口、所属省份，并插入若干数据。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1027-mysql03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1027 关系型数据库MySQL03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1027 关系型数据库MySQL03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 新建一个学生表S，有包含如下信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 创建一个城市表，字段有id、名字、所属国家名字、人口、所属省份，并插入若干数据。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 某大学研究生院有若干研究生导师，包括职工编号、姓名、职称、研究方向，其中每个导师的职工编号是唯一的。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 在数据库中创建如下两张表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1028-mysql04" class="md-nav__link">
+    <span class="md-ellipsis">
+      1028 关系型数据库MySQL04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1028 关系型数据库MySQL04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-c_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 使用c_api向数据库分别实现对数据的: 增删改查。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 参照我们上课演示的隔离级别: 自己实操演示感知一遍(截图提交: 只要提交部分关键图)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编程软件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1001-linux01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1001 Linux系统编程之基础篇01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1001 Linux系统编程之基础篇01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-ls-l-3-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. (1) 整理ls -l各列的含义 (3) 目录文件的内容是一个什么结构，存储了哪些信息？(2) 什么是硬链接？目录和硬链接存在什么关系？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-1-2-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. (1) 检查一下自己的内核版本，在互联网上查询当前最新的内核版本。(2) Linux的系统可以分成哪几层结构，分别有什么功能？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 以表格的形式整理用户（查询、切换、配置密码、增加和删除）相关命令。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-1-linux2-3-4-cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. (1) Linux的虚拟文件系统采用什么类型的数据结构组织的？目录文件和普通文件在数据结构中扮演着怎么样不同的角色？(2) 什么是路径、相对路径和绝对路径？(3) 普通用户家目录在何方？如何快速将当前工作目录切换到家目录。(4) 整理cd命令的几种用法。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1002-linux02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1002 Linux系统编程之基础篇02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1002 Linux系统编程之基础篇02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-usrsharedochtml100blockls-l" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 在/usr/share/doc找到所有以html结尾且大小大于100个block的文件，并且使用ls -l展示其详细信息。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 整理学习过的正则表达式规则。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vimtutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 尝试一下vimtutor命令，按照要求练习一下，记录使用到的快捷键。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1003-linux03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1003 Linux系统编程之基础篇03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1003 Linux系统编程之基础篇03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-gdbgdbcore" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 使用gdb调试程序，整理调试所用到的所有快捷键。使用gdb调试core文件，并检查出错时的堆栈信息。可以使用以下代码进行调试。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 说明一下使用动态库和静态库的区别，然后分别生成动态库和静态库。可以直接参考文档笔记中的实现。主要是自己练习一下生成库文件的指令。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cmainc-addc-subtractcmainmakefilectestc-test2c-test3cmaintesttest2test3makefilecleanrebuildmakefile" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 一个目录中有三个.c文件：main.c add.c subtract.c(内容无所谓)，最终将它们生成一个可执行程序main。请编写这个Makefile文件。一个目录中有三个.c文件：test.c test2.c test3.c(内容无所谓)，它们都有自己的main函数，都要最终生成独立的可执行程序：test、test2、test3。请编写这个Makefile文件。注意：要求实现clean清理和rebuild重建功能。注：可以考虑将你写的Makefile尽量提高通用性。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1004-linux04" class="md-nav__link">
+    <span class="md-ellipsis">
+      1004 Linux系统编程之基础篇04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1004 Linux系统编程之基础篇04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-helloworldlinuxmakefilecc" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 请按照章节《HelloWorld》配置Linux开发环境。配置好公共头文件、Makefile以及.c文件模板。最后实现一个标准C语言的文件流文件复制，将代码提交上来。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-1dirent2telldirseekdir3ls-al" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 以下小题目，请利用学过的目录相关操作函数实现：（1）打印列出目录中的所有文件和子目录，要求列出dirent结构体的所有信息（不用递归，只看一级目录）。（2）自己生成一个目录，感受一下telldir和seekdir的使用。（3）往后预习，尝试自己写一下ls -al的实现。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1005-linux05" class="md-nav__link">
+    <span class="md-ellipsis">
+      1005 Linux系统编程之基础篇05
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1005 Linux系统编程之基础篇05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1ls-al2tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 实现：（1）无排序功能的ls -al指令（2）实现简化版tree指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1006-linux06" class="md-nav__link">
+    <span class="md-ellipsis">
+      1006 Linux系统编程之基础篇06
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1006 Linux系统编程之基础篇06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fopenopenmmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 请实现fopen/open/mmap三种形式的文件复制。然后自己测试比较一下它们的性能。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-struct-studentintfloatstruct-student-s3lseekprintf" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 定义一个学生结构体类型struct student，里边含有学号(int)，姓名，分数(float)。定义结构体数组struct student s[3],给数组赋初值后，写入文件，然后通过lseek偏移到开头，然后再读取并使用printf输出。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-dup12-3-4serverlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 利用dup实现重定向功能：（1）重定向标准输出到文件（2）标准输入重定向到文件, 从文件读数据（3）实现在标准输出重定向到文件, 复原,再重定向到文件的反复横跳（4）重定向标准错误到文件server.log中, 实现类似打印日志的功能。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1007-linux01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1007 Linux系统编程之文件系统01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1007 Linux系统编程之文件系统01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ababb" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 编写程序A和B。A负责将文件的名字、长度和内容通过管道发送B，B需要新建一个目录，并将该文件存储起来。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-10s10s" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 实现即时聊天，如果对方连续10s没有发送任何消息则断开连接。（注意，即使本方在10s内从标准输入当中输入数据也不行）。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1008-linux01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1008 Linux系统编程之进程管理01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1008 Linux系统编程之进程管理01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 说明一下什么是进程，什么是虚拟内存，什么是虚拟CPU？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cpsidid" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 编写C程序验证ps命令显示的是有效用户ID，还是真实用户ID。作业中应该包括代码、操作每个步骤和命令以及最终结果的截图。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 使用思维导图整理所学过的所有进程相关的命令。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-1-2-printf-printf-n-" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. (1). 请问下面的程序一共输出多少个“-”。(2). 上题中的printf("-")换成printf("-\n")；程序会输出多少个“-”?思考一下为什么？把进程地址空间的图画出来。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1009-linux02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1009 Linux系统编程之进程管理02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1009 Linux系统编程之进程管理02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 说明什么是孤儿进程，什么是僵尸进程，他们对操作系统有什么影响？书写代码创建孤儿进程和僵尸进程。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-return_exitexit" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 进程的结束方式有哪些？return、_exit和exit有什么区别？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 实现一个守护进程。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 书写两个可执行程序：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 验证匿名管道的性质：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1010-linux03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1010 Linux系统编程之进程管理03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1010 Linux系统编程之进程管理03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-how-are-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 新建共享内存，连接，然后往共享内存写入How are you,然后另外一个进程连接共享内存，读取数据并打印显示,最后删除共享内存。 提交操作记录和相关代码。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-forkfor11000" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. fork创建一个子进程，两个进程访问同一段共享内存，共享内存里保存一个整形数，父子进程用for循环的方式。每次对这个整形数字加1，父子进程各循环1000万次。加完后打印一下共享内存里的数字，看看是多少？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1011-linux04" class="md-nav__link">
+    <span class="md-ellipsis">
+      1011 Linux系统编程之进程管理04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1011 Linux系统编程之进程管理04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-signalhandlerhandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. signal的作用是什么？会不会导致阻塞？handler函数会在什么情况下调用？使用同一个handler去注册不同的信号，效果怎么样？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-maskpending" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 信号递送过程中，产生了另一个同类信号会怎么样？产生了另两个、三个、多个同类信号会怎么样？写代码验证一下你的想法。说明mask和pending如何变化。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sigaction21-223332sigpending3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 使用sigaction注册2号信号的处理函数。1） 允许自动重启低速系统调用；2）在处理2号信号时阻塞3号信号，不会被3号信号打断；3）在2号信号的信号处理函数中，使用sigpending函数判断一下有没有3号信号处于未决状态。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-sigprocmask252sigpending" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 通过sigprocmask阻塞2号信号，睡眠5秒后，解除阻塞，2号信号得到执行；在睡眠后，解除阻塞之前，通过sigpending检测是否有信号挂起。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 完成窗口聊天：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      （1）通信方式：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1012-linux01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1012 Linux系统编程之多线程01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1012 Linux系统编程之多线程01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 什么是线程？线程和进程有哪些区别？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pthread_joinvoid-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. pthread_join为什么需要一个void **参数？书写程序，创建3个子线程，然后等待所有的子线程终止，最后获取其退出状态。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1013-linux02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1013 Linux系统编程之多线程02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1013 Linux系统编程之多线程02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 线程的清理函数什么时候会执行？什么情况下线程退出的时候不会执行清理函数？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pthread_cleanup_pushpthread_cleanup_pop" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 从源码角度说明为什么pthread_cleanup_push和pthread_cleanup_pop必须成对出现？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-22000gettimeofdaygettimeofday" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 尝试使用2个线程对同一个全局变量各加2000万(或者更多次)，统计加锁解锁的消耗。使用gettimeofday可以获取高精度当前时间(参考预习文档上对gettimeofday使用说明)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1014-linux03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1014 Linux系统编程之多线程03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1014 Linux系统编程之多线程03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-t1t2t1-a-ct2-ba-b-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 现在有两个线程t1和t2，t1 打印 A 和 C，t2 打印 B。书写代码，使用条件变量每次的显示顺序都是A-&gt;B-&gt;C。代码书写完成后，回答问题：条件变量中加锁的目的是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ababsleepba" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 主线程执行事件A，子线程执行事件B，在AB事件之外不使用sleep，使用循环机制配合互斥锁，确保B一定在A完成之后运行。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 文档上给的生产者消费者代码示例，有时间可以写写练练优化优化。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1015-linux01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1015 Linux系统编程之网络编程01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1015 Linux系统编程之网络编程01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ositcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. OSI模型有哪些层？TCP/IP模型有哪些层？他们之间的对应关系是怎样的？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tcpiptcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. TCP/IP协议族常见的协议有哪些？他们分别属于TCP/IP模型的哪一层？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-http-getpost" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. http的请求方式中: get请求和post请求有什么区别, 试说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1016-linux02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1016 Linux系统编程之网络编程02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1016 Linux系统编程之网络编程02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-httphttphttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. HTTP请求报文和响应报文由哪些部分组成？HTTP常用方法有哪些？HTTP常用状态码有哪些？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 对称加密和非对称加密有什么区别？简要说明一下HTTPS的握手阶段流程。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-uri" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. URI由哪些部分组成？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-httphttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. HTTP的中文全称是什么？从全称的每个字段来说明HTTP的特点。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-http-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 使用浏览器或者抓包工具, 抓一个http的包, 截图标注一个http请求有那些信息需要重点关注。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1017-linux03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1017 Linux系统编程之网络编程03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1017 Linux系统编程之网络编程03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. TCP协议如何保证数据的可靠传输？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 为什么TCP需要三次握手？两次握手为什么不行？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tcp4time_wait" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. TCP断开连接时为什么是4次挥手？为什么主动断开的一方要经历TIME_WAIT状态？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-wiresharktcptcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 通过wireshark抓包分析TCP三次握手过程，尝试解读TCP协议的每一个字段，截图显示抓包结果。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-net" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 在net转换的时候, 路由器会做什么事情? 简要说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1018-linux04" class="md-nav__link">
+    <span class="md-ellipsis">
+      1018 Linux系统编程之网络编程04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1018 Linux系统编程之网络编程04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 什么是大端模式和小端模式，什么是主机字节序和网络字节序？编写代码，验证一下自己的机器是大端模式还是小端模式？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 根据域名，获取一下知名互联网厂商的IP地址信息，如阿里、京东、腾讯、百度。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-socketbindlistenconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 说说socket、bind、listen、connect函数分别有什么作用呢？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-recvsend" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 使用recv和send函数时发生了什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 编写两个程序，一个是客户端另一个是服务端，它们通过tcp连接进行即时聊天。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1019-linux05" class="md-nav__link">
+    <span class="md-ellipsis">
+      1019 Linux系统编程之网络编程05
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1019 Linux系统编程之网络编程05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sockettcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 让socket底层基于TCP, 实现代码让两个客户端连接同一个服务端, 两者之间可以相互通信。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sockettcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 选做: 让socket底层基于TCP, 实现代码让多个客户端连接同一个服务端, 实现群聊效果(一个人发信息, 别人都可以收到)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1020-linux06" class="md-nav__link">
+    <span class="md-ellipsis">
+      1020 Linux系统编程之网络编程06
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1020 Linux系统编程之网络编程06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 边缘触发和水平触发是什么？为什么使用边缘触发的时候必须配合非阻塞IO？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-epoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 把前面写的群聊的代码, 试着改成epoll实现。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1021-linux07" class="md-nav__link">
+    <span class="md-ellipsis">
+      1021 Linux系统编程之网络编程07
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1021 Linux系统编程之网络编程07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-a-b-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 参考我们上课的代码: 让子进程A打开一个文件, 把这个文件描述符信息发给父进程B, 让父进程B在这个文件上能写一个字符串。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 仿照我们上课写的进程池, 自己手写(不要直接复制)一个进程池代码 (如果有余力可以试着优化功能)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1022-linux08" class="md-nav__link">
+    <span class="md-ellipsis">
+      1022 Linux系统编程之网络编程08
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1022 Linux系统编程之网络编程08">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-recvnint-netfd-void-buf-int-lengthmsg_waitallbuflength-recvnetfdbuf-lenmsg_waitall-recvnnetfd-buf-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 在今天代码的基础上: 实现函数(客户端): recvn(int netfd, void *buf, int length)。该函数可以在不使用MSG_WAITALL的情况下，往buf指向的内存中接收任意长度(length)的数据。即: 把我们的代码由 recv(netFd,buf, len,MSG_WAITALL) 改为调用我们自己实现的 recvn(netfd, buf, length)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-atxt-btxt-atxt-atxt-btxt-btxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 选做: 假设服务端有两个文件A.txt, B.txt; 当客户端要求(发送请求)下载A.txt, 服务器传输A.txt给客户端; 当客户端要求下载B.txt的时候, 服务器传输B.txt给客户端
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1023-linux09" class="md-nav__link">
+    <span class="md-ellipsis">
+      1023 Linux系统编程之网络编程09
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1023 Linux系统编程之网络编程09">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 上课代码好好看看写写。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-queueh-queuec-queuec" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 把我们上课没有写完的队列实现(我们上课只是定义了queue.h, 没有实现queue.c), 写出来(queue.c)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sendfd-sendfdint-local_socket_fd-int-net_fdsendfdint-local_socket_fd-int-net_fd-int-tag-recvfd" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 上课说在有序退出的时候, 我们在实现调用sendFd的时候偷懒了, 把sendFd(int local_socket_fd, int net_fd)改造成sendFd(int local_socket_fd, int net_fd, int tag)的模式, 把对应的recvFd也改改。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1024-linux10" class="md-nav__link">
+    <span class="md-ellipsis">
+      1024 Linux系统编程之网络编程10
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1024 Linux系统编程之网络编程10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 把线程池的代码最好自己手写一遍(如果能自己独立写出来更好)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-eg" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. (选作)把我们上课写的线程池的代码选择一个方向进行优化实现(eg: 限制任务队列长度, 队列长度超出的时候, 给用户回复服务器忙. 或者自选优化方向)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 把git的今天讲的命令练习一下, 截图提交。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1025-mysql01" class="md-nav__link">
+    <span class="md-ellipsis">
+      1025 关系型数据库MySQL01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1025 关系型数据库MySQL01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 练习今天讲的所有Git命令(提交部分命令的关键截图即可)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 模拟和同桌共同使用开发一个项目, 制造冲突, 解决冲突。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 创建分支, 试着在分支上写代码并且感受合并分支。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ubuntumysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 通过我们在Ubuntu系统中安装的mysql客户端, 创建一个名为'订单'的数据库, 截图提交。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1026-mysql02" class="md-nav__link">
+    <span class="md-ellipsis">
+      1026 关系型数据库MySQL02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1026 关系型数据库MySQL02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-usersql" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 新建如下表 user表，按要求写出如下SQL语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 有如下一张表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 新建一个学生表S，有包含如下信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 创建一个城市表，字段有id、名字、所属国家名字、人口、所属省份，并插入若干数据。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1027-mysql03" class="md-nav__link">
+    <span class="md-ellipsis">
+      1027 关系型数据库MySQL03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1027 关系型数据库MySQL03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 新建一个学生表S，有包含如下信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 创建一个城市表，字段有id、名字、所属国家名字、人口、所属省份，并插入若干数据。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 某大学研究生院有若干研究生导师，包括职工编号、姓名、职称、研究方向，其中每个导师的职工编号是唯一的。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 在数据库中创建如下两张表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1028-mysql04" class="md-nav__link">
+    <span class="md-ellipsis">
+      1028 关系型数据库MySQL04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1028 关系型数据库MySQL04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-c_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 使用c_api向数据库分别实现对数据的: 增删改查。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 参照我们上课演示的隔离级别: 自己实操演示感知一遍(截图提交: 只要提交部分关键图)。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="linux">Linux系统编程<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
+<h2 id="1001-linux01">1001 Linux系统编程之基础篇01<a class="headerlink" href="#1001-linux01" title="Permanent link">&para;</a></h2>
+<h3 id="1-1-ls-l-3-2">1. (1) 整理ls -l各列的含义 (3) 目录文件的内容是一个什么结构，存储了哪些信息？(2) 什么是硬链接？目录和硬链接存在什么关系？<a class="headerlink" href="#1-1-ls-l-3-2" title="Permanent link">&para;</a></h3>
+<p>【答】</p>
+<p>（1）<strong>ls -l各列的含义</strong></p>
+<p>（2）<strong>硬链接</strong></p>
+<p><strong>关系</strong></p>
+<p>（3）<strong>结构</strong></p>
+<p><strong>信息</strong></p>
+<h3 id="2-1-2-linux">2. (1) 检查一下自己的内核版本，在互联网上查询当前最新的内核版本。(2) Linux的系统可以分成哪几层结构，分别有什么功能？<a class="headerlink" href="#2-1-2-linux" title="Permanent link">&para;</a></h3>
+<p>【答】</p>
+<p>（1）<strong>自己的内核版本</strong></p>
+<p><strong>当前最新的内核版本</strong></p>
+<p>（2）<strong>结构</strong></p>
+<p><strong>功能</strong></p>
+<h3 id="3">3. 以表格的形式整理用户（查询、切换、配置密码、增加和删除）相关命令。<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>【答】<strong>用户相关命令</strong></p>
+<h3 id="4-1-linux2-3-4-cd">4. (1) Linux的虚拟文件系统采用什么类型的数据结构组织的？目录文件和普通文件在数据结构中扮演着怎么样不同的角色？(2) 什么是路径、相对路径和绝对路径？(3) 普通用户家目录在何方？如何快速将当前工作目录切换到家目录。(4) 整理cd命令的几种用法。<a class="headerlink" href="#4-1-linux2-3-4-cd" title="Permanent link">&para;</a></h3>
+<p>【答】</p>
+<p>（1）<strong>类型</strong></p>
+<p><strong>目录文件</strong></p>
+<p><strong>普通文件</strong></p>
+<p>（2）<strong>路径</strong></p>
+<p><strong>相对路径</strong></p>
+<p><strong>绝对路径</strong></p>
+<p>（3）<strong>普通用户家目录</strong></p>
+<p><strong>方法</strong></p>
+<p>（4）<strong>用法</strong></p>
+<h3 id="_1">总结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="1002-linux02">1002 Linux系统编程之基础篇02<a class="headerlink" href="#1002-linux02" title="Permanent link">&para;</a></h2>
+<h3 id="1-usrsharedochtml100blockls-l">1. 在/usr/share/doc找到所有以html结尾且大小大于100个block的文件，并且使用ls -l展示其详细信息。<a class="headerlink" href="#1-usrsharedochtml100blockls-l" title="Permanent link">&para;</a></h3>
+<p>【答】</p>
+<p><strong>文件</strong></p>
+<p><strong>详细信息</strong></p>
+<h3 id="2">2. 整理学习过的正则表达式规则。<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>【答】</p>
+<h3 id="3-vimtutor">3. 尝试一下vimtutor命令，按照要求练习一下，记录使用到的快捷键。<a class="headerlink" href="#3-vimtutor" title="Permanent link">&para;</a></h3>
+<p>【答】</p>
+<h3 id="_2">总结<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="1003-linux03">1003 Linux系统编程之基础篇03<a class="headerlink" href="#1003-linux03" title="Permanent link">&para;</a></h2>
+<h3 id="1-gdbgdbcore">1. 使用gdb调试程序，整理调试所用到的所有快捷键。使用gdb调试core文件，并检查出错时的堆栈信息。可以使用以下代码进行调试。<a class="headerlink" href="#1-gdbgdbcore" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">Node</span><span class="p">;</span>
+
+<span class="c1">// 尾插法插入结点</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">add_before_tail</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">**</span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">new_node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span>
+<span class="n">new_node</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="n">new_node</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">head</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_node</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">;</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">temp</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_node</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 打印链表中的所有值</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">print_list</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">current</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d -&gt; &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">current</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;NULL</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="n">add_before_tail</span><span class="p">(</span><span class="o">&amp;</span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">add_before_tail</span><span class="p">(</span><span class="o">&amp;</span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="n">add_before_tail</span><span class="p">(</span><span class="o">&amp;</span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+
+<span class="n">print_list</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>答：</p>
+<h3 id="2_1">2. 说明一下使用动态库和静态库的区别，然后分别生成动态库和静态库。可以直接参考文档笔记中的实现。主要是自己练习一下生成库文件的指令。<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="3-cmainc-addc-subtractcmainmakefilectestc-test2c-test3cmaintesttest2test3makefilecleanrebuildmakefile">3. 一个目录中有三个.c文件：main.c add.c subtract.c(内容无所谓)，最终将它们生成一个可执行程序main。请编写这个Makefile文件。一个目录中有三个.c文件：test.c test2.c test3.c(内容无所谓)，它们都有自己的main函数，都要最终生成独立的可执行程序：test、test2、test3。请编写这个Makefile文件。注意：要求实现clean清理和rebuild重建功能。注：可以考虑将你写的Makefile尽量提高通用性。<a class="headerlink" href="#3-cmainc-addc-subtractcmainmakefilectestc-test2c-test3cmaintesttest2test3makefilecleanrebuildmakefile" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_3">总结<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="1004-linux04">1004 Linux系统编程之基础篇04<a class="headerlink" href="#1004-linux04" title="Permanent link">&para;</a></h2>
+<h3 id="1-helloworldlinuxmakefilecc">1. 请按照章节《HelloWorld》配置Linux开发环境。配置好公共头文件、Makefile以及.c文件模板。最后实现一个标准C语言的文件流文件复制，将代码提交上来。<a class="headerlink" href="#1-helloworldlinuxmakefilecc" title="Permanent link">&para;</a></h3>
+<h3 id="2-1dirent2telldirseekdir3ls-al">2. 以下小题目，请利用学过的目录相关操作函数实现：（1）打印列出目录中的所有文件和子目录，要求列出dirent结构体的所有信息（不用递归，只看一级目录）。（2）自己生成一个目录，感受一下telldir和seekdir的使用。（3）往后预习，尝试自己写一下ls -al的实现。<a class="headerlink" href="#2-1dirent2telldirseekdir3ls-al" title="Permanent link">&para;</a></h3>
+<h3 id="_4">总结<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="1005-linux05">1005 Linux系统编程之基础篇05<a class="headerlink" href="#1005-linux05" title="Permanent link">&para;</a></h2>
+<h3 id="1-1ls-al2tree">1. 实现：（1）无排序功能的ls -al指令（2）实现简化版tree指令<a class="headerlink" href="#1-1ls-al2tree" title="Permanent link">&para;</a></h3>
+<h3 id="_5">总结<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="1006-linux06">1006 Linux系统编程之基础篇06<a class="headerlink" href="#1006-linux06" title="Permanent link">&para;</a></h2>
+<h3 id="1-fopenopenmmap">1. 请实现fopen/open/mmap三种形式的文件复制。然后自己测试比较一下它们的性能。<a class="headerlink" href="#1-fopenopenmmap" title="Permanent link">&para;</a></h3>
+<h3 id="2-struct-studentintfloatstruct-student-s3lseekprintf">2. 定义一个学生结构体类型struct student，里边含有学号(int)，姓名，分数(float)。定义结构体数组struct student s[3],给数组赋初值后，写入文件，然后通过lseek偏移到开头，然后再读取并使用printf输出。<a class="headerlink" href="#2-struct-studentintfloatstruct-student-s3lseekprintf" title="Permanent link">&para;</a></h3>
+<h3 id="3-dup12-3-4serverlog">3. 利用dup实现重定向功能：（1）重定向标准输出到文件（2）标准输入重定向到文件, 从文件读数据（3）实现在标准输出重定向到文件, 复原,再重定向到文件的反复横跳（4）重定向标准错误到文件server.log中, 实现类似打印日志的功能。<a class="headerlink" href="#3-dup12-3-4serverlog" title="Permanent link">&para;</a></h3>
+<h3 id="_6">总结<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h2 id="1007-linux01">1007 Linux系统编程之文件系统01<a class="headerlink" href="#1007-linux01" title="Permanent link">&para;</a></h2>
+<h3 id="1-ababb">1. 编写程序A和B。A负责将文件的名字、长度和内容通过管道发送B，B需要新建一个目录，并将该文件存储起来。<a class="headerlink" href="#1-ababb" title="Permanent link">&para;</a></h3>
+<h3 id="2-10s10s">2. 实现即时聊天，如果对方连续10s没有发送任何消息则断开连接。（注意，即使本方在10s内从标准输入当中输入数据也不行）。<a class="headerlink" href="#2-10s10s" title="Permanent link">&para;</a></h3>
+<h3 id="_7">总结<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h2 id="1008-linux01">1008 Linux系统编程之进程管理01<a class="headerlink" href="#1008-linux01" title="Permanent link">&para;</a></h2>
+<h3 id="1-cpu">1. 说明一下什么是进程，什么是虚拟内存，什么是虚拟CPU？<a class="headerlink" href="#1-cpu" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2-cpsidid">2. 编写C程序验证ps命令显示的是有效用户ID，还是真实用户ID。作业中应该包括代码、操作每个步骤和命令以及最终结果的截图。<a class="headerlink" href="#2-cpsidid" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="3_1">3. 使用思维导图整理所学过的所有进程相关的命令。<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="4-1-2-printf-printf-n-">4. (1). 请问下面的程序一共输出多少个“-”。(2). 上题中的printf("-")换成printf("-\n")；程序会输出多少个“-”?思考一下为什么？把进程地址空间的图画出来。<a class="headerlink" href="#4-1-2-printf-printf-n-" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">fork</span><span class="p">();</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">fork</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>答：</p>
+<h3 id="_8">总结<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h2 id="1009-linux02">1009 Linux系统编程之进程管理02<a class="headerlink" href="#1009-linux02" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 说明什么是孤儿进程，什么是僵尸进程，他们对操作系统有什么影响？书写代码创建孤儿进程和僵尸进程。<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h3 id="2-return_exitexit">2. 进程的结束方式有哪些？return、_exit和exit有什么区别？<a class="headerlink" href="#2-return_exitexit" title="Permanent link">&para;</a></h3>
+<h3 id="3_2">3. 实现一个守护进程。<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<h3 id="4">4. 书写两个可执行程序：<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>可执行程序一：</p>
+<p>父进程负责创建子进程并且最后回收其资源；</p>
+<p>子进程加载可执行程序二。</p>
+<p>可执行程序二：</p>
+<p>列出当前目录所有文件的文件名。</p>
+<hr />
+<p>答：</p>
+<h3 id="5">5. 验证匿名管道的性质：<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>1、是否发生读阻塞？</p>
+<p>2、是否发生写阻塞？</p>
+<p>3、读端先关闭，写端继续写会怎么样？</p>
+<p>4、写端先关闭，读端继续读会怎么样？</p>
+<hr />
+<p>答：</p>
+<h3 id="_9">总结<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="1010-linux03">1010 Linux系统编程之进程管理03<a class="headerlink" href="#1010-linux03" title="Permanent link">&para;</a></h2>
+<h3 id="1-how-are-you">1. 新建共享内存，连接，然后往共享内存写入How are you,然后另外一个进程连接共享内存，读取数据并打印显示,最后删除共享内存。 提交操作记录和相关代码。<a class="headerlink" href="#1-how-are-you" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2-forkfor11000">2. fork创建一个子进程，两个进程访问同一段共享内存，共享内存里保存一个整形数，父子进程用for循环的方式。每次对这个整形数字加1，父子进程各循环1000万次。加完后打印一下共享内存里的数字，看看是多少？<a class="headerlink" href="#2-forkfor11000" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_10">总结<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="1011-linux04">1011 Linux系统编程之进程管理04<a class="headerlink" href="#1011-linux04" title="Permanent link">&para;</a></h2>
+<h3 id="1-signalhandlerhandler">1. signal的作用是什么？会不会导致阻塞？handler函数会在什么情况下调用？使用同一个handler去注册不同的信号，效果怎么样？<a class="headerlink" href="#1-signalhandlerhandler" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2-maskpending">2. 信号递送过程中，产生了另一个同类信号会怎么样？产生了另两个、三个、多个同类信号会怎么样？写代码验证一下你的想法。说明mask和pending如何变化。<a class="headerlink" href="#2-maskpending" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="3-sigaction21-223332sigpending3">3. 使用sigaction注册2号信号的处理函数。1） 允许自动重启低速系统调用；2）在处理2号信号时阻塞3号信号，不会被3号信号打断；3）在2号信号的信号处理函数中，使用sigpending函数判断一下有没有3号信号处于未决状态。<a class="headerlink" href="#3-sigaction21-223332sigpending3" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="4-sigprocmask252sigpending">4. 通过sigprocmask阻塞2号信号，睡眠5秒后，解除阻塞，2号信号得到执行；在睡眠后，解除阻塞之前，通过sigpending检测是否有信号挂起。<a class="headerlink" href="#4-sigprocmask252sigpending" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="5_1">5. 完成窗口聊天：<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
+<h3 id="1_1">（1）通信方式：<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>- A进程和B进程负责通信，从标准输入读到的字符串通过管道发给对方
+- A进程从标准输入读到的字符串发给B进程后，B打印到屏幕上。
+- B进程从标准输入读到的字符串发给A进程，A打印到屏幕上。
+（2）退出方式：
+任意一个进程在标准输入收到输入1，给所有进程（通信双方）发送10号信号，每个进程收到10号信号后，开始执行有序退出。</p>
+<p>答：</p>
+<h3 id="_11">总结<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="1012-linux01">1012 Linux系统编程之多线程01<a class="headerlink" href="#1012-linux01" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 什么是线程？线程和进程有哪些区别？<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2-pthread_joinvoid-3">2. <code>pthread_join</code>为什么需要一个<code>void **</code>参数？书写程序，创建3个子线程，然后等待所有的子线程终止，最后获取其退出状态。<a class="headerlink" href="#2-pthread_joinvoid-3" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_12">总结<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h2 id="1013-linux02">1013 Linux系统编程之多线程02<a class="headerlink" href="#1013-linux02" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 线程的清理函数什么时候会执行？什么情况下线程退出的时候不会执行清理函数？<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<h3 id="2-pthread_cleanup_pushpthread_cleanup_pop">2. 从源码角度说明为什么<code>pthread_cleanup_push</code>和<code>pthread_cleanup_pop</code>必须成对出现？<a class="headerlink" href="#2-pthread_cleanup_pushpthread_cleanup_pop" title="Permanent link">&para;</a></h3>
+<h3 id="3-22000gettimeofdaygettimeofday">3. 尝试使用2个线程对同一个全局变量各加2000万(或者更多次)，统计加锁解锁的消耗。使用gettimeofday可以获取高精度当前时间(参考预习文档上对gettimeofday使用说明)。<a class="headerlink" href="#3-22000gettimeofdaygettimeofday" title="Permanent link">&para;</a></h3>
+<h3 id="_13">总结<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h2 id="1014-linux03">1014 Linux系统编程之多线程03<a class="headerlink" href="#1014-linux03" title="Permanent link">&para;</a></h2>
+<h3 id="1-t1t2t1-a-ct2-ba-b-c">1. 现在有两个线程t1和t2，t1 打印 A 和 C，t2 打印 B。书写代码，使用条件变量每次的显示顺序都是A-&gt;B-&gt;C。代码书写完成后，回答问题：条件变量中加锁的目的是什么？<a class="headerlink" href="#1-t1t2t1-a-ct2-ba-b-c" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2-ababsleepba">2. 主线程执行事件A，子线程执行事件B，在AB事件之外不使用sleep，使用循环机制配合互斥锁，确保B一定在A完成之后运行。<a class="headerlink" href="#2-ababsleepba" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nl">A</span><span class="p">:</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Before A!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;After A</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="nl">B</span><span class="p">:</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Before B!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;After B</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>答：</p>
+<h3 id="3_3">3. 文档上给的生产者消费者代码示例，有时间可以写写练练优化优化。<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_14">总结<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="1015-linux01">1015 Linux系统编程之网络编程01<a class="headerlink" href="#1015-linux01" title="Permanent link">&para;</a></h2>
+<h3 id="1-ositcpip">1. OSI模型有哪些层？TCP/IP模型有哪些层？他们之间的对应关系是怎样的？<a class="headerlink" href="#1-ositcpip" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2-tcpiptcpip">2. TCP/IP协议族常见的协议有哪些？他们分别属于TCP/IP模型的哪一层？<a class="headerlink" href="#2-tcpiptcpip" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="3-http-getpost">3. http的请求方式中: get请求和post请求有什么区别, 试说明<a class="headerlink" href="#3-http-getpost" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_15">总结<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="1016-linux02">1016 Linux系统编程之网络编程02<a class="headerlink" href="#1016-linux02" title="Permanent link">&para;</a></h2>
+<h3 id="1-httphttphttp">1. HTTP请求报文和响应报文由哪些部分组成？HTTP常用方法有哪些？HTTP常用状态码有哪些？<a class="headerlink" href="#1-httphttphttp" title="Permanent link">&para;</a></h3>
+<h3 id="2-https">2. 对称加密和非对称加密有什么区别？简要说明一下HTTPS的握手阶段流程。<a class="headerlink" href="#2-https" title="Permanent link">&para;</a></h3>
+<h3 id="3-uri">3. URI由哪些部分组成？<a class="headerlink" href="#3-uri" title="Permanent link">&para;</a></h3>
+<h3 id="4-httphttp">4. HTTP的中文全称是什么？从全称的每个字段来说明HTTP的特点。<a class="headerlink" href="#4-httphttp" title="Permanent link">&para;</a></h3>
+<h3 id="5-http-http">5. 使用浏览器或者抓包工具, 抓一个http的包, 截图标注一个http请求有那些信息需要重点关注。<a class="headerlink" href="#5-http-http" title="Permanent link">&para;</a></h3>
+<h3 id="_16">总结<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<h2 id="1017-linux03">1017 Linux系统编程之网络编程03<a class="headerlink" href="#1017-linux03" title="Permanent link">&para;</a></h2>
+<h3 id="1-tcp">1. TCP协议如何保证数据的可靠传输？<a class="headerlink" href="#1-tcp" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2-tcp">2. 为什么TCP需要三次握手？两次握手为什么不行？<a class="headerlink" href="#2-tcp" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="3-tcp4time_wait">3. TCP断开连接时为什么是4次挥手？为什么主动断开的一方要经历TIME_WAIT状态？<a class="headerlink" href="#3-tcp4time_wait" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="4-wiresharktcptcp">4. 通过wireshark抓包分析TCP三次握手过程，尝试解读TCP协议的每一个字段，截图显示抓包结果。<a class="headerlink" href="#4-wiresharktcptcp" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="5-net">5. 在net转换的时候, 路由器会做什么事情? 简要说明<a class="headerlink" href="#5-net" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_17">总结<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="1018-linux04">1018 Linux系统编程之网络编程04<a class="headerlink" href="#1018-linux04" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1. 什么是大端模式和小端模式，什么是主机字节序和网络字节序？编写代码，验证一下自己的机器是大端模式还是小端模式？<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2-ip">2. 根据域名，获取一下知名互联网厂商的IP地址信息，如阿里、京东、腾讯、百度。<a class="headerlink" href="#2-ip" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="3-socketbindlistenconnect">3. 说说socket、bind、listen、connect函数分别有什么作用呢？<a class="headerlink" href="#3-socketbindlistenconnect" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="4-recvsend">4. 使用recv和send函数时发生了什么？<a class="headerlink" href="#4-recvsend" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="5-tcp">5. 编写两个程序，一个是客户端另一个是服务端，它们通过tcp连接进行即时聊天。<a class="headerlink" href="#5-tcp" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_18">总结<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h2 id="1019-linux05">1019 Linux系统编程之网络编程05<a class="headerlink" href="#1019-linux05" title="Permanent link">&para;</a></h2>
+<h3 id="1-sockettcp">1. 让socket底层基于TCP, 实现代码让两个客户端连接同一个服务端, 两者之间可以相互通信。<a class="headerlink" href="#1-sockettcp" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2-sockettcp">2. 选做: 让socket底层基于TCP, 实现代码让多个客户端连接同一个服务端, 实现群聊效果(一个人发信息, 别人都可以收到)。<a class="headerlink" href="#2-sockettcp" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_19">总结<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="1020-linux06">1020 Linux系统编程之网络编程06<a class="headerlink" href="#1020-linux06" title="Permanent link">&para;</a></h2>
+<h3 id="1-io">1. 边缘触发和水平触发是什么？为什么使用边缘触发的时候必须配合非阻塞IO？<a class="headerlink" href="#1-io" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2-epoll">2. 把前面写的群聊的代码, 试着改成epoll实现。<a class="headerlink" href="#2-epoll" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_20">总结<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<h2 id="1021-linux07">1021 Linux系统编程之网络编程07<a class="headerlink" href="#1021-linux07" title="Permanent link">&para;</a></h2>
+<h3 id="1-a-b-b">1. 参考我们上课的代码: 让子进程A打开一个文件, 把这个文件描述符信息发给父进程B, 让父进程B在这个文件上能写一个字符串。<a class="headerlink" href="#1-a-b-b" title="Permanent link">&para;</a></h3>
+<h3 id="2_2">2. 仿照我们上课写的进程池, 自己手写(不要直接复制)一个进程池代码 (如果有余力可以试着优化功能)<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<h3 id="_21">总结<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<h2 id="1022-linux08">1022 Linux系统编程之网络编程08<a class="headerlink" href="#1022-linux08" title="Permanent link">&para;</a></h2>
+<h3 id="1-recvnint-netfd-void-buf-int-lengthmsg_waitallbuflength-recvnetfdbuf-lenmsg_waitall-recvnnetfd-buf-length">1. 在今天代码的基础上: 实现函数(客户端): recvn(int netfd, void *buf, int length)。该函数可以在不使用MSG_WAITALL的情况下，往buf指向的内存中接收任意长度(length)的数据。即: 把我们的代码由 recv(netFd,buf, len,MSG_WAITALL) 改为调用我们自己实现的 recvn(netfd, buf, length)。<a class="headerlink" href="#1-recvnint-netfd-void-buf-int-lengthmsg_waitallbuflength-recvnetfdbuf-lenmsg_waitall-recvnnetfd-buf-length" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2-atxt-btxt-atxt-atxt-btxt-btxt">2. 选做: 假设服务端有两个文件A.txt, B.txt; 当客户端要求(发送请求)下载A.txt, 服务器传输A.txt给客户端; 当客户端要求下载B.txt的时候, 服务器传输B.txt给客户端<a class="headerlink" href="#2-atxt-btxt-atxt-atxt-btxt-btxt" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_22">总结<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="1023-linux09">1023 Linux系统编程之网络编程09<a class="headerlink" href="#1023-linux09" title="Permanent link">&para;</a></h2>
+<h3 id="1_5">1. 上课代码好好看看写写。<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2-queueh-queuec-queuec">2. 把我们上课没有写完的队列实现(我们上课只是定义了queue.h, 没有实现queue.c), 写出来(queue.c)。<a class="headerlink" href="#2-queueh-queuec-queuec" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="3-sendfd-sendfdint-local_socket_fd-int-net_fdsendfdint-local_socket_fd-int-net_fd-int-tag-recvfd">3. 上课说在有序退出的时候, 我们在实现调用sendFd的时候偷懒了, 把sendFd(int local_socket_fd, int net_fd)改造成sendFd(int local_socket_fd, int net_fd, int tag)的模式, 把对应的recvFd也改改。<a class="headerlink" href="#3-sendfd-sendfdint-local_socket_fd-int-net_fdsendfdint-local_socket_fd-int-net_fd-int-tag-recvfd" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_23">总结<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="1024-linux10">1024 Linux系统编程之网络编程10<a class="headerlink" href="#1024-linux10" title="Permanent link">&para;</a></h2>
+<h3 id="1_6">1. 把线程池的代码最好自己手写一遍(如果能自己独立写出来更好)。<a class="headerlink" href="#1_6" title="Permanent link">&para;</a></h3>
+<h3 id="2-eg">2. (选作)把我们上课写的线程池的代码选择一个方向进行优化实现(eg: 限制任务队列长度, 队列长度超出的时候, 给用户回复服务器忙.  或者自选优化方向)。<a class="headerlink" href="#2-eg" title="Permanent link">&para;</a></h3>
+<h3 id="3-git">3. 把git的今天讲的命令练习一下, 截图提交。<a class="headerlink" href="#3-git" title="Permanent link">&para;</a></h3>
+<h3 id="_24">总结<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<h2 id="1025-mysql01">1025 关系型数据库MySQL01<a class="headerlink" href="#1025-mysql01" title="Permanent link">&para;</a></h2>
+<h3 id="1-git">1. 练习今天讲的所有Git命令(提交部分命令的关键截图即可)。<a class="headerlink" href="#1-git" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2_3">2. 模拟和同桌共同使用开发一个项目, 制造冲突, 解决冲突。<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="3_4">3. 创建分支, 试着在分支上写代码并且感受合并分支。<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="4-ubuntumysql">4. 通过我们在Ubuntu系统中安装的mysql客户端, 创建一个名为'订单'的数据库, 截图提交。<a class="headerlink" href="#4-ubuntumysql" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_25">总结<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="1026-mysql02">1026 关系型数据库MySQL02<a class="headerlink" href="#1026-mysql02" title="Permanent link">&para;</a></h2>
+<h3 id="1-usersql">1. 新建如下表 user表，按要求写出如下SQL语句<a class="headerlink" href="#1-usersql" title="Permanent link">&para;</a></h3>
+<ol>
+<li>写出建表语句</li>
+<li>增加 年龄这一列</li>
+<li>修改身高 为浮点类型</li>
+<li>插入10条数据</li>
+<li>修改id = 10 的名字为'乔峰'</li>
+<li>修改 id 不为1和2 的性别为 '男'</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>nickname</th>
+<th>gender</th>
+<th>height</th>
+<th>weight</th>
+<th>score</th>
+<th>birthday</th>
+<th>nation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>String</td>
+<td>String</td>
+<td>String</td>
+<td>int</td>
+<td>int</td>
+<td>float</td>
+<td>Date</td>
+<td>String</td>
+</tr>
+<tr>
+<td>编号</td>
+<td>名字</td>
+<td>昵称</td>
+<td>性别</td>
+<td>身高</td>
+<td>体重</td>
+<td>分数</td>
+<td>生日</td>
+<td>地区</td>
+</tr>
+</tbody>
+</table>
+<p>答：</p>
+<h3 id="2_4">2. 有如下一张表<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">student</span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">int</span><span class="p">,</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<span class="w">    </span><span class="n">chinese</span><span class="w"> </span><span class="nb">float</span><span class="p">,</span>
+<span class="w">    </span><span class="n">english</span><span class="w"> </span><span class="nb">float</span><span class="p">,</span>
+<span class="w">    </span><span class="n">math</span><span class="w"> </span><span class="nb">float</span>
+<span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>请添加2列信息，出生日期，籍贯。</li>
+<li>请修改语文成绩的数据类型为int型</li>
+<li>请在里面插入10名学生数据</li>
+<li>假设10名同学中有同姓的，如王，请找出姓王同学的信息</li>
+<li>请找出各科不及格学生的信息</li>
+<li>请找出有任何一科不及格学生的名称</li>
+<li>请找出两科成绩在90分以上的学生名称</li>
+<li>请找出没有一科挂科的学生名称</li>
+</ol>
+<hr />
+<p>答：</p>
+<h3 id="3-s">3. 新建一个学生表S，有包含如下信息<a class="headerlink" href="#3-s" title="Permanent link">&para;</a></h3>
+<p>学号 id，
+学生姓名 name，
+性别 gender，
+年龄 age，</p>
+<p>专业 dept，</p>
+<p>所在系编号 …等</p>
+<p>并插入10条数据。</p>
+<p>学号格式为 201801 201802 201803...
+性别只有 'male' &amp; 'female'
+院系包含（信息系、数学系，计算机科学系 等）</p>
+<p>然后做如下查询：</p>
+<p>-- 1.查询全体学生的学号与姓名。</p>
+<p>-- 3.查询全体学生的详细记录。</p>
+<p>-- 4.查询全体学生的姓名、出生年份和所属部门 使用列别名改变查询结果的列标题</p>
+<p>-- 7.查询所有年龄在20岁以下的学生姓名及其年龄。</p>
+<p>-- 8.查询年龄在20~23岁（包括20岁和23岁）之间的学生的姓名、系别和年龄。</p>
+<p>-- 9.查询年龄不在20~23岁之间的学生姓名、系别和年龄。</p>
+<p>-- 10.查询信息系、数学系和计算机系学生的姓名和性别。</p>
+<p>-- 11.查询既不是信息系、数学系，也不是计算机科学系的学生的姓名和性别。</p>
+<p>-- 12.查询学号为200518的学生的详细情况。</p>
+<p>-- 13.查询所有姓刘学生的姓名、学号和性别。</p>
+<p>-- 14.查询姓“李”且全名为两个汉字的学生的姓名。</p>
+<p>-- 15.查询名字中第2个字为“立"字的学生的姓名和学号。</p>
+<p>-- 16.查询所有不姓刘的学生姓名。</p>
+<p>-- 17.查询学号在201801~201809之间的学生姓名。</p>
+<hr />
+<p>答：</p>
+<h3 id="4-id">4. 创建一个城市表，字段有id、名字、所属国家名字、人口、所属省份，并插入若干数据。<a class="headerlink" href="#4-id" title="Permanent link">&para;</a></h3>
+<p>-- 1. 查询所有城市名及人口信息</p>
+<p>-- 2. 查询city表中，所有中国的城市信息</p>
+<p>-- 3. 查询人口数小于100人城市信息</p>
+<p>-- 4. 查询中国,人口数超过500的所有城市信息</p>
+<p>-- 5. 查询中国或美国的城市信息</p>
+<p>-- 6. 查询人口数为100-200（包括两头）城市信息</p>
+<p>-- 7. 查询中国或美国，人口数大于500的城市</p>
+<p>-- 8. 查询城市名为qing开头的城市信息</p>
+<hr />
+<p>答：</p>
+<h3 id="_26">总结<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="1027-mysql03">1027 关系型数据库MySQL03<a class="headerlink" href="#1027-mysql03" title="Permanent link">&para;</a></h2>
+<h3 id="1-s">1. 新建一个学生表S，有包含如下信息<a class="headerlink" href="#1-s" title="Permanent link">&para;</a></h3>
+<p>学号 id，
+学生姓名 name，
+性别 gender，
+年龄 age，</p>
+<p>专业 dept，</p>
+<p>所在系编号 …等</p>
+<p>并插入10条数据。</p>
+<p>学号格式为 201801 201802 201803...
+性别只有 'male' &amp; 'female'
+院系包含（信息系、数学系，计算机科学系 等）</p>
+<p>然后做如下查询：</p>
+<p>-- 1.查询不同院系学生的人数。
+-- 2.查询不同院系学生的平均年龄，并以降序排序。
+-- 3.查询计算机系年龄在20岁以下的学生姓名。
+-- 4.查询全体学生情况，查询结果按所在系的系号升序排列，同一系中的学生按年龄降序排列。</p>
+<hr />
+<p>答：</p>
+<h3 id="2-id">2. 创建一个城市表，字段有id、名字、所属国家名字、人口、所属省份，并插入若干数据。<a class="headerlink" href="#2-id" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>统计city表的行数</p>
+</li>
+<li>
+<p>统计各国城市的个数</p>
+</li>
+<li>
+<p>统计每个国家的城市总人口数</p>
+</li>
+<li>
+<p>统计中国每个省的城市个数及城市名列表</p>
+</li>
+<li>
+<p>统计每个国家的城市个数,并且只显示超过5个城市的国家</p>
+</li>
+<li>
+<p>统计每个国家的城市个数,并且只显示超过5个城市的国家并按照从大到小排序</p>
+</li>
+<li>
+<p>统计每个国家的城市个数,并且只显示超过5个城市的国家并按照从大到小排序,并且只显示排名前三</p>
+</li>
+</ol>
+<hr />
+<p>答：</p>
+<h3 id="3_5">3. 某大学研究生院有若干研究生导师，包括职工编号、姓名、职称、研究方向，其中每个导师的职工编号是唯一的。<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<p>若干研究生，包括学号、姓名、性别、入学日期，其中每个研究生的学号是唯一的。</p>
+<p>每个导师可以带若干研究生，但每个研究生只能有一个导师。</p>
+<p>请设计一个数据库，要求可以正确体现导师和研究生之间的关系。</p>
+<p>设计完毕之后，请插入一定量的数据，并验证你设计的数据库是否满足要求。</p>
+<p>-- 1.请查出每个导师所带研究生的姓名。</p>
+<p>-- 2.清查出特定姓名的导师所带研究生的姓名。</p>
+<p>-- 3.请查出每个导师所带研究生的数量。</p>
+<p>-- 4.请查出每个导师所带的男研究生的数量。</p>
+<p>-- 5.请找出选择哪个研究方向的导师最多。</p>
+<p>-- 6.请找统计不同职称的导师的个数。</p>
+<hr />
+<p>答：</p>
+<h3 id="4_1">4. 在数据库中创建如下两张表<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">dept</span>
+<span class="p">(</span>
+<span class="n">deptno</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
+<span class="n">dname</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">emp</span>
+<span class="p">(</span>
+<span class="n">empno</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
+<span class="n">ename</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<span class="n">job</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<span class="n">mgr</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<span class="n">sal</span><span class="w"> </span><span class="nb">float</span><span class="p">,</span>
+<span class="n">deptno</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">dept</span><span class="p">(</span><span class="n">deptno</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;事业部&#39;</span><span class="p">);</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;销售部&#39;</span><span class="p">);</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;技术部&#39;</span><span class="p">);</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">,</span><span class="s1">&#39;jacky&#39;</span><span class="p">,</span><span class="s1">&#39;clerk&#39;</span><span class="p">,</span><span class="s1">&#39;tom&#39;</span><span class="p">,</span><span class="s1">&#39;1000&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;02&#39;</span><span class="p">,</span><span class="s1">&#39;tom&#39;</span><span class="p">,</span><span class="s1">&#39;clerk&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;2000&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;07&#39;</span><span class="p">,</span><span class="s1">&#39;biddy&#39;</span><span class="p">,</span><span class="s1">&#39;clerk&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;2000&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;03&#39;</span><span class="p">,</span><span class="s1">&#39;jenny&#39;</span><span class="p">,</span><span class="s1">&#39;sales&#39;</span><span class="p">,</span><span class="s1">&#39;pretty&#39;</span><span class="p">,</span><span class="s1">&#39;600&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">);</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;04&#39;</span><span class="p">,</span><span class="s1">&#39;pretty&#39;</span><span class="p">,</span><span class="s1">&#39;sales&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;800&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">);</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;05&#39;</span><span class="p">,</span><span class="s1">&#39;buddy&#39;</span><span class="p">,</span><span class="s1">&#39;jishu&#39;</span><span class="p">,</span><span class="s1">&#39;canndy&#39;</span><span class="p">,</span><span class="s1">&#39;1000&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">);</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;06&#39;</span><span class="p">,</span><span class="s1">&#39;canndy&#39;</span><span class="p">,</span><span class="s1">&#39;jishu&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;1500&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">);</span>
+<span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+<span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>--1. 列出emp表中各部门的部门号，最高工资，最低工资</p>
+<p>--2. 列出emp表中各部门job为'CLERK'的员工的最低工资，最高工资</p>
+<p>--3. 对于emp中最低工资小于2000的部门，列出job为'CLERK'的员工的部门号，最低工资，最高工资</p>
+<p>--4. 根据部门号由高而低，工资有低而高列出每个员工的姓名，部门号，工资</p>
+<p>--5. 列出'buddy'所在部门中每个员工的姓名与部门号</p>
+<p>--6. 列出每个员工的姓名，工作，部门号，部门名</p>
+<p>--7. 列出emp中工作为'CLERK'的员工的姓名，工作，部门号，部门名</p>
+<p>--8. 对于emp中有管理者的员工，列出姓名，管理者姓名（管理者外键为mgr）</p>
+<p>--9. 对于dept表中，列出所有部门名，部门号，同时列出各部门工作为'CLERK'的员工名与工作</p>
+<p>--10. 对于工资高于本部门平均水平的员工，列出部门号，姓名，工资，按部门号排序</p>
+<p>--11. 对于emp，列出各个部门中工资高于本部门平均工资的员工数和部门号，按部门号排序</p>
+<hr />
+<p>答：</p>
+<h3 id="_27">总结<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="1028-mysql04">1028 关系型数据库MySQL04<a class="headerlink" href="#1028-mysql04" title="Permanent link">&para;</a></h2>
+<h3 id="1-c_api">1. 使用c_api向数据库分别实现对数据的: 增删改查。<a class="headerlink" href="#1-c_api" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="2_5">2. 参照我们上课演示的隔离级别: 自己实操演示感知一遍(截图提交: 只要提交部分关键图)。<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_28">总结<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "navigation.path"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

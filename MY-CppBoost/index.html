@@ -1,0 +1,2584 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../MY-CppBase/">
+      
+      
+        <link rel="next" href="../MY-Linux/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>C++提高 - Linux C++ 开发</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Linux C++ 开发" class="md-header__button md-logo" aria-label="Linux C++ 开发" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linux C++ 开发
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C++提高
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linux C++ 开发" class="md-nav__button md-logo" aria-label="Linux C++ 开发" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Linux C++ 开发
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LeetCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    力扣
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY-C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C语言
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY-CppBase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    C++提高
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    C++提高
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#c01" class="md-nav__link">
+    <span class="md-ellipsis">
+      C++提升篇01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C++提升篇01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 扩展阅读（阅读，加深对面向对象的理解）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 类与类之间的关系有哪几种？各自的特点怎样的？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 面向对象设计有哪些原则？各自的特点是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-umlc-primer-159" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 运用所学的UML类图的知识，画出“文本查询程序的扩展”作业的类图。【C++ Primer 15.9节作业】（可以贴图）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c02" class="md-nav__link">
+    <span class="md-ellipsis">
+      C++提升篇02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C++提升篇02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 设计模式可以分为几类？分别有哪些？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 什么是单例模式？它有哪些特点？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 什么是工厂模式？它有哪些特点？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 什么是观察者模式？它有哪些特点？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据库提高篇01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据库提高篇01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 简答题：什么是Redis?有哪些有优缺点？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 简答题：为什么要用 Redis /为什么要用缓存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 简答题：Redis为什么这么快？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 简答题：Redis有哪些常用数据类型？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 简答题：什么是Redis持久化？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 简答题：Redis 的持久化机制是什么？各自的优缺点？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-redis-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 简答题：Redis key的过期时间和永久有效分别怎么设置？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-redisredisredis" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 简答题：Redis事务的概念？Redis事务的三个阶段？Redis事务相关命令和事务的特征？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 简答题：将每种数据类型的命令多敲击一下，加深印象？（这个自己下面多敲一敲，熟悉一下，此题不交）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qt框架01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt框架01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-qt" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 说明一下Qt生成的项目模板中有哪些文件和文件夹，分别有什么作用？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-qt-creator" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Qt Creator中有哪几个模式，切换的快捷键是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-qtqapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 如何查看某个Qt内置类的帮助文档，如何查看某个类的源代码？QApplication的继承体系是怎么样的？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-uiqstringappend" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 根据如下ui绘制一个计算器，先不实现计算的功能，只实现显示表达式和编辑表达式的功能；QString的append方法可以追加一个字符。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qt框架02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt框架02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-qstringstdstringcharqstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. QString和std::string和char数组有什么区别？QString增删改查用什么成员函数？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 使用元对象系统的注意事项有哪些？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-myintersectionqlistqsetmyoddqmapqlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 书写一个函数MyIntersection，可以支持两个相同的QList或者QSet的取交集的操作，返回新集合。书写一个函数MyOdd，可以将一个QMap的所有奇数的键或者是值搜集起来，返回新QList。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-usrincludedir1dir2cd-cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 给出一个路径'/usr/include/dir1/dir2'：将路径切割并存入一个栈中；实现cd 子目录和cd 上一级功能，返回路径的字符串。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 根据如下ui绘制一个计算器，点击任何一个符号的时候直接输出运算结果。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-2qlineedit3qpushbutton-1qlabelqlineedit-ip-port-username-password-qlineedit-submitqmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 书写一个用于显示属性配置的程序：2个QLineEdit、3个QPushButton 1个QLabel；左边QLineEdit可以输入 ip port username password 等其他字符串；右边QLineEdit可以输入 左边属性对应的值；submit按钮可以提交数据。要求，所有的属性存入一个QMap中。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt03" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qt框架03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt框架03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-xo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 实现一个井字棋 点击空白按钮可以显示'X'或者'O'。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 信号和槽机制的目的是什么？书写代码实现一个自定义信号和自定义槽函数。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. connect函数有几种重载形式？哪一种更好为什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-abca-b-cb-cc-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 现在有三个对象A，B，C，需要实现下面效果：A发射信号会导致 B调用槽函数 C调用槽函数；B发射信号会导致 C调用槽函数；C发射信号会导致 A发射信号。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt04" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qt框架04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt框架04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-abcabbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 现在有三个对象ABC，A的父亲是B，B的父亲是C。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 实现一个“打蚊子”游戏。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt05" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qt框架05
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt框架05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 什么是窗口？怎么样创建一个窗口
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-qwidget" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 通过修改QWidget的构造函数的参数来显示不同风格的窗口，并在窗口中显示窗口选项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-nginxapache" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Nginx和Apache最大区别是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 使用Nginx部署一个产品的帮助文档服务器。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 有哪些负载均衡策略？各有什么优缺点？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 说明什么是幂等性？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 为什么需要将HTTP协议设计成无状态的呢？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-redisworkflowredisx1100" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 存在下列的redis键值映射关系，使用workflow的redis任务和序列，假如只知道"x1"，如何找到最终的"100"？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-redis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 读取某个网站的内容，并且存入redis服务端当中
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow03" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 实现分片上传功能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux系统编程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编程软件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#c01" class="md-nav__link">
+    <span class="md-ellipsis">
+      C++提升篇01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C++提升篇01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 扩展阅读（阅读，加深对面向对象的理解）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 类与类之间的关系有哪几种？各自的特点怎样的？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 面向对象设计有哪些原则？各自的特点是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-umlc-primer-159" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 运用所学的UML类图的知识，画出“文本查询程序的扩展”作业的类图。【C++ Primer 15.9节作业】（可以贴图）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c02" class="md-nav__link">
+    <span class="md-ellipsis">
+      C++提升篇02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C++提升篇02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 设计模式可以分为几类？分别有哪些？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 什么是单例模式？它有哪些特点？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 什么是工厂模式？它有哪些特点？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 什么是观察者模式？它有哪些特点？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据库提高篇01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据库提高篇01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 简答题：什么是Redis?有哪些有优缺点？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 简答题：为什么要用 Redis /为什么要用缓存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 简答题：Redis为什么这么快？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 简答题：Redis有哪些常用数据类型？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 简答题：什么是Redis持久化？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 简答题：Redis 的持久化机制是什么？各自的优缺点？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-redis-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 简答题：Redis key的过期时间和永久有效分别怎么设置？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-redisredisredis" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 简答题：Redis事务的概念？Redis事务的三个阶段？Redis事务相关命令和事务的特征？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 简答题：将每种数据类型的命令多敲击一下，加深印象？（这个自己下面多敲一敲，熟悉一下，此题不交）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qt框架01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt框架01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-qt" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 说明一下Qt生成的项目模板中有哪些文件和文件夹，分别有什么作用？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-qt-creator" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Qt Creator中有哪几个模式，切换的快捷键是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-qtqapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 如何查看某个Qt内置类的帮助文档，如何查看某个类的源代码？QApplication的继承体系是怎么样的？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-uiqstringappend" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 根据如下ui绘制一个计算器，先不实现计算的功能，只实现显示表达式和编辑表达式的功能；QString的append方法可以追加一个字符。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qt框架02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt框架02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-qstringstdstringcharqstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. QString和std::string和char数组有什么区别？QString增删改查用什么成员函数？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 使用元对象系统的注意事项有哪些？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-myintersectionqlistqsetmyoddqmapqlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 书写一个函数MyIntersection，可以支持两个相同的QList或者QSet的取交集的操作，返回新集合。书写一个函数MyOdd，可以将一个QMap的所有奇数的键或者是值搜集起来，返回新QList。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-usrincludedir1dir2cd-cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 给出一个路径'/usr/include/dir1/dir2'：将路径切割并存入一个栈中；实现cd 子目录和cd 上一级功能，返回路径的字符串。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 根据如下ui绘制一个计算器，点击任何一个符号的时候直接输出运算结果。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-2qlineedit3qpushbutton-1qlabelqlineedit-ip-port-username-password-qlineedit-submitqmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 书写一个用于显示属性配置的程序：2个QLineEdit、3个QPushButton 1个QLabel；左边QLineEdit可以输入 ip port username password 等其他字符串；右边QLineEdit可以输入 左边属性对应的值；submit按钮可以提交数据。要求，所有的属性存入一个QMap中。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt03" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qt框架03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt框架03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-xo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 实现一个井字棋 点击空白按钮可以显示'X'或者'O'。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 信号和槽机制的目的是什么？书写代码实现一个自定义信号和自定义槽函数。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. connect函数有几种重载形式？哪一种更好为什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-abca-b-cb-cc-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 现在有三个对象A，B，C，需要实现下面效果：A发射信号会导致 B调用槽函数 C调用槽函数；B发射信号会导致 C调用槽函数；C发射信号会导致 A发射信号。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt04" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qt框架04
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt框架04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-abcabbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 现在有三个对象ABC，A的父亲是B，B的父亲是C。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 实现一个“打蚊子”游戏。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt05" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qt框架05
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt框架05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 什么是窗口？怎么样创建一个窗口
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-qwidget" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 通过修改QWidget的构造函数的参数来显示不同风格的窗口，并在窗口中显示窗口选项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-nginxapache" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Nginx和Apache最大区别是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 使用Nginx部署一个产品的帮助文档服务器。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 有哪些负载均衡策略？各有什么优缺点？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 说明什么是幂等性？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 为什么需要将HTTP协议设计成无状态的呢？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-redisworkflowredisx1100" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 存在下列的redis键值映射关系，使用workflow的redis任务和序列，假如只知道"x1"，如何找到最终的"100"？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-redis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 读取某个网站的内容，并且存入redis服务端当中
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow03" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 实现分片上传功能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="c">C++提高<a class="headerlink" href="#c" title="Permanent link">&para;</a></h1>
+<h2 id="c01">C++提升篇01<a class="headerlink" href="#c01" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 扩展阅读（阅读，加深对面向对象的理解）<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>[OO真经]：<a href="https://www.cnblogs.com/leoo2sk/archive/2009/04/09/1432103.html">https://www.cnblogs.com/leoo2sk/archive/2009/04/09/1432103.html</a></p>
+<p>【答】</p>
+<h3 id="2">2. 类与类之间的关系有哪几种？各自的特点怎样的？<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<h3 id="3">3. 面向对象设计有哪些原则？各自的特点是什么？<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<h3 id="4-umlc-primer-159">4. 运用所学的UML类图的知识，画出“文本查询程序的扩展”作业的类图。【C++ Primer 15.9节作业】（可以贴图）<a class="headerlink" href="#4-umlc-primer-159" title="Permanent link">&para;</a></h3>
+<h3 id="_1">总结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="c02">C++提升篇02<a class="headerlink" href="#c02" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 设计模式可以分为几类？分别有哪些？<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<h3 id="2_1">2. 什么是单例模式？它有哪些特点？<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<h3 id="3_1">3. 什么是工厂模式？它有哪些特点？<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<h3 id="4">4. 什么是观察者模式？它有哪些特点？<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<h3 id="_2">总结<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="01">数据库提高篇01<a class="headerlink" href="#01" title="Permanent link">&para;</a></h2>
+<h3 id="1-redis">1. 简答题：什么是Redis?有哪些有优缺点？<a class="headerlink" href="#1-redis" title="Permanent link">&para;</a></h3>
+<h3 id="2-redis">2. 简答题：为什么要用 Redis /为什么要用缓存<a class="headerlink" href="#2-redis" title="Permanent link">&para;</a></h3>
+<h3 id="3-redis">3. 简答题：Redis为什么这么快？<a class="headerlink" href="#3-redis" title="Permanent link">&para;</a></h3>
+<h3 id="4-redis">4. 简答题：Redis有哪些常用数据类型？<a class="headerlink" href="#4-redis" title="Permanent link">&para;</a></h3>
+<h3 id="5-redis">5. 简答题：什么是Redis持久化？<a class="headerlink" href="#5-redis" title="Permanent link">&para;</a></h3>
+<h3 id="6-redis">6. 简答题：Redis 的持久化机制是什么？各自的优缺点？<a class="headerlink" href="#6-redis" title="Permanent link">&para;</a></h3>
+<h3 id="7-redis-key">7. 简答题：Redis key的过期时间和永久有效分别怎么设置？<a class="headerlink" href="#7-redis-key" title="Permanent link">&para;</a></h3>
+<h3 id="8-redisredisredis">8. 简答题：Redis事务的概念？Redis事务的三个阶段？Redis事务相关命令和事务的特征？<a class="headerlink" href="#8-redisredisredis" title="Permanent link">&para;</a></h3>
+<h3 id="9">9. 简答题：将每种数据类型的命令多敲击一下，加深印象？（这个自己下面多敲一敲，熟悉一下，此题不交）<a class="headerlink" href="#9" title="Permanent link">&para;</a></h3>
+<h3 id="_3">总结<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="qt01">Qt框架01<a class="headerlink" href="#qt01" title="Permanent link">&para;</a></h2>
+<h3 id="1-qt">1. 说明一下Qt生成的项目模板中有哪些文件和文件夹，分别有什么作用？<a class="headerlink" href="#1-qt" title="Permanent link">&para;</a></h3>
+<p>【答】</p>
+<p>文件</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>1001.pro
+1001.pro.user（实际存在，但在Qt Creator中不显示）
+main.cpp
+mainwindow.cpp
+mainwindow.h
+mainwindow.ui
+</code></pre></div></td></tr></table></div>
+<p>A、pro文件</p>
+<p><strong>pro文件是项目构建文件，类似于Makefile</strong>。</p>
+<p>qmake是Qt提供的一个跨平台的构建工具，在构建项目时，IDE会根据pro文件生成相应的构建脚本，如Makefile或Visual Studio项目文件，再来进行项目的实际编译和链接。</p>
+<p><strong>pro文件是qmake工具的输入文件，用于描述项目的结构、依赖关系以及构建过程</strong>。</p>
+<p>B、源代码文件main.cpp</p>
+<p>框架自动生成的代码</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;dialog.h&quot;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QApplication&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QApplication</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Dialog</span><span class="w"> </span><span class="n">w</span><span class="p">;</span>
+<span class="w">    </span><span class="n">w</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">exec</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>值得特别注意的类有两个：</p>
+<ul>
+<li>QApplication是事件循环类，其中的exec()方法开启事件循环，让进程可以处理操作系统传入的各种事件。</li>
+<li>Dialog是可视的对话框类，其中的show()方法在屏幕上绘制对话框和其他各种图形元素。</li>
+</ul>
+<p>从某种意义上来说，QApplication是整个GUI应用的大脑，它负责接收和处理各种事件；而图形界面上各种可视的元素，比如例子中的对话框对象，就是GUI进程的身体，它控制了整个应用的外观。对于应用而言，QApplication对象可以开启永不停止的事件循环（若有必要可以创造派生类扩展其功能），而业务逻辑一般集中在各种可视元素上。</p>
+<p>C、对话框对象的设计</p>
+<p>dialog.h</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#ifndef DIALOG_H</span>
+<span class="cp">#define DIALOG_H</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QDialog&gt;</span>
+
+<span class="n">QT_BEGIN_NAMESPACE</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Ui</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Dialog</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="n">QT_END_NAMESPACE</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Dialog</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QDialog</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Q_OBJECT</span>
+
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">Dialog</span><span class="p">(</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+<span class="w">    </span><span class="o">~</span><span class="n">Dialog</span><span class="p">();</span>
+
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">Ui</span><span class="o">::</span><span class="n">Dialog</span><span class="w"> </span><span class="o">*</span><span class="n">ui</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="cp">#endif </span><span class="c1">// DIALOG_H</span>
+</code></pre></div></td></tr></table></div>
+<p>dialog.cpp</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;dialog.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ui_dialog.h&quot;</span>
+
+<span class="n">Dialog</span><span class="o">::</span><span class="n">Dialog</span><span class="p">(</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="p">)</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">QDialog</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">ui</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Ui</span><span class="o">::</span><span class="n">Dialog</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">setupUi</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Dialog</span><span class="o">::~</span><span class="n">Dialog</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">ui</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>在构造函数中，会首先调用Ui::Dialog的setupUi方法来创建静态图形界面，自定义的业务逻辑在后续代码中添加即可。</li>
+<li>Ui::Dialog的实现是根据ui文件自动生成，需要先构建才会生成（快捷键是ctrl+b）。</li>
+</ul>
+<p>D、UI文件</p>
+<p>可以通过ui文件，创建应用的静态图形界面。首先双击ui文件，此时Qt Creator的界面会切换到Qt Designer图形界面编辑器中。</p>
+<p>在Qt Creator当中可以通过拖放组件的方式修改ui文件，在使用构建功能之后，Qt Creator在构建过程中会使用UIC工具，将ui文件翻译成对应的C++代码（本例中是Ui::Dialog），并且可以让用户在自己的代码中访问ui的各个对象。</p>
+<p>接下来，可以将一个Label类型的组件拖入中心区域，此时在对象浏览器当中可以找到该对象。此外，在ui文件当中，所有的组件对象构成了一棵树结构。随后选中组件对象，用户可以在对象属性编辑器当中可以修改对象属性，从而影响应用程序的静态界面效果。</p>
+<p>文件夹：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>1001：Qt项目1001的文件夹
+在Qt Creator中显示，但实际不存在的目录：
+Headers
+Sources
+Forms
+</code></pre></div></td></tr></table></div>
+<p>A、1001目录存放所有的项目文件；</p>
+<p>B、Headers目录存放用户自己写的头文件；</p>
+<p>C、Sources目录存放用户自己写的源代码文件；</p>
+<p>D、Forms目录存放静态界面文件。</p>
+<h3 id="2-qt-creator">2. Qt Creator中有哪几个模式，切换的快捷键是什么？<a class="headerlink" href="#2-qt-creator" title="Permanent link">&para;</a></h3>
+<p>【答】</p>
+<p>模式：</p>
+<p>2个模式：编辑模式、设计模式</p>
+<p>切换的快捷键：</p>
+<p>快捷键Shift+F4，可以实现快速切换Designer和源代码；快捷键Esc，可以回退Designer到ui代码。</p>
+<h3 id="3-qtqapplication">3. 如何查看某个Qt内置类的帮助文档，如何查看某个类的源代码？QApplication的继承体系是怎么样的？<a class="headerlink" href="#3-qtqapplication" title="Permanent link">&para;</a></h3>
+<p>答：使用快捷键F1可以打开帮助手册，F2可以转到类的定义。</p>
+<ul>
+<li>Dialog类派生自QDialog类，其构造函数中存在一个parent形参。</li>
+<li>Dialog类的实现部分是由另一个类Ui::Dialog来完成的，这里使用了pimpl技术来减少依赖。</li>
+</ul>
+<h3 id="4-uiqstringappend">4. 根据如下ui绘制一个计算器，先不实现计算的功能，只实现显示表达式和编辑表达式的功能；QString的append方法可以追加一个字符。<a class="headerlink" href="#4-uiqstringappend" title="Permanent link">&para;</a></h3>
+<p><img alt="20240530180746" src="../qt-image/20240530180746.png" /></p>
+<p>【答】代码</p>
+<p>mainwindow.h</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#ifndef MAINWINDOW_H</span>
+<span class="cp">#define MAINWINDOW_H</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QMainWindow&gt;</span>
+
+<span class="n">QT_BEGIN_NAMESPACE</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Ui</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainWindow</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="n">QT_END_NAMESPACE</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MainWindow</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QMainWindow</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Q_OBJECT</span>
+
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">MainWindow</span><span class="p">(</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+<span class="w">    </span><span class="o">~</span><span class="n">MainWindow</span><span class="p">();</span>
+
+<span class="k">private</span><span class="w"> </span><span class="n">slots</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">on_btn_1_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_2_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_3_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_4_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_5_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_6_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_7_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_8_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_9_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_0_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_add_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_sub_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_mul_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_div_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_del_clicked</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_btn_equal_clicked</span><span class="p">();</span>
+
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">Ui</span><span class="o">::</span><span class="n">MainWindow</span><span class="w"> </span><span class="o">*</span><span class="n">ui</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="cp">#endif </span><span class="c1">// MAINWINDOW_H</span>
+</code></pre></div></td></tr></table></div>
+<p>main.cpp</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;mainwindow.h&quot;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QApplication&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QApplication</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+<span class="w">    </span><span class="n">MainWindow</span><span class="w"> </span><span class="n">w</span><span class="p">;</span>
+<span class="w">    </span><span class="n">w</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">exec</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>mainwindow.cpp</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;mainwindow.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ui_mainwindow.h&quot;</span>
+
+<span class="n">MainWindow</span><span class="o">::</span><span class="n">MainWindow</span><span class="p">(</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="p">)</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">QMainWindow</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">ui</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Ui</span><span class="o">::</span><span class="n">MainWindow</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">setupUi</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">MainWindow</span><span class="o">::~</span><span class="n">MainWindow</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">ui</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_1_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_2_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_3_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;3&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_4_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;4&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_5_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;5&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_6_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;6&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_7_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;7&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_8_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;8&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_9_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;9&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_0_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;0&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_add_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;+&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_sub_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_mul_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_div_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_del_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="p">.</span><span class="n">chop</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">MainWindow</span><span class="o">::</span><span class="n">on_btn_equal_clicked</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;output&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;=&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="_4">总结<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Qt项目1001-4</li>
+</ul>
+<h2 id="qt02">Qt框架02<a class="headerlink" href="#qt02" title="Permanent link">&para;</a></h2>
+<h3 id="1-qstringstdstringcharqstring">1. QString和std::string和char数组有什么区别？QString增删改查用什么成员函数？<a class="headerlink" href="#1-qstringstdstringcharqstring" title="Permanent link">&para;</a></h3>
+<p>【答】</p>
+<p>区别：</p>
+<p><strong>QString</strong>：Qt在为了方便用户使用字符串上面做了很多努力，设计出了功能更加丰富的QString类。Qt框架中使用QChar类来表示一个字符，QChar的编码是utf-16，无论是英文字符还是中文汉字都是占据了2个字节。对于字符串，Qt框架使用QString类来表示，QString是QChar的序列。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;你好世界&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">QChar</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="w">    </span><span class="n">qDebug</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;str = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ch = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//QChar %lc</span>
+<span class="w">    </span><span class="n">qDebug</span><span class="p">(</span><span class="s">&quot;ch = %lc</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ch</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>类似于std::string，QString也支持访问成员、拼接、截取、获取长度、删除和修改的操作。QString的接口和std::string不一样，功能也会更多一些。</p>
+<p><strong>std::string</strong>：由于零开销原则的限制，C++标准库的std::string为了性能，只提供了非常有限的功能；当涉及到中英文兼容这种跨语言问题时，不同编码格式的转换会让字符串的故事更加复杂。</p>
+<p><strong>char数组</strong>：C风格的字符数组形式的字符串字面值常量。</p>
+<p>成员函数：</p>
+<p>增：append()</p>
+<p>删：remove()</p>
+<p>改：replace()</p>
+<p>查：indexOf()</p>
+<h3 id="2_2">2. 使用元对象系统的注意事项有哪些？<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>为了正确使用元对象，代码需要遵循下列步骤：</p>
+<ul>
+<li>从QObject派生的含有Q_OBJECT宏的类的定义<strong>必须在头文件</strong>中，Q_OBJECT宏应该位于类声明的私有部分。</li>
+<li>确保pro文件中，SOURCES变量包含了项目中的所有源文件，HEADERS变量包含了项目中所有的头文件。（如果使用Qt Creator，IDE会自动帮我们完成这一步骤）。</li>
+<li>应该在头文件中使用逻辑指令（比如#ifndef）防止头文件被包含多次。</li>
+<li>QObject类应是基类列表中的第一个类。</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// QWidget就是一个典型的使用元对象的例子</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Q_WIDGETS_EXPORT</span><span class="w"> </span><span class="n">QWidget</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QObject</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QPaintDevice</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Q_OBJECT</span>
+<span class="w">    </span><span class="nf">Q_DECLARE_PRIVATE</span><span class="p">(</span><span class="n">QWidget</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="3-myintersectionqlistqsetmyoddqmapqlist">3. 书写一个函数MyIntersection，可以支持两个相同的QList或者QSet的取交集的操作，返回新集合。书写一个函数MyOdd，可以将一个QMap<int,int>的所有奇数的键或者是值搜集起来，返回新QList。<a class="headerlink" href="#3-myintersectionqlistqsetmyoddqmapqlist" title="Permanent link">&para;</a></h3>
+<h3 id="4-usrincludedir1dir2cd-cd">4. 给出一个路径'/usr/include/dir1/dir2'：将路径切割并存入一个栈中；实现cd 子目录和cd 上一级功能，返回路径的字符串。<a class="headerlink" href="#4-usrincludedir1dir2cd-cd" title="Permanent link">&para;</a></h3>
+<h3 id="5-ui">5. 根据如下ui绘制一个计算器，点击任何一个符号的时候直接输出运算结果。<a class="headerlink" href="#5-ui" title="Permanent link">&para;</a></h3>
+<h3 id="6-2qlineedit3qpushbutton-1qlabelqlineedit-ip-port-username-password-qlineedit-submitqmap">6. 书写一个用于显示属性配置的程序：2个QLineEdit、3个QPushButton 1个QLabel；左边QLineEdit可以输入 ip port username password 等其他字符串；右边QLineEdit可以输入 左边属性对应的值；submit按钮可以提交数据。要求，所有的属性存入一个QMap中。<a class="headerlink" href="#6-2qlineedit3qpushbutton-1qlabelqlineedit-ip-port-username-password-qlineedit-submitqmap" title="Permanent link">&para;</a></h3>
+<h3 id="_5">总结<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="qt03">Qt框架03<a class="headerlink" href="#qt03" title="Permanent link">&para;</a></h2>
+<h3 id="1-xo">1. 实现一个井字棋 点击空白按钮可以显示'X'或者'O'。<a class="headerlink" href="#1-xo" title="Permanent link">&para;</a></h3>
+<h3 id="2_3">2. 信号和槽机制的目的是什么？书写代码实现一个自定义信号和自定义槽函数。<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<h3 id="3-connect">3. connect函数有几种重载形式？哪一种更好为什么？<a class="headerlink" href="#3-connect" title="Permanent link">&para;</a></h3>
+<h3 id="4-abca-b-cb-cc-a">4. 现在有三个对象A，B，C，需要实现下面效果：A发射信号会导致 B调用槽函数 C调用槽函数；B发射信号会导致 C调用槽函数；C发射信号会导致 A发射信号。<a class="headerlink" href="#4-abca-b-cb-cc-a" title="Permanent link">&para;</a></h3>
+<h3 id="_6">总结<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h2 id="qt04">Qt框架04<a class="headerlink" href="#qt04" title="Permanent link">&para;</a></h2>
+<h3 id="1-abcabbc">1. 现在有三个对象ABC，A的父亲是B，B的父亲是C。<a class="headerlink" href="#1-abcabbc" title="Permanent link">&para;</a></h3>
+<p>点击A的内部，要求执行：A的filter、event和event_handler；B的filter、event。</p>
+<p>【答】</p>
+<h3 id="2_4">2. 实现一个“打蚊子”游戏。<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>在屏幕中央有一个600*400的QWidget，一个用来统计分数的QLabel；一开始会在QWidget内部随机位置生成一个蚊子，当鼠标点击到蚊子以后，旧蚊子消失然后在另一个位置生成新的蚊子，分数增加。</p>
+<p>【答】</p>
+<h3 id="_7">总结<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h2 id="qt05">Qt框架05<a class="headerlink" href="#qt05" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 什么是窗口？怎么样创建一个窗口<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<h3 id="2-qwidget">2. 通过修改QWidget的构造函数的参数来显示不同风格的窗口，并在窗口中显示窗口选项<img alt="img" src="https://doc.qt.io/qt-5/images/windowflags-example.png" /><a class="headerlink" href="#2-qwidget" title="Permanent link">&para;</a></h3>
+<p>答：</p>
+<h3 id="_8">总结<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h2 id="workflow01">Workflow01<a class="headerlink" href="#workflow01" title="Permanent link">&para;</a></h2>
+<h3 id="1-nginxapache">1. Nginx和Apache最大区别是什么？<a class="headerlink" href="#1-nginxapache" title="Permanent link">&para;</a></h3>
+<h3 id="2-nginx">2. 使用Nginx部署一个产品的帮助文档服务器。<a class="headerlink" href="#2-nginx" title="Permanent link">&para;</a></h3>
+<h3 id="3_2">3. 有哪些负载均衡策略？各有什么优缺点？<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<h3 id="4_1">4. 说明什么是幂等性？<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<h3 id="5-http">5. 为什么需要将HTTP协议设计成无状态的呢？<a class="headerlink" href="#5-http" title="Permanent link">&para;</a></h3>
+<h3 id="_9">总结<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h2 id="workflow02">Workflow02<a class="headerlink" href="#workflow02" title="Permanent link">&para;</a></h2>
+<h3 id="1-redisworkflowredisx1100">1. 存在下列的redis键值映射关系，使用workflow的redis任务和序列，假如只知道"x1"，如何找到最终的"100"？<a class="headerlink" href="#1-redisworkflowredisx1100" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>&quot;x1&quot; --&gt; &quot;x2&quot;
+&quot;x2&quot; --&gt; &quot;x3&quot;
+&quot;x3&quot; --&gt; &quot;x4&quot;
+&quot;x4&quot; --&gt; &quot;100&quot;
+</code></pre></div></td></tr></table></div>
+<p>【答】</p>
+<h3 id="2-redis_1">2. 读取某个网站的内容，并且存入redis服务端当中<a class="headerlink" href="#2-redis_1" title="Permanent link">&para;</a></h3>
+<p>（比如先访问淘宝，再set <a href="http://www.taobao.com/">www.taobao.com</a> 淘宝的html内容）</p>
+<p>【答】</p>
+<h3 id="_10">总结<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2 id="workflow03">Workflow03<a class="headerlink" href="#workflow03" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 实现分片上传功能<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<p>【答】</p>
+<h3 id="_11">总结<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "navigation.path"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
